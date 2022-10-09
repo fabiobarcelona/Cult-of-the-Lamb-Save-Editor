@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>COTL Save Editor</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <div class="container-fluid">
+        <!-- File Upload Modal -->
+        <div class="modal fade" id="fileUploadModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="fileUploadModalLabel">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="fileUploadModalLabel">Upload your save file</h5>
+                        <img src="./assets/lamb.gif" alt="lamb" width="64" height="64">
+                    </div>
+                    <div class="modal-body">
+                        <h1 class="text-center">Cult of the Lamb - Save File Editor</h1>
+                        <p class="mb-4 text-muted text-center">
+                            Upload your save file below and start editing your save
+                            file to your
+                            liking.
+                            <span class="text-danger">Make sure you always backup your original save file.</span>
+                            After you are done, replace your old save file with the new one.
+                        </p>
+
+                        <form runat="server">
+                            <input type='file' class="form-control" id="file" />
+                        </form>
+
+                        <hr />
+
+                        <p class="mb-4 text-muted text-center">
+                            If you don't know where your save file is located, copy the below path and paste in your
+                            file explorer top bar or, if you are on Windows, hit Windows key + R and paste the path in
+                            the Run dialog box.
+                        </p>
+                        <label>Save file location Windows:</label>
+                        <div class="input-group mb-5">
+                            <input type="text" class="form-control" id="WindowsSaveFilePath"
+                                value="%USERPROFILE%\AppData\LocalLow\Massive Monster\Cult Of The Lamb\saves"
+                                aria-label="Windows Save File Location" disabled>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary"
+                                    onclick="copyTextToClipboard('WindowsSaveFilePath')" type="button">Copy</button>
+                            </div>
+                        </div>
+
+
+                        <label>Save file location macOS:</label>
+                        <div class="input-group mb-5">
+                            <input type="text" class="form-control" id="macOSSaveFilePath"
+                                value="~/Library/Application Support/Massive Monster/Cult Of The Lamb/saves"
+                                aria-label="macOS Save File Location" disabled>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary"
+                                    onclick="copyTextToClipboard('macOSSaveFilePath')" type="button">Copy</button>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="text-center">
+                            <p class="mb-4 text-muted text-center">
+                                If you don't have a save file, or want to try out the application first before editing
+                                your
+                                real save file,
+                                click the button below to load a test save file.
+                            </p>
+                            <button class="btn btn-outline-secondary" onclick="loadTestData()" type="button">Load test
+                                data</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form id="form">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-cult-tab" data-bs-toggle="tab" data-bs-target="#nav-cult"
+                        type="button" role="tab" aria-controls="nav-cult" aria-selected="true">Cult Information</button>
+                    <button class="nav-link" id="nav-character-tab" data-bs-toggle="tab" data-bs-target="#nav-character"
+                        type="button" role="tab" aria-controls="nav-character" aria-selected="false">Character
+                        Stats</button>
+                    <button class="nav-link" id="nav-followers-tab" data-bs-toggle="tab" data-bs-target="#nav-followers"
+                        type="button" role="tab" aria-controls="nav-followers" aria-selected="false">Followers</button>
+                    <button class="nav-link" id="nav-buildings-tab" data-bs-toggle="tab" data-bs-target="#nav-buildings"
+                        type="button" role="tab" aria-controls="nav-buildings" aria-selected="false">Building
+                        Unlocks</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-cult" role="tabpanel" aria-labelledby="nav-cult-tab">
+                    <h2>Cult Basic Information</h2>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <label for="CultName">Cult Name:</label>
+                            <input type="text" class="form-control" id="CultName">
+                        </div>
+                    </div>
+                    <h2>Cult Traits</h2>
+                    <hr />
+                    <div class="row">
+                        <div class="col">
+                            <h3>Afterlife</h3>
+                            <hr />
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Left Branch</th>
+                                        <th>Right Branch</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_9" value="9">
+                                            <label class="form-check-label" for="CultTraits_9">Belief in
+                                                Sacrifice</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Gain 20 Faith whenever a follower is sacrificed"></i>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_3" value="3">
+                                            <label class="form-check-label" for="CultTraits_3">Belief in
+                                                Afterlife</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Lose 5 Faith instead of 20 when a follower dies"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_30" value="30">
+                                            <label class="form-check-label" for="CultTraits_30">Respect Your
+                                                Elders</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Gain 5 Faith when a follower reaches old age in your cult"></i>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_31" value="31">
+                                            <label class="form-check-label" for="CultTraits_31">Good Die Young</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Gain 10 Faith whenever an elder follower is murdered, sacrificed, or consumed, but lose 20 Faith by the natural death of an elder follower."></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <h3>Work and Worship</h3>
+                            <hr />
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Left Branch</th>
+                                        <th>Right Branch</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_11" value="11">
+                                            <label class="form-check-label" for="CultTraits_11">Faithful</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Generates devotion 15% faster"></i>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_24" value="24">
+                                            <label class="form-check-label" for="CultTraits_24">Industrious</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Increases work speed by 15%"></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <h3>Possessions</h3>
+                            <hr />
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Left Branch</th>
+                                        <th>Right Branch</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_18" value="18">
+                                            <label class="form-check-label" for="CultTraits_18">Materialistic</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Gain Faith when building better sleeping quarters"></i>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_19" value="19">
+                                            <label class="form-check-label" for="CultTraits_19">False Idols</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Gain additional Faith when placing a decoration building"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_27" value="27">
+                                            <label class="form-check-label" for="CultTraits_27">Sacral
+                                                Architecture</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Gain 5 Faith in the construction of the new building"></i>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_26" value="26">
+                                            <label class="form-check-label" for="CultTraits_26">Devotee</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Gain additional Faith when delivering a daily Sermon"></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h3>Law and Order</h3>
+                            <hr />
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Left Branch</th>
+                                        <th>Right Branch</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_7" value="7">
+                                            <label class="form-check-label" for="CultTraits_7">Belief in Original
+                                                Sin</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Reduced loss of Faith when putting a follower in jail who is not dissenting against the cult"></i>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_8" value="8">
+                                            <label class="form-check-label" for="CultTraits_8">Belief in
+                                                Absolution</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Gain 10 Faith for every day that begins without a follower in prison"></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <h3>Sustenance</h3>
+                            <hr />
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Left Branch</th>
+                                        <th>Right Branch</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_5" value="5">
+                                            <label class="form-check-label" for="CultTraits_5">Cannibal</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Gain 5 Faith when a follower eats a meal made of follower meat"></i>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_6" value="6">
+                                            <label class="form-check-label" for="CultTraits_6">Grass Eater</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="No Faith is lost when a follower eats a grass meal"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_28" value="28">
+                                            <label class="form-check-label" for="CultTraits_28">Substances
+                                                Encouraged</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Gain 20 Faith in the performance of the Brainwashing Ritual"></i>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                id="CultTraits_29" value="29">
+                                            <label class="form-check-label" for="CultTraits_29">Prohibitionism</label>
+                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
+                                                title="Increase work speed and devotion generation by 10% after the Brainwashing Ritual, but 50% chance of followers becoming sick after the ritual is performed"></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-character" role="tabpanel" aria-labelledby="nav-character-tab">
+                    <div class="row">
+                        <label for="PLAYER_HEALTH">Red Hearts:</label>
+                        <input type="number" class="form-control" id="PLAYER_HEALTH" min="1" max="10"><br>
+
+                        <label for="PLAYER_BLUE_HEARTS">Blue Hearts:</label>
+                        <input type="number" class="form-control" id="PLAYER_BLUE_HEARTS" min="0" max="86"><br>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-followers" role="tabpanel" aria-labelledby="nav-followers-tab">
+                    <!-- Dynamically generated content -->
+                </div>
+                <div class="tab-pane fade" id="nav-buildings" role="tabpanel" aria-labelledby="nav-buildings-tab">
+                    <div class="row">
+                        <div class="col">
+                            4
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <footer class="footer fixed-bottom bg-light py-2">
+            <p class="alignleft">
+                <span class="text-muted text-center">Made with &#10084; by SavagE</span>
+            </p>
+            <p class="aligncenter">
+                <input type="submit" id="formSubmitBtn" class="btn btn-lg btn-primary" form="form" value="Save"></input>
+            </p>
+
+        </footer>
+    </div>
+    <!-- JS CDN FILES-->
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/ricmoo/aes-js/e27b99df/index.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+</body>
+
+</html>
