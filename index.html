@@ -5,6 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -105,222 +107,528 @@
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-cult" role="tabpanel" aria-labelledby="nav-cult-tab">
                     <h2>Cult Basic Information</h2>
+
                     <hr />
-                    <div class="row">
-                        <div class="col">
+                    <div class="row mb-5">
+                        <div class="col-6">
                             <label for="CultName">Cult Name:</label>
                             <input type="text" class="form-control" id="CultName">
                         </div>
                     </div>
                     <h2>Cult Traits</h2>
                     <hr />
-                    <div class="row">
-                        <div class="col">
-                            <h3>Afterlife</h3>
-                            <hr />
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Left Branch</th>
-                                        <th>Right Branch</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_9" value="9">
-                                            <label class="form-check-label" for="CultTraits_9">Belief in
-                                                Sacrifice</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Gain 20 Faith whenever a follower is sacrificed"></i>
-                                        </td>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_3" value="3">
-                                            <label class="form-check-label" for="CultTraits_3">Belief in
-                                                Afterlife</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Lose 5 Faith instead of 20 when a follower dies"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_30" value="30">
-                                            <label class="form-check-label" for="CultTraits_30">Respect Your
-                                                Elders</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Gain 5 Faith when a follower reaches old age in your cult"></i>
-                                        </td>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_31" value="31">
-                                            <label class="form-check-label" for="CultTraits_31">Good Die Young</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Gain 10 Faith whenever an elder follower is murdered, sacrificed, or consumed, but lose 20 Faith by the natural death of an elder follower."></i>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-cult-traits-afterlife-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-cult-traits-afterlife" type="button" role="tab"
+                                aria-controls="nav-cult-traits-afterlife" aria-selected="true">Afterlife</button>
+
+                            <button class="nav-link" data-bs-toggle="tab" id="nav-cult-traits-afterlife-tab"
+                                data-bs-target="#nav-cult-traits-work" type="button" role="tab"
+                                aria-controls="nav-cult-traits-work" aria-selected="true">Work and Worship</button>
+
+                            <button class="nav-link" data-bs-toggle="tab" id="nav-cult-traits-possessions-tab"
+                                data-bs-target="#nav-cult-traits-possessions" type="button" role="tab"
+                                aria-controls="nav-cult-traits-possessions" aria-selected="true">Possessions</button>
+
+                            <button class="nav-link" data-bs-toggle="tab" id="nav-cult-traits-law-tab"
+                                data-bs-target="#nav-cult-traits-law" type="button" role="tab"
+                                aria-controls="nav-cult-traits-law" aria-selected="true">Law and Order</button>
+
+                            <button class="nav-link" data-bs-toggle="tab" id="nav-cult-traits-sustenance-tab"
+                                data-bs-target="#nav-cult-traits-sustenance" type="button" role="tab"
+                                aria-controls="nav-cult-traits-sustenance" aria-selected="true">Sustenance</button>
                         </div>
-                        <div class="col">
-                            <h3>Work and Worship</h3>
-                            <hr />
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Left Branch</th>
-                                        <th>Right Branch</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_11" value="11">
-                                            <label class="form-check-label" for="CultTraits_11">Faithful</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Generates devotion 15% faster"></i>
-                                        </td>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_24" value="24">
-                                            <label class="form-check-label" for="CultTraits_24">Industrious</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Increases work speed by 15%"></i>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    </nav>
+                    <div class="tab-content mt-3" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-cult-traits-afterlife" role="tabpanel"
+                            aria-labelledby="nav-cult-traits-afterlife-tab">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Left Branch</h3>
+                                    <hr />
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="col">Unlocked?</th>
+                                                <th class="col">Image</th>
+                                                <th class="col">Name</th>
+                                                <th class="col">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_9" value="9">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/9.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_9">Belief in
+                                                        Sacrifice</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_9">Gain 20 Faith
+                                                        whenever a
+                                                        follower is sacrificed.</label>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_30" value="30">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/30.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_30">Respect Your
+                                                        Elders</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_30">Gain 10 Faith
+                                                        when a Follower becomes an elder.</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h3>Right Branch</h3>
+                                    <hr />
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="col">Unlocked?</th>
+                                                <th class="col">Image</th>
+                                                <th class="col">Name</th>
+                                                <th class="col">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_3" value="3">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/3.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_3">Belief in
+                                                        Afterlife</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_3">Death is not the
+                                                        end. When a Follower dies only lose -5 faith instead of
+                                                        -20.</label>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_31" value="31">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/31.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_31">Good Die
+                                                        Young</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_31">Gain 10 Faith if
+                                                        an elder is sacrificed, murdered or consumed, but lose 20 Faith
+                                                        if an elder dies naturally.</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <h3>Possessions</h3>
-                            <hr />
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Left Branch</th>
-                                        <th>Right Branch</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_18" value="18">
-                                            <label class="form-check-label" for="CultTraits_18">Materialistic</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Gain Faith when building better sleeping quarters"></i>
-                                        </td>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_19" value="19">
-                                            <label class="form-check-label" for="CultTraits_19">False Idols</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Gain additional Faith when placing a decoration building"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_27" value="27">
-                                            <label class="form-check-label" for="CultTraits_27">Sacral
-                                                Architecture</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Gain 5 Faith in the construction of the new building"></i>
-                                        </td>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_26" value="26">
-                                            <label class="form-check-label" for="CultTraits_26">Devotee</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Gain additional Faith when delivering a daily Sermon"></i>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+
+                        <div class="tab-pane fade" id="nav-cult-traits-work" role="tabpanel"
+                            aria-labelledby="nav-cult-traits-work-tab">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Left Branch</h3>
+                                    <hr />
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="col">Unlocked?</th>
+                                                <th class="col">Image</th>
+                                                <th class="col">Name</th>
+                                                <th class="col">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_11" value="11">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/11.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_11">Faithful</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_11">Generates
+                                                        Devotion 15% faster.</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h3>Right Branch</h3>
+                                    <hr />
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="col">Unlocked?</th>
+                                                <th class="col">Image</th>
+                                                <th class="col">Name</th>
+                                                <th class="col">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_24" value="24">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/24.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label"
+                                                        for="CultTraits_24">Industrious</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_24">Increased work
+                                                        speed by 15%.</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <h3>Law and Order</h3>
-                            <hr />
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Left Branch</th>
-                                        <th>Right Branch</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_7" value="7">
-                                            <label class="form-check-label" for="CultTraits_7">Belief in Original
-                                                Sin</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Reduced loss of Faith when putting a follower in jail who is not dissenting against the cult"></i>
-                                        </td>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_8" value="8">
-                                            <label class="form-check-label" for="CultTraits_8">Belief in
-                                                Absolution</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Gain 10 Faith for every day that begins without a follower in prison"></i>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                        <div class="tab-pane fade" id="nav-cult-traits-possessions" role="tabpanel"
+                            aria-labelledby="nav-cult-traits-possessions-tab">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Left Branch</h3>
+                                    <hr />
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="col">Unlocked?</th>
+                                                <th class="col">Image</th>
+                                                <th class="col">Name</th>
+                                                <th class="col">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_18" value="18">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/18.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label"
+                                                        for="CultTraits_18">Materialistic</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_18">Gain Faith when
+                                                        building better sleeping quarters.</label>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_27" value="27">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/27.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_27">Sacral
+                                                        Architecture</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_27">Gain 5 Faith
+                                                        when a building is constructed.</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h3>Right Branch</h3>
+                                    <hr />
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="col">Unlocked?</th>
+                                                <th class="col">Image</th>
+                                                <th class="col">Name</th>
+                                                <th class="col">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_19" value="19">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/19.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_19">False
+                                                        Idols</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_19">Gain 7 Faith
+                                                        when a decoration is built.</label>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_26" value="26">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/26.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_26">Devotee</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_26">Gain more Faith
+                                                        when you give a sermon.</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <h3>Sustenance</h3>
-                            <hr />
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Left Branch</th>
-                                        <th>Right Branch</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_5" value="5">
-                                            <label class="form-check-label" for="CultTraits_5">Cannibal</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Gain 5 Faith when a follower eats a meal made of follower meat"></i>
-                                        </td>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_6" value="6">
-                                            <label class="form-check-label" for="CultTraits_6">Grass Eater</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="No Faith is lost when a follower eats a grass meal"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_28" value="28">
-                                            <label class="form-check-label" for="CultTraits_28">Substances
-                                                Encouraged</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Gain 20 Faith in the performance of the Brainwashing Ritual"></i>
-                                        </td>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input" name="CultTraits"
-                                                id="CultTraits_29" value="29">
-                                            <label class="form-check-label" for="CultTraits_29">Prohibitionism</label>
-                                            <i class="bi bi-info-circle-fill" data-bs-toggle="tooltip"
-                                                title="Increase work speed and devotion generation by 10% after the Brainwashing Ritual, but 50% chance of followers becoming sick after the ritual is performed"></i>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                        <div class="tab-pane fade" id="nav-cult-traits-law" role="tabpanel"
+                            aria-labelledby="nav-cult-traits-law-tab">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Left Branch</h3>
+                                    <hr />
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="col">Unlocked?</th>
+                                                <th class="col">Image</th>
+                                                <th class="col">Name</th>
+                                                <th class="col">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_7" value="7">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/7.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_7">Belief in
+                                                        Original
+                                                        Sin</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_7">All are born
+                                                        guilty. Reduced Faith loss when putting a Follower in jail who
+                                                        is not dissenting.</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h3>Right Branch</h3>
+                                    <hr />
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="col">Unlocked?</th>
+                                                <th class="col">Image</th>
+                                                <th class="col">Name</th>
+                                                <th class="col">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_8" value="8">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/8.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label"
+                                                        for="CultTraits_8">Absolution</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_8">Freedom above all
+                                                        else. Every day that begins without anyone in prison, gain +10
+                                                        Faith.</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="nav-cult-traits-sustenance" role="tabpanel"
+                            aria-labelledby="nav-cult-traits-sustenance-tab">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Left Branch</h3>
+                                    <hr />
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="col">Unlocked?</th>
+                                                <th class="col">Image</th>
+                                                <th class="col">Name</th>
+                                                <th class="col">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_5" value="5">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/5.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_5">Cannibal</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_5">Gain +5 Faith
+                                                        when
+                                                        a Follower eats a meal made from Follower meat.</label>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_28" value="28">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/28.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_28">Substances
+                                                        Encouraged</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_28">Gain 20 Faith
+                                                        when Brainwashing Ritual is performed.</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h3>Right Branch</h3>
+                                    <hr />
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="col">Unlocked?</th>
+                                                <th class="col">Image</th>
+                                                <th class="col">Name</th>
+                                                <th class="col">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_6" value="6">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/6.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_6">Grass
+                                                        Eater</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_6">No longer lose
+                                                        Faith when a follower eats a Grass Meal.</label>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="col">
+                                                    <input type="checkbox" class="form-check-input" name="CultTraits"
+                                                        id="CultTraits_29" value="29">
+                                                </td>
+                                                <td class="col" style="background-color:black;">
+                                                    <image src="assets/Traits/29.png" alt="Trait Preview not available">
+                                                    </image>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label"
+                                                        for="CultTraits_29">Prohibitionist</label>
+                                                </td>
+                                                <td class="col">
+                                                    <label class="form-check-label" for="CultTraits_29">Work speed and
+                                                        devotion generation increased by 10%, but 50% chance of
+                                                        Followers becoming sick after the Brainwashing ritual.</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

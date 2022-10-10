@@ -1,5 +1,13 @@
 var obj;
 var followersToRemove = [];
+var necklaceDescriptionsMap = new Map([
+    ["0", ""],
+    ["45", "Follower will generate devotion faster"],
+    ["46", "Follower will have increased movement speed"],
+    ["47", "Follower will live an unnaturally long life, double what would be usually expected"],
+    ["48", "Follower will harvest bonus resources"],
+    ["49", "Follower will never sleep"]
+]);
 document.getElementById('file').addEventListener('change', handleFileSelect, false);
 document.getElementById('form').addEventListener('submit', handleSubmit);
 
@@ -54,6 +62,7 @@ function buildJSON() {
         // * Dropdown fields
         obj.Followers[index].Outfit = Number(document.getElementById('FollowerOutfit_' + element.ID).value);
         obj.Followers[index].Necklace = Number(document.getElementById('FollowerNecklace_' + element.ID).value);
+        obj.Followers[index].SkinName = document.getElementById('FollowerSkinName_' + element.ID).value;
 
         // * Checkboxes
         obj.Followers[index].IsStarving = document.getElementById('FollowerIsStarving_' + element.ID).checked ? true : false;
@@ -63,7 +72,7 @@ function buildJSON() {
 
         // * Traits
         obj.Followers[index].Traits = [];
-        document.querySelectorAll('input[id*="FollowerTraits_' + element.ID + '"]:checked').forEach(element => obj.Followers[index].Traits.push(Number(element.value)));
+        document.querySelectorAll('input[name="FollowerTraits_' + element.ID + '"]:checked').forEach(element => obj.Followers[index].Traits.push(Number(element.value)));
 
         // * Range Sliders
         obj.Followers[index].Adoration = Number(document.getElementById('FollowerAdoration_' + element.ID).value);
@@ -98,15 +107,8 @@ function copyTextToClipboard(field) {
 
 }
 
-function getFollowerPortrait(skinName) {
-    let found;
-
-    try {
-        found = skinName.match(/[a-zA-Z_ ]/g);
-    } catch {
-        return 'Unknown';
-    }
-
+function getFollowerSkinName(skinName) {
+    let found = skinName.match(/[a-zA-Z_ ]/g);
     return found.join('');
 }
 
@@ -149,8 +151,7 @@ function populateValues() {
         content +=
             `<div class="col">
                 <div class="card" style="width: 16rem;">
-                    <!-- <img src="assets/Follower_Forms/${result.SkinName}.webp" class="card-img-top" id="FollowerPortrait_${result.ID}" height="224px" width="120px" alt="Picture not available"> -->
-                    <img src="assets/Follower_Forms/${getFollowerPortrait(result.SkinName)}.webp" class="card-img-top" id="FollowerPortrait_${result.ID}" height="224px" width="120px" alt="Picture not available">
+                    <img src="assets/Follower_Forms/${getFollowerSkinName(result.SkinName)}.webp" onerror="this.src='assets/Follower_Forms/Unknown.png'" class="card-img-top" id="FollowerPortrait_${result.ID}" height="224px" width="120px" alt="Picture not available">
                     <div class="card-body">
                         <h5 class="card-title">
                             ${result.Name}
@@ -174,7 +175,7 @@ function populateValues() {
                 </div>
             </div>
 
-            <div class="modal fade" id="ID_DELETE${result.ID}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Label_Delete${result.ID}" aria-hidden="true">
+            <div class="modal fade" id="ID_DELETE${result.ID}" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Label_Delete${result.ID}" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -192,7 +193,7 @@ function populateValues() {
                 </div>
             </div>
 
-            <div class="modal fade" id="ID${result.ID}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Label_${result.ID}" aria-hidden="true">
+            <div class="modal fade" id="ID${result.ID}" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Label_${result.ID}" aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -244,10 +245,30 @@ function populateValues() {
                                     <br/>
                                     <p>Outfit Preview:</p>
                                     <image id="FollowerOutfitPreview_${result.ID}" class="mx-auto d-block" src="assets/Outfit_Preview/${result.Outfit}.png" alt="Outfit Preview not available">
+
+                                    <hr/>
+
+                                    <label for="FollowerSkinName_${result.ID}" >Follower Skin:</label>
+                                    <select class="form-select" id="FollowerSkinName_${result.ID}" onchange="document.getElementById('FollowerSkinNamePreview_${result.ID}').src = 'assets/Follower_Forms/' + this.value + '.webp' ">
+                                        `;
+
+        // ! Make sure only unlocked skins are available
+        obj.FollowerSkinsUnlocked.forEach((skin) => {
+            content += `<option value="${skin}" ${getFollowerSkinName(result.SkinName) == getFollowerSkinName(skin) ? 'selected' : ''}>${skin}</option>`;
+        });
+
+        content += `
+                                    </select>
+
+                                    <br/>
+                                    <p>Skin Preview:</p>
+                                    <image id="FollowerSkinNamePreview_${result.ID}" class="mx-auto d-block" src="assets/Follower_Forms/${result.SkinName}.webp" alt="Form Preview not available">
                                 </div>
                                 <div class="col">
                                     <label for="FollowerNecklace_${result.ID}" >Follower Necklace: </label>
-                                    <select class="form-select" id="FollowerNecklace_${result.ID}" onchange="document.getElementById('FollowerNecklacePreview_${result.ID}').src = 'assets/Necklace_Preview/' + this.value + '.png' ">
+                                    <select class="form-select" id="FollowerNecklace_${result.ID}"
+                                    onchange="document.getElementById('FollowerNecklacePreview_${result.ID}').src = 'assets/Necklace_Preview/' + this.value + '.png';
+                                    document.getElementById('FollowerNecklacePreviewText_${result.ID}').innerHTML = necklaceDescriptionsMap.get(this.value)">
                                         <option value="0" ${result.Necklace == 0 ? 'selected' : ''}>-- None --</option>
                                         <option value="45" ${result.Necklace == 45 ? 'selected' : ''}>Flower Necklace</option>
                                         <option value="46" ${result.Necklace == 46 ? 'selected' : ''}>Feather Necklace</option>
@@ -259,6 +280,9 @@ function populateValues() {
                                     <br/>
                                     <p>Necklace Preview:</p>
                                     <image id="FollowerNecklacePreview_${result.ID}" class="mx-auto d-block" height="80px" width="70px" src="assets/Necklace_Preview/${result.Necklace}.png" alt="Necklace Preview not available">
+                                    <div class="text-center mt-4">
+                                        <span id="FollowerNecklacePreviewText_${result.ID}" class="text-muted mb-3"></span>
+                                    </div> 
                                 </div>
                             </div>
 
@@ -306,14 +330,14 @@ function populateValues() {
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}23" value="23">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/23.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-success">Positive</p>
+                                                    <span class="text-success">Positive</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}23">Coprophiliac</label>
@@ -325,134 +349,153 @@ function populateValues() {
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}21" value="21">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/21.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-success">Positive</p>
+                                                    <span class="text-success">Positive</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}21">Gullible</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}21">15% easier to level up</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}21">15% easier to level up.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}11" value="11">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/11.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-success">Positive</p>
+                                                    <span class="text-success">Positive</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}11">Faithful</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}11">Generates Devotion 15% faster</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}11">Generates Devotion 15% faster.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
+                                                        id="FollowerTraits_${result.ID}24" value="24">
+                                                </td>
+                                                <td class="col-1" style="background-color:black;">
+                                                    <image src="assets/Traits/24.png" alt="Trait Preview not available">
+                                                </td>
+                                                <td class="col-1">
+                                                    <span class="text-success">Positive</span>
+                                                </td>
+                                                <td class="col-3">
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}24">Industrious</label>
+                                                </td>
+                                                <td class="col-6">
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}24">Increased work speed by 15%.</label>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="d-flex">
+                                                <td class="col-1">
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}18" value="18">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/18.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-success">Positive</p>
+                                                    <span class="text-success">Positive</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}18">Materialistic</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}18">Give Faith when building better sleeping quarters</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}18">Gain Faith when building better sleeping quarters.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}2" value="2">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/2.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-success">Positive</p>
+                                                    <span class="text-success">Positive</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}2">Naturally Obedient</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}2">On recruiting this Worshiper, immediately gain 10 Faith</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}2">On recruiting this Follower immediately gain 10 Faith.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}16" value="16">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/16.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-success">Positive</p>
+                                                    <span class="text-success">Positive</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}16">Strong Constitution</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}16">Heals 15% faster when sick and in bed rest</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}16">Heals 15% faster when sick and in bed rest.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}17" value="17">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/17.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-success">Positive</p>
+                                                    <span class="text-success">Positive</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}17">Zealous</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}17">Ignores Dissenters when they preach</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}17">Ignores dissenters when they preach.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}32" value="32">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/32.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-success">Positive</p>
+                                                    <span class="text-success">Positive</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}32">Immortal</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}32">Will never reach old age</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}32">Will never reach old age.</label>
                                                 </td>
                                             </tr>
 
@@ -460,153 +503,153 @@ function populateValues() {
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}20" value="20">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/20.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-danger">Negative</p>
+                                                    <span class="text-danger">Negative</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}20">Cynical</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}20">15% harder to level up</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}20">15% harder to level up.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}12" value="12">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/12.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-danger">Negative</p>
+                                                    <span class="text-danger">Negative</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}12">Faithless</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}12">Generates Devotion 15% slower</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}12">Generates Devotion 15% slower.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}22" value="22">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/22.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-danger">Negative</p>
+                                                    <span class="text-danger">Negative</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}22">Germaphobe</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}22">Lose 10 Faith when falling ill</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}22">Lose 10 Faith when falling ill.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}1" value="1">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/1.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-danger">Negative</p>
+                                                    <span class="text-danger">Negative</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}1">Natural Skeptic</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}1">On recruiting Worshiper, immediately lose 10 Faith</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}1">On recruiting Follower immediately lose 10 Faith.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}15" value="15">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/15.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-danger">Negative</p>
+                                                    <span class="text-danger">Negative</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}15">Sickly</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}15">Heals 15% slower when sick and in bed rest</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}15">Heals 15% slower when sick and in bed rest.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}25" value="25">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/25.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-danger">Negative</p>
+                                                    <span class="text-danger">Negative</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}25">Sloth</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}25">Work and devotion generation speed reduced by 10%</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}25">Work and devotion generation speed reduced by 10%.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}4" value="4">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
                                                     <image src="assets/Traits/4.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-danger">Negative</p>
+                                                    <span class="text-danger">Negative</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}4">Terrified of Death</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}4">Lose -5 Faith whenever another Worshiper dies</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}4">Lose -5 Faith whenever another Follower dies.</label>
                                                 </td>
                                             </tr>
 
                                             <tr class="d-flex">
                                                 <td class="col-1">
-                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits"
+                                                    <input type="checkbox" class="form-check-input" name="FollowerTraits_${result.ID}"
                                                         id="FollowerTraits_${result.ID}10" value="10">
                                                 </td>
                                                 <td class="col-1" style="background-color:black;">
-                                                    <image src="assets/Traits/9.png" alt="Trait Preview not available">
+                                                    <image src="assets/Traits/10.png" alt="Trait Preview not available">
                                                 </td>
                                                 <td class="col-1">
-                                                    <p class="text-danger">Negative</p>
+                                                    <span class="text-danger">Negative</span>
                                                 </td>
                                                 <td class="col-3">
                                                     <label class="form-check-label" for="FollowerTraits_${result.ID}10">Against Sacrifice</label>
                                                 </td>
                                                 <td class="col-6">
-                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}10">-5 Faith when a Follower is Sacrificed</label>
+                                                    <label class="form-check-label" for="FollowerTraits_${result.ID}10">-5 Faith when a Follower is Sacrificed.</label>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -769,15 +812,12 @@ function handleFileSelect(event) {
 }
 
 function loadTestData() {
-    var req = new XMLHttpRequest();
-    req.open('GET', 'https://raw.githubusercontent.com/fabiobarcelona/Cult-of-the-Lamb-Save-Editor/main/test_save.json', false);
-    req.send(null);
-    if (req.status == 200) {
-        obj = JSON.parse(req.responseText);
-        populateValues();
-        fileUploadModal.hide();
-    }
-    else {
-        alert('Error loading test data');
-    }
+    fetch('https://raw.githubusercontent.com/fabiobarcelona/Cult-of-the-Lamb-Save-Editor/main/test_save.json')
+        .then(response => response.json())
+        .then(function (data) {
+            obj = data;
+            populateValues();
+            fileUploadModal.hide();
+        })
+        .catch(() => alert('Error loading test data'));
 }
