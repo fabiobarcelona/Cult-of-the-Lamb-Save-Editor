@@ -40,7 +40,7 @@
                         </p>
 
                         <form runat="server">
-                            <input type='file' class="form-control" id="file" />
+                            <input type='file' class="form-control mb-5" id="file" />
                         </form>
 
                         <hr />
@@ -1326,9 +1326,926 @@
                     </table>
                 </div>
                 <div class="tab-pane fade" id="nav-inventory" role="tabpanel" aria-labelledby="nav-inventory-tab">
-                    <div class="row">
-                        2
+                    <h2>Currency</h2>
+                    <hr />
+                    <div class="row row-cols-8 g-4 mb-4">
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Lumber" src="./assets/Items/1.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Lumber</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_1" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Stone" src="./assets/Items/2.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Stone</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_2" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Bone" src="./assets/Items/9.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Bone</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_9" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Coin" src="./assets/Items/20.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Coin</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_20" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Heart of a Heretic"
+                                        src="./assets/Items/22.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Heart of a Heretic</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_22" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Holy Talisman (not usable)"
+                                        src="./assets/Items/114.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Holy Talisman <span class="text-muted fs-6">(Not
+                                            usable)</span>
+                                    </h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_114" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <h2>Food</h2>
+                    <hr />
+                    <div class="row g-4 mb-4">
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Meat" src="./assets/Items/6.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Meat</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_6" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Berry" src="./assets/Items/21.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Berry</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_21" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Salmon" src="./assets/Items/28.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Salmon</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_28" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Minnow" src="./assets/Items/33.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Minnow</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_33" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Tuna" src="./assets/Items/34.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Tuna</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_34" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Grass" src="./assets/Items/35.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Grass</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_35" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Fertilizer" src="./assets/Items/39.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Fertilizer</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_39" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Pumpkin" src="./assets/Items/50.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Pumpkin</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_50" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Follower Meat"
+                                        src="./assets/Items/62.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Follower Meat</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_62" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Crab" src="./assets/Items/91.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Crab</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_91" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Lobster" src="./assets/Items/92.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Lobster</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_92" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Octopus" src="./assets/Items/93.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Octopus</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_93" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Squid" src="./assets/Items/94.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Squid</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_94" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Swordfish" src="./assets/Items/95.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Swordfish</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_95" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Blowfish" src="./assets/Items/96.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Blowfish</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_96" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Beetroot" src="./assets/Items/97.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Beetroot</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_97" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Cauliflower" src="./assets/Items/102.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Cauliflower</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_102" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Morsel" src="./assets/Items/105.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Morsel</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_105" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h2>Items</h2>
+                    <hr />
+                    <div class="row g-4 mb-4">
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Berry Bush Seed"
+                                        src="./assets/Items/8.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Berry Bush Seed</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_8" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Small Gift" src="./assets/Items/43.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Small Gift</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_43" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Big Gift" src="./assets/Items/44.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Big Gift</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_44" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Flower Necklace"
+                                        src="./assets/Items/45.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Flower Necklace</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_45" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Feather Necklace"
+                                        src="./assets/Items/46.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Feather Necklace</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_46" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Skull Necklace"
+                                        src="./assets/Items/47.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Skull Necklace</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_47" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mb-4">
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Natures Necklace"
+                                        src="./assets/Items/48.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Natures Necklace</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_48" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Moon Necklace"
+                                        src="./assets/Items/49.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Moon Necklace</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_49" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Pumpkin Seed" src="./assets/Items/51.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Pumpkin Seed</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_51" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Camellia" src="./assets/Items/55.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Camellia</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_55" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Menticide Mushroom"
+                                        src="./assets/Items/29.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Menticide Mushroom</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_29" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Menticide Mushroom Spore"
+                                        src="./assets/Items/70.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Menticide Mushroom Spore</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_70" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Camellia Seed"
+                                        src="./assets/Items/72.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Camellia Seed</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_72" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Wooden Planks"
+                                        src="./assets/Items/81.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Wooden Planks</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_81" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Stone Blocks" src="./assets/Items/82.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Stone Blocks</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_82" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Gold Nugget" src="./assets/Items/83.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Gold Nugget</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_83" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Gold Bars" src="./assets/Items/86.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Gold Bars</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_86" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Crystal Shards"
+                                        src="./assets/Items/89.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Crystal Shards</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_89" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Spider Silk" src="./assets/Items/90.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Spider Silk</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_90" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Beetroot Seed"
+                                        src="./assets/Items/98.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Beetroot Seed</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_98" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Eye of the Witness"
+                                        src="./assets/Items/101.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Eye of the Witness</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_101" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Cauliflower Seed"
+                                        src="./assets/Items/103.png" width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Cauliflower Seed</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_103" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-center bg-light">
+                                    <img class="card-img-top my-2 w-auto" alt="Shell" src="./assets/Items/117.png"
+                                        width="116px" height="82px">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Shell</h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <span class="input-group-text">x</span>
+                                        <input type="number" class="form-control" name="Items" id="Items_117" min="0"
+                                            max="99999999">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="tab-pane fade" id="nav-followers" role="tabpanel" aria-labelledby="nav-followers-tab">
                     <!-- Dynamically generated content -->

@@ -35,14 +35,14 @@ document.getElementById('DeathCatBeaten').addEventListener('change', function ()
 
 function populateValues() {
     console.log('Original JSON', obj);
-    console.log('Followers BEFORE', obj.Followers);
-    console.log('Followers Recruits BEFORE', obj.Followers_Recruit);
-    console.log('Followers Dead BEFORE', obj.Followers_Dead);
 
     // Cult Information & Character Stats
     populateCultAndCharacterStats();
 
-    // Current Indoctriinated Followers
+    // Inventory items
+    populateInventoryItems();
+
+    // Current Indoctrinated Followers
     populateCurrentFollowers();
 
     // Followers waiting for being Indoctrinated
@@ -77,6 +77,22 @@ function buildJSON() {
         obj.RecipesDiscovered.push(115);
     }
     document.querySelectorAll('input[name="RecipesDiscovered"]:checked').forEach(element => obj.RecipesDiscovered.push(Number(element.value)));
+
+    // ! Inventory Items
+    document.querySelectorAll('input[name="Items"]').forEach(element => {
+        let itemIndex = obj.items.findIndex(item => { return item.type == (element.id).match(/\d/g).join(''); });
+        if (itemIndex != -1) {
+            obj.items[itemIndex].quantity = Number(element.value);
+            obj.items[itemIndex].UnreservedQuantity = Number(element.value);
+        } else {
+            // ? If the item is not present in the inventory, we add it
+            obj.items.push({
+                "type": (element.id).match(/\d/g).join(''),
+                "quantity": Number(element.value),
+                "UnreservedQuantity": Number(element.value)
+            });
+        }
+    });
 
     // ! Remove followers marked for deletion
     followersToRemove.forEach(function (id) {
@@ -256,10 +272,6 @@ function buildJSON() {
     });
 
     console.log('FINAL OBJ: ', obj);
-
-    console.log('Followers AFTER', obj.Followers);
-    console.log('Followers Recruits AFTER', obj.Followers_Recruit);
-    console.log('Followers Dead AFTER', obj.Followers_Dead);
 
     return obj;
 }
@@ -444,6 +456,14 @@ function populateCultAndCharacterStats() {
     }
     obj.RecipesDiscovered.forEach(function (element) {
         document.querySelector('input[name="RecipesDiscovered"][value="' + element + '"]').checked = true
+    });
+}
+
+function populateInventoryItems() {
+    document.querySelectorAll('input[name="Items"]').forEach(function (element) {
+        // * element.id = "Items_0" --> We only want the number
+        let res = obj.items.find(item => { return item.type == (element.id).match(/\d/g).join(''); });
+        element.value = res ? res.quantity : 0;
     });
 }
 
