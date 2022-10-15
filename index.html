@@ -93,26 +93,126 @@
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-cult-tab" data-bs-toggle="tab" data-bs-target="#nav-cult"
-                        type="button" role="tab" aria-controls="nav-cult" aria-selected="true">Cult Information</button>
-                    <button class="nav-link" id="nav-character-tab" data-bs-toggle="tab" data-bs-target="#nav-character"
-                        type="button" role="tab" aria-controls="nav-character" aria-selected="false">Character
-                        Stats</button>
+                        type="button" role="tab" aria-controls="nav-cult" aria-selected="true">Cult &amp;
+                        Character</button>
+                    <button class="nav-link" id="nav-inventory-tab" data-bs-toggle="tab" data-bs-target="#nav-inventory"
+                        type="button" role="tab" aria-controls="nav-inventory" aria-selected="false">Inventory
+                        Editor</button>
                     <button class="nav-link" id="nav-followers-tab" data-bs-toggle="tab" data-bs-target="#nav-followers"
                         type="button" role="tab" aria-controls="nav-followers" aria-selected="false">Followers</button>
+                    <button class="nav-link" id="nav-recruiting-followers-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-recruiting-followers" type="button" role="tab"
+                        aria-controls="nav-recruiting-followers" aria-selected="false">Recruiting Followers</button>
+                    <button class="nav-link" id="nav-dead-followers-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-dead-followers" type="button" role="tab" aria-controls="nav-dead-followers"
+                        aria-selected="false">Dead Followers</button>
                     <button class="nav-link" id="nav-buildings-tab" data-bs-toggle="tab" data-bs-target="#nav-buildings"
                         type="button" role="tab" aria-controls="nav-buildings" aria-selected="false">Building
                         Unlocks</button>
                 </div>
             </nav>
-            <div class="tab-content" id="nav-tabContent">
+            <div class="tab-content my-3" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-cult" role="tabpanel" aria-labelledby="nav-cult-tab">
-                    <h2>Cult Basic Information</h2>
+                    <h2>Cult Information &amp; Character Stats</h2>
 
                     <hr />
-                    <div class="row mb-5">
-                        <div class="col-6">
+                    <div class="row mb-2">
+                        <div class="col">
                             <label for="CultName">Cult Name:</label>
-                            <input type="text" class="form-control" id="CultName">
+                            <input type="text" class="form-control" id="CultName"> <br />
+
+                            <label for="CurrentDayIndex">Current Day:</label>
+                            <input type="number" class="form-control" id="CurrentDayIndex"> <br />
+
+                            <h4>Dungeon Doors Unlocked</h4>
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <input type="checkbox" class="form-check-input" name="UnlockedDungeonDoor"
+                                        id="UnlockedDungeonDoor_7" value="7">
+                                    <label class="form-check-label" for="UnlockedDungeonDoor_7">Darkwood</label>
+                                    <br />
+
+                                    <input type="checkbox" class="form-check-input" name="UnlockedDungeonDoor"
+                                        id="UnlockedDungeonDoor_8" value="8">
+                                    <label class="form-check-label" for="UnlockedDungeonDoor_8">Anura</label>
+                                    <br />
+                                </div>
+                                <div class="col">
+                                    <input type="checkbox" class="form-check-input" name="UnlockedDungeonDoor"
+                                        id="UnlockedDungeonDoor_9" value="9">
+                                    <label class="form-check-label" for="UnlockedDungeonDoor_9">Anchordeep</label>
+                                    <br />
+
+                                    <input type="checkbox" class="form-check-input" name="UnlockedDungeonDoor"
+                                        id="UnlockedDungeonDoor_10" value="10">
+                                    <label class="form-check-label" for="UnlockedDungeonDoor_10">Silk
+                                        Cradle</label>
+                                    <br />
+                                </div>
+                            </div>
+                            <button class="btn btn-danger" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Spoiler section
+                            </button>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="checkbox" class="form-check-input" id="DeathCatBeaten">
+                                            <label for="DeathCatBeaten">The One Who Waits Beaten</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="checkbox" class="form-check-input" id="RatauKilled">
+                                            <label for="RatauKilled">Ratau Killed</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal fade" id="DeathCatBeatenWarning" data-bs-keyboard="false"
+                                        tabindex="-1" aria-labelledby="DeathCatBeatenWarningLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="DeathCatBeatenWarningLabel">Warning</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>If you indoctrinate The One Who Waits, it will
+                                                        always have the ID "666". <span
+                                                            class="fw-bold text-danger">Having multiple followers with
+                                                            the
+                                                            same ID can lead to softlocks or save file
+                                                            corruption.</span> Make sure
+                                                        you have a back up of your save file and don't have more than
+                                                        one Follower sharing the same ID.
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary"
+                                                        data-bs-dismiss="modal">Got it boss</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="PLAYER_HEALTH">Red Hearts:&emsp;<span class="text-muted"
+                                    style="font-size:12px;">1
+                                    unit = Half heart (i.e 10 = 5 hearts)</span></label>
+                            <input type="number" class="form-control" id="PLAYER_HEALTH"> <br />
+
+                            <label for="PLAYER_SPIRIT_HEARTS">Spirit Hearts:</label>
+                            <input type="number" class="form-control" id="PLAYER_SPIRIT_HEARTS"> <br />
+
+                            <label for="PLAYER_BLACK_HEARTS">Diseased Hearts:</label>
+                            <input type="number" class="form-control" id="PLAYER_BLACK_HEARTS"> <br />
+
+                            <label for="PLAYER_BLUE_HEARTS">Blue Hearts:</label>
+                            <input type="number" class="form-control" id="PLAYER_BLUE_HEARTS"> <br />
                         </div>
                     </div>
                     <h2>Cult Traits</h2>
@@ -140,7 +240,7 @@
                                 aria-controls="nav-cult-traits-sustenance" aria-selected="true">Sustenance</button>
                         </div>
                     </nav>
-                    <div class="tab-content mt-3" id="nav-tabContent">
+                    <div class="tab-content my-3">
                         <div class="tab-pane fade show active" id="nav-cult-traits-afterlife" role="tabpanel"
                             aria-labelledby="nav-cult-traits-afterlife-tab">
                             <div class="row">
@@ -631,17 +731,614 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="nav-character" role="tabpanel" aria-labelledby="nav-character-tab">
-                    <div class="row">
-                        <label for="PLAYER_HEALTH">Red Hearts:</label>
-                        <input type="number" class="form-control" id="PLAYER_HEALTH" min="1" max="10"><br>
 
-                        <label for="PLAYER_BLUE_HEARTS">Blue Hearts:</label>
-                        <input type="number" class="form-control" id="PLAYER_BLUE_HEARTS" min="0" max="86"><br>
+                    <h2>Cooking Recipes Discovered</h2>
+                    <hr />
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Unlocked?</th>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Effects</th>
+                                <th>Ingredients</th>
+                                <th>Category</th>
+                                <th>Quality</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_57" value="57">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/57.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_57">Grassy Gruel</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_57">Better than
+                                        nothing.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_57">+25% chance of causing
+                                        illness.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_57">x5 Grass</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_57">Basic</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_57">★☆☆</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_106" value="106">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/106.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_106">Basic Berry Bowl</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_106">Simple meal made from
+                                        berries.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_106">+15% chance of the
+                                        follower
+                                        pooping instantly.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_106">x6 Berry</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_106">Basic</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_106">★☆☆</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_32" value="32">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/32.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_32">Paltry Pumpkin
+                                        Soup</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_32">A healthy meal of
+                                        vegetables.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_32">+5% chance of causing
+                                        illness and diarrhea.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_32">x4 Pumpkin</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_32">Vegetable</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_32">★☆☆</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_107" value="107">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/107.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_107">Cheery Cauliflower
+                                        Chowder</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_107">Tasty veggy
+                                        dish.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_107">+25% chance of dropping
+                                        valuable resources.<br />+5% chance of causing illness.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_107">x4 Cauliflower</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_107">Vegetable</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_107">★★☆</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_59" value="59">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/59.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_59">Splendid Vegetable
+                                        Feast</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_59">A divine culinary
+                                        experience!</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_59">+50% chance of increasing
+                                        Follower loyalty.<br />+5 Faith.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_59">x6 Beetroot<br />x2
+                                        Pumpkin<br />x2 Cauliflower</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_59">Vegetable</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_59">★★★</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_112" value="112">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/112.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_112">Stringy Meat
+                                        Gruel</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_112">Made from
+                                        scraps.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_112">+10% chance of causing
+                                        exhaustion.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_112">x3 Morsel</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_112">Meat</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_112">★☆☆</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_58" value="58">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/58.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_58">Hearty Meat Broth</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_58">A filling, carnivorous
+                                        affair.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_58">+25% chance of dropping
+                                        valuable resources.<br />+15% chance of the Follower pooping instantly.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_58">x2 Meat</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_58">Meat</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_58">★★☆</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_113" value="113">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/113.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_113">Mighty Meat
+                                        Feast</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_113">Great hunks of juicy
+                                        meat.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_113">+75% chance of dropping
+                                        valuable resources.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_113">x4 Meat<br />x1
+                                        Crab<br />x1 Lobster</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_113">Meat</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_113">★★★</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_100" value="100">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/100.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_100">Pungent Fish
+                                        Stew</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_100">Tastes better than it
+                                        looks.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_100">+10% chance of causing
+                                        illness.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_100">3 Minnow</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_100">Fish</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_100">★☆☆</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_60" value="60">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/60.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_60">Tasty Fish Meal</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_60">A satisfying dish, made
+                                        with
+                                        care.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_60">+25% chance of dropping
+                                        valuable resources.<br />+15% chance of the Follower vomiting instantly.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_60">3 Salmon</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_60">Fish</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_60">★★☆</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_99" value="99">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/99.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_99">Delicious Fish
+                                        Feast</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_99">Rich ingredients,
+                                        perfectly
+                                        prepared.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_99">+25% chance of dropping
+                                        valuable resources.<br />+30% chance of a sick Follower recovering from
+                                        illness.<br />+5 Faith.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_99">x1 Squid<br />x1
+                                        Octopus<br />x1 Blowfish<br />x1 Swordfish</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_99">Fish</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_99">★★★</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_108" value="108">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/108.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_108">Meager Mixed
+                                        Meal</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_108">Not great.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_108">+10% chance of
+                                        increasing
+                                        Follower loyalty.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_108">x4 Berry<br />x2
+                                        Minnow<br />x2 Morsel</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_108">Mixed</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_108">★☆☆</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_109" value="109">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/109.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_109">Modest Mixed
+                                        Meal</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_109">Tastes better than it
+                                        looks.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_109">+20% chance of
+                                        increasing
+                                        Follower loyalty.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_109">x4 Pumpkin<br />x2
+                                        Salmon<br />x2 Meat</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_109">Mixed</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_109">★★☆</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_110" value="110">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/110.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_110">Magnificent Mixed
+                                        Meal</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_110">A fine meal made from
+                                        the
+                                        very best mixed ingredients.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_110">+100% chance of
+                                        increasing
+                                        Follower loyalty.<br />+100% chance of stopping a Follower from
+                                        dissenting.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_110">x4 Beetroot<br />x2
+                                        Tuna<br />x2 Meat</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_110">Mixed</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_110">★★★</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_69" value="69">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/69.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_69">Bowl of Poop</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_69">A "meal" made of
+                                        excrement...</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_69">+50% chance of causing
+                                        illness and diarrhea.<br />-20 Faith.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_69">x3 Fertilizer</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_69">Special</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_69">★☆☆</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_65" value="65">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/65.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_65">Minced Follower
+                                        Meat</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_65">A dish made of the flesh
+                                        of
+                                        fellow Cult members.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_65">+75% chance of causing
+                                        illness.<br />+25% chance of increasing Follower loyalty.<br />+40 chance of
+                                        stopping a Follower from dissenting.<br />-20 Faith.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_65">x3 Follower Meat<br />x5
+                                        Bone</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_65">Special</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_65">★☆☆</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" name="RecipesDiscovered"
+                                        id="RecipesDiscovered_111" value="111">
+                                </td>
+                                <td>
+                                    <image src="./assets/Cooking_Recipes/111.png"
+                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
+                                    </image>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_111">Deadly Dish</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_111">A truly vile
+                                        concoction.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_111">+75% chance of the
+                                        follower
+                                        dying instantly.<br />+100% chance of dropping valuable resources.</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_111">x1 Follower Meat<br />x1
+                                        Fertilizer<br />x1 Grass</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_111">Special</label>
+                                </td>
+                                <td>
+                                    <label class="form-check-label" for="RecipesDiscovered_111">★☆☆</label>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="nav-inventory" role="tabpanel" aria-labelledby="nav-inventory-tab">
+                    <div class="row">
+                        2
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-followers" role="tabpanel" aria-labelledby="nav-followers-tab">
+                    <!-- Dynamically generated content -->
+                </div>
+                <div class="tab-pane fade" id="nav-recruiting-followers" role="tabpanel"
+                    aria-labelledby="nav-recruiting-followers-tab">
+                    <!-- Dynamically generated content -->
+                </div>
+                <div class="tab-pane fade" id="nav-dead-followers" role="tabpanel"
+                    aria-labelledby="nav-dead-followers-tab">
                     <!-- Dynamically generated content -->
                 </div>
                 <div class="tab-pane fade" id="nav-buildings" role="tabpanel" aria-labelledby="nav-buildings-tab">
