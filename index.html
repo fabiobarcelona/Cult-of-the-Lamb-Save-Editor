@@ -98,6 +98,8 @@
                     <button class="nav-link" id="nav-inventory-tab" data-bs-toggle="tab" data-bs-target="#nav-inventory"
                         type="button" role="tab" aria-controls="nav-inventory" aria-selected="false">Inventory
                         Editor</button>
+                    <button class="nav-link" id="nav-tarot-tab" data-bs-toggle="tab" data-bs-target="#nav-tarot"
+                        type="button" role="tab" aria-controls="nav-tarot" aria-selected="false">Tarot Cards</button>
                     <button class="nav-link" id="nav-followers-tab" data-bs-toggle="tab" data-bs-target="#nav-followers"
                         type="button" role="tab" aria-controls="nav-followers" aria-selected="false">Followers</button>
                     <button class="nav-link" id="nav-recruiting-followers-tab" data-bs-toggle="tab"
@@ -2245,7 +2247,930 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="tab-pane fade" id="nav-tarot" role="tabpanel" aria-labelledby="nav-tarot-tab">
+                    <h2>Tarot Cards</h2>
+                    <hr />
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="col">Unlocked?</th>
+                                <th class="col">Image</th>
+                                <th class="col">Name</th>
+                                <th class="col">Effects</th>
+                                <th class="col">Effects +</th>
+                                <th class="col">Effects ++</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_0"
+                                        value="0">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/0.png" height="80px" width="50px"
+                                        alt="The Hearts I">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_0">The Hearts I</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_0">Gain an extra half heart.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_0">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_0">-</label>
+                                </td>
+                            </tr>
 
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_1"
+                                        value="1">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/1.png" height="80px" width="50px"
+                                        alt="The Hearts II">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_1">The Hearts II</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_1">Gain an extra heart.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_1">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_1">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_2"
+                                        value="2">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/2.png" height="80px" width="50px"
+                                        alt="The Hearts III">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_2">The Hearts III</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_2">Gain an extra 2 hearts.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_2">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_2">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_6"
+                                        value="6">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/6.png" height="80px" width="50px"
+                                        alt="Weeping Moon">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_6">Weeping Moon</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_6">30% more damage during the
+                                        night.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_6">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_6">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_16"
+                                        value="16">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/16.png" height="80px" width="50px"
+                                        alt="Nature's Boon">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_16">Nature's Boon</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_16">Harvest bonus resources.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_16">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_16">-</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_3"
+                                        value="3">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/3.png" height="80px" width="50px"
+                                        alt="The Lovers I">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_3">The Lovers I</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_3">Blue Heart +1.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_3">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_3">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_4"
+                                        value="4">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/4.png" height="80px" width="50px"
+                                        alt="The Lovers II">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_4">The Lovers II</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_4">Blue Heart +2.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_4">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_4">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_5"
+                                        value="5">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/5.png" height="80px" width="50px"
+                                        alt="All Seeing Sun">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_5">All Seeing Sun</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_5">Do 20% more damage during the
+                                        day.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_5">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_5">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_10"
+                                        value="10">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/10.png" height="80px" width="50px"
+                                        alt="True Sight">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_10">True Sight</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_10">The Lamb has a 10% chance of a
+                                        crit when dealing damage.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_10">The Lamb has a 20% chance of a
+                                        crit when dealing damage.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_10">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_14"
+                                        value="14">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/14.png" height="80px" width="50px" alt="Telescope">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_14">Telescope</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_14">Reveals the map.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_14">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_14">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_15"
+                                        value="15">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/15.png" height="80px" width="50px"
+                                        alt="Hands of Rage">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_15">Hands of Rage</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_15">Fire a projectile when you swing
+                                        your weapon. 10s cooldown.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_15">Fire a projectile when you swing
+                                        your weapon. 5s cooldown.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_15">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_17"
+                                        value="17">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/17.png" height="80px" width="50px"
+                                        alt="The Burning Dead">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_17">The Burning Dead</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_17">Dead enemy bodies explode,
+                                        damaging other enemies.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_17">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_17">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_9"
+                                        value="9">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/9.png" height="80px" width="50px"
+                                        alt="Diseased Heart">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_9">Diseased Heart</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_9">Allows the Lamb to deal damage to
+                                        everything on screen they are hit.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_9">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_9">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_8"
+                                        value="8">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/8.png" height="80px" width="50px"
+                                        alt="The Arachnid">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_8">The Arachnid</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_8">Allows the Lamb to deal poison
+                                        damage to enemies when attacking.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_8">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_8">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_32"
+                                        value="32">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/32.png" height="80px" width="50px"
+                                        alt="Divine Strength">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_32">Divine Strength</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_32">Attack rate increased by
+                                        1.25x.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_32">Attack rate increased by
+                                        1.5x.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_32">Attack rate increased by
+                                        2x.</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_33"
+                                        value="33">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/33.png" height="80px" width="50px"
+                                        alt="Master of the Art">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_33">Master of the Art</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_33">The Lamb's overall weapon damage
+                                        increases by 1.2x.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_33">The Lamb's overall weapon damage
+                                        increases by 1.5x.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_33">The Lamb's overall weapon damage
+                                        increases by 1.75x.</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_31"
+                                        value="31">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/31.png" height="80px" width="50px" alt="The Path">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_31">The Path</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_31">Increase movement speed by
+                                        1.25x.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_31">Increase movement speed by
+                                        1.5x.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_31">Increase movement speed by
+                                        2x.</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_34"
+                                        value="34">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/34.png" height="80px" width="50px"
+                                        alt="Fervour's Harvest">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_34">Fervour's Harvest</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_34">Enemies drop 2x more
+                                        Fervor.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_34">Enemies drop 3x more
+                                        Fervor.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_34">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_35"
+                                        value="35">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/35.png" height="80px" width="50px"
+                                        alt="Soul Snatcher">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_35">Soul Snatcher</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_35">When killing an enemy 10% chance
+                                        of healing.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_35">When killing an enemy 20% chance
+                                        of healing.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_35">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_36"
+                                        value="36">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/36.png" height="80px" width="50px"
+                                        alt="Shield of Faith">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_36">Shield of Faith</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_36">When attacked 10% chance of
+                                        negating damage.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_36">When attacked 20% chance of
+                                        negating damage.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_36">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_37"
+                                        value="37">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/37.png" height="80px" width="50px" alt="The Bomb">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_37">The Bomb</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_37">Drop an explosive when you roll
+                                        10s cooldown.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_37">Drop an explosive when you roll
+                                        5s cooldown.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_37">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_38"
+                                        value="38">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/38.png" height="80px" width="50px"
+                                        alt="Ichor Earned">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_38">Ichor Earned</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_38">Drop black Ichor on hit.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_38">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_38">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_39"
+                                        value="39">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/39.png" height="80px" width="50px"
+                                        alt="Ichor Lingered">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_39">Ichor Lingered</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_39">Drop black Ichor when you roll
+                                        10s cooldown.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_39">Drop black Ichor when you roll
+                                        5s cooldown.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_39">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_40"
+                                        value="40">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/40.png" height="80px" width="50px"
+                                        alt="Mithridatism">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_40">Mithridatism</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_40">Immune to poison from
+                                        enemies.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_40">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_40">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_41"
+                                        value="41">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/41.png" height="80px" width="50px"
+                                        alt="Blazing Trial">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_41">Blazing Trial</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_41">Rolling into an enemy will
+                                        damage them.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_41">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_41">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_44"
+                                        value="44">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/44.png" height="80px" width="50px"
+                                        alt="Divine Curse">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_44">Divine Curse</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_44">Allows curses to consume 25%
+                                        less Fervor.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_44">Allows curses to consume 50%
+                                        less Fervor.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_44">Allows curses to consume 75%
+                                        less Fervor.</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_45"
+                                        value="45">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/45.png" height="80px" width="50px"
+                                        alt="Strength from Within">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_45">Strength from Within</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_45">Fervour will slowly replenish
+                                        over time 2.5s cooldown.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_45">Fervour will slowly replenish
+                                        over time 1.5s cooldown.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_45">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_46"
+                                        value="46">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/46.png" height="80px" width="50px"
+                                        alt="Strength from Without">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_46">Strength from Without</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_46">Receive 5 fervour when
+                                        hit.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_46">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_46">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_47"
+                                        value="47">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/47.png" height="80px" width="50px"
+                                        alt="Neptune's Curse">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_47">Neptune's Curse</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_47">Enemies have a chance of
+                                        dropping a fish upon death.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_47">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_47">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_42"
+                                        value="42">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/42.png" height="80px" width="50px"
+                                        alt="Fortune's Blessing">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_42">Fortune's Blessing</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_42">The Lambs gains double health
+                                        when healing.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_42">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_42">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_12"
+                                        value="12">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/12.png" height="80px" width="50px"
+                                        alt="Death's Door">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_12">Death's Door</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_12">When hit down to half a heart,
+                                        all enemies will be dealt 2 damage.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_12">When hit down to half a heart,
+                                        all enemies will be dealt 3 damage.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_12">When hit down to half a heart,
+                                        all enemies will be dealt 10 damage.</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_13"
+                                        value="13">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/13.png" height="80px" width="50px" alt="The Deal">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_13">The Deal</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_13">When killed, resurrect with 1
+                                        heart</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_13">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_13">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_48"
+                                        value="48">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/48.png" height="80px" width="50px"
+                                        alt="Rabbit's Foot">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_48">Rabbit's Foot</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_48">Increases the chance to spawn
+                                        better chests.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_48">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_48">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_7"
+                                        value="7">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/7.png" height="80px" width="50px" alt="Ambrosia">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_7">Ambrosia</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_7">Increase curse damage by
+                                        1.25x.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_7">Increase curse damage by
+                                        1.5x.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_7">Increase curse damage by
+                                        1.75x.</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_18"
+                                        value="18">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/18.png" height="80px" width="50px"
+                                        alt="Gift From Below">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_18">Gift From Below</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_18">The Lamb has a 10% chance of
+                                        receiving a blue heart upon killing an enemy.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_18">The Lamb has a 20% chance of
+                                        receiving a blue heart upon killing an enemy.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_18">-</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-1">
+                                    <input type="checkbox" class="form-check-input" name="TarotCards" id="TarotCards_11"
+                                        value="11">
+                                </td>
+                                <td class="col">
+                                    <image src="./assets/Tarot_Cards/11.png" height="80px" width="50px"
+                                        alt="Fervour's Host">
+                                    </image>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_11">Fervour's Host</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_11">Fervour replenishes fully when
+                                        entering a new combat room.</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_11">-</label>
+                                </td>
+                                <td class="col">
+                                    <label class="form-check-label" for="TarotCards_11">-</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="tab-pane fade" id="nav-followers" role="tabpanel" aria-labelledby="nav-followers-tab">
                     <!-- Dynamically generated content -->
@@ -2261,7 +3186,7 @@
                 <div class="tab-pane fade" id="nav-buildings" role="tabpanel" aria-labelledby="nav-buildings-tab">
                     <div class="row">
                         <div class="col">
-                            4
+                            Work in Progress
                         </div>
                     </div>
                 </div>

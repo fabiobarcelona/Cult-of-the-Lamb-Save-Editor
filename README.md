@@ -19,10 +19,13 @@ An easy to use PWA to edit your Cult of the Lamb Save File. Upload your save fil
   - Unlock Fleeces (WIP)
 
 - Inventory Editor
-- Tarot Cards (WIP)
+- Tarot Cards
+- Doctrines (WIP)
 - Followers
   - Edit almost everything (Name, Skin, Outfit, Status...)
   - Delete Followers
   - Revive Dead Followers
+
+- Buildings Unlock (WIP)
 
 And much more to come over time! :)

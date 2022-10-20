@@ -1,24 +1,26 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 var obj;
 var fileName;
 var hasMealBurned = false;
 var followersToRemove = [];
 var followersToRevive = [];
 var necklaceDescriptionsMap = new Map([
-    ["0", ""],
-    ["45", "Follower will generate devotion faster"],
-    ["46", "Follower will have increased movement speed"],
-    ["47", "Follower will live an unnaturally long life, double what would be usually expected"],
-    ["48", "Follower will harvest bonus resources"],
-    ["49", "Follower will never sleep"]
+    ['0', ''],
+    ['45', 'Follower will generate devotion faster'],
+    ['46', 'Follower will have increased movement speed'],
+    ['47', 'Follower will live an unnaturally long life, double what would be usually expected'],
+    ['48', 'Follower will harvest bonus resources'],
+    ['49', 'Follower will never sleep']
 ]);
 
 var DeathCatBeatenWarningModal = new bootstrap.Modal(document.getElementById('DeathCatBeatenWarning'), {
     keyboard: false
-})
+});
 
 var fileUploadModal = new bootstrap.Modal(document.getElementById('fileUploadModal'), {
     keyboard: false
-})
+});
 
 fileUploadModal.toggle();
 
@@ -41,6 +43,9 @@ function populateValues() {
 
     // Inventory items
     populateInventoryItems();
+
+    // Inventory items
+    populateTarotCards();
 
     // Current Indoctrinated Followers
     populateCurrentFollowers();
@@ -87,11 +92,17 @@ function buildJSON() {
         } else {
             // ? If the item is not present in the inventory, we add it
             obj.items.push({
-                "type": (element.id).match(/\d/g).join(''),
-                "quantity": Number(element.value),
-                "UnreservedQuantity": Number(element.value)
+                'type': (element.id).match(/\d/g).join(''),
+                'quantity': Number(element.value),
+                'UnreservedQuantity': Number(element.value)
             });
         }
+    });
+
+    // ! Tarot Cards
+    obj.PlayerFoundTrinkets = [];
+    document.querySelectorAll('input[name="TarotCards"]:checked').forEach(element => {
+        obj.PlayerFoundTrinkets.push(Number(element.value));
     });
 
     // ! Remove followers marked for deletion
@@ -105,7 +116,7 @@ function buildJSON() {
     // ! Revive followers marked for revival
     followersToRevive.forEach(function (id) {
         // Push revived follower to obj.Followers
-        obj.Followers.push(obj.Followers_Dead.find((element) => element.ID == id))
+        obj.Followers.push(obj.Followers_Dead.find((element) => element.ID == id));
         // Remove from obj.Followers_Dead_IDs
         obj.Followers_Dead_IDs = obj.Followers_Dead_IDs.filter(follower => follower != id);
         // Remove from obj.Followers_Dead
@@ -117,22 +128,22 @@ function buildJSON() {
         // * Text fields
         obj.Followers[index].Name = document.getElementById('FollowerName_' + element.ID).value;
 
-        obj.Followers[index].XPLevel = Number(document.getElementById('FollowerLevel_' + element.ID).value) != NaN &&
+        obj.Followers[index].XPLevel = isNaN(Number(document.getElementById('FollowerLevel_' + element.ID).value)) &&
             Number(document.getElementById('FollowerLevel_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerLevel_' + element.ID).value) : 1;
 
-        obj.Followers[index].Age = Number(document.getElementById('FollowerAge_' + element.ID).value) != NaN &&
+        obj.Followers[index].Age = isNaN(Number(document.getElementById('FollowerAge_' + element.ID).value)) &&
             Number(document.getElementById('FollowerAge_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerAge_' + element.ID).value) : 1;
 
-        obj.Followers[index].DayJoined = Number(document.getElementById('FollowerDayJoined_' + element.ID).value) != NaN &&
+        obj.Followers[index].DayJoined = isNaN(Number(document.getElementById('FollowerDayJoined_' + element.ID).value)) &&
             Number(document.getElementById('FollowerDayJoined_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerDayJoined_' + element.ID).value) : 1;
 
-        obj.Followers[index].MemberDuration = Number(document.getElementById('FollowerMemberDuration_' + element.ID).value) != NaN &&
+        obj.Followers[index].MemberDuration = isNaN(Number(document.getElementById('FollowerMemberDuration_' + element.ID).value)) &&
             Number(document.getElementById('FollowerMemberDuration_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerMemberDuration_' + element.ID).value) : 1;
 
-        obj.Followers[index].SacrificialValue = Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value) != NaN &&
+        obj.Followers[index].SacrificialValue = isNaN(Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value)) &&
             Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value) : 1;
 
-        obj.Followers[index].LifeExpectancy = Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value) != NaN &&
+        obj.Followers[index].LifeExpectancy = isNaN(Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value)) &&
             Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value) : 1;
 
         // * Dropdown fields
@@ -170,22 +181,22 @@ function buildJSON() {
         // * Text fields
         obj.Followers_Recruit[index].Name = document.getElementById('FollowerName_' + element.ID).value;
 
-        obj.Followers_Recruit[index].XPLevel = Number(document.getElementById('FollowerLevel_' + element.ID).value) != NaN &&
+        obj.Followers_Recruit[index].XPLevel = isNaN(Number(document.getElementById('FollowerLevel_' + element.ID).value)) &&
             Number(document.getElementById('FollowerLevel_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerLevel_' + element.ID).value) : 1;
 
-        obj.Followers_Recruit[index].Age = Number(document.getElementById('FollowerAge_' + element.ID).value) != NaN &&
+        obj.Followers_Recruit[index].Age = isNaN(Number(document.getElementById('FollowerAge_' + element.ID).value)) &&
             Number(document.getElementById('FollowerAge_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerAge_' + element.ID).value) : 1;
 
-        obj.Followers_Recruit[index].DayJoined = Number(document.getElementById('FollowerDayJoined_' + element.ID).value) != NaN &&
+        obj.Followers_Recruit[index].DayJoined = isNaN(Number(document.getElementById('FollowerDayJoined_' + element.ID).value)) &&
             Number(document.getElementById('FollowerDayJoined_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerDayJoined_' + element.ID).value) : 1;
 
-        obj.Followers_Recruit[index].MemberDuration = Number(document.getElementById('FollowerMemberDuration_' + element.ID).value) != NaN &&
+        obj.Followers_Recruit[index].MemberDuration = isNaN(Number(document.getElementById('FollowerMemberDuration_' + element.ID).value)) &&
             Number(document.getElementById('FollowerMemberDuration_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerMemberDuration_' + element.ID).value) : 1;
 
-        obj.Followers_Recruit[index].SacrificialValue = Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value) != NaN &&
+        obj.Followers_Recruit[index].SacrificialValue = isNaN(Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value)) &&
             Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value) : 1;
 
-        obj.Followers_Recruit[index].LifeExpectancy = Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value) != NaN &&
+        obj.Followers_Recruit[index].LifeExpectancy = isNaN(Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value)) &&
             Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value) : 1;
 
         // * Dropdown fields
@@ -223,22 +234,22 @@ function buildJSON() {
         // * Text fields
         obj.Followers_Dead[index].Name = document.getElementById('FollowerName_' + element.ID).value;
 
-        obj.Followers_Dead[index].XPLevel = Number(document.getElementById('FollowerLevel_' + element.ID).value) != NaN &&
+        obj.Followers_Dead[index].XPLevel = isNaN(Number(document.getElementById('FollowerLevel_' + element.ID).value)) &&
             Number(document.getElementById('FollowerLevel_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerLevel_' + element.ID).value) : 1;
 
-        obj.Followers_Dead[index].Age = Number(document.getElementById('FollowerAge_' + element.ID).value) != NaN &&
+        obj.Followers_Dead[index].Age = isNaN(Number(document.getElementById('FollowerAge_' + element.ID).value)) &&
             Number(document.getElementById('FollowerAge_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerAge_' + element.ID).value) : 1;
 
-        obj.Followers_Dead[index].DayJoined = Number(document.getElementById('FollowerDayJoined_' + element.ID).value) != NaN &&
+        obj.Followers_Dead[index].DayJoined = isNaN(Number(document.getElementById('FollowerDayJoined_' + element.ID).value)) &&
             Number(document.getElementById('FollowerDayJoined_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerDayJoined_' + element.ID).value) : 1;
 
-        obj.Followers_Dead[index].MemberDuration = Number(document.getElementById('FollowerMemberDuration_' + element.ID).value) != NaN &&
+        obj.Followers_Dead[index].MemberDuration = isNaN(Number(document.getElementById('FollowerMemberDuration_' + element.ID).value)) &&
             Number(document.getElementById('FollowerMemberDuration_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerMemberDuration_' + element.ID).value) : 1;
 
-        obj.Followers_Dead[index].SacrificialValue = Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value) != NaN &&
+        obj.Followers_Dead[index].SacrificialValue = isNaN(Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value)) &&
             Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value) : 1;
 
-        obj.Followers_Dead[index].LifeExpectancy = Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value) != NaN &&
+        obj.Followers_Dead[index].LifeExpectancy = isNaN(Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value)) &&
             Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value) : 1;
 
         // * Dropdown fields
@@ -280,7 +291,7 @@ function reviveFollower(followerId) {
 
     followersToRevive.push(followerId);
 
-    document.getElementById('FollowerPortrait_' + followerId).src = "assets/green_check.png";
+    document.getElementById('FollowerPortrait_' + followerId).src = 'assets/green_check.png';
     document.getElementById('FollowerReviveButton_' + followerId).setAttribute('disabled', 'true');
     document.getElementById('FollowerDeleteButton_' + followerId).setAttribute('disabled', 'true');
 }
@@ -289,7 +300,7 @@ function deleteFollower(followerId, flag = false) {
 
     followersToRemove.push(followerId);
 
-    document.getElementById('FollowerPortrait_' + followerId).src = "assets/Necklace_Preview/0.png";
+    document.getElementById('FollowerPortrait_' + followerId).src = 'assets/Necklace_Preview/0.png';
     document.getElementById('FollowerDeleteButton_' + followerId).setAttribute('disabled', 'true');
     document.getElementById('FollowerEditButton_' + followerId).setAttribute('disabled', 'true');
 
@@ -314,7 +325,7 @@ function getFollowerSkinName(skinName) {
 
 function handleSubmit(event) {
     event.preventDefault();
-    if (event.submitter.id === "formSubmitBtn") {
+    if (event.submitter.id === 'formSubmitBtn') {
         console.log(event);
         buildJSON();
         var fileToSave = new Blob([JSON.stringify(obj)], {
@@ -335,7 +346,7 @@ function handleFileSelect(event) {
 
     reader.onload = populateValues;*/
 
-    const reader = new FileReader()
+    const reader = new FileReader();
     reader.readAsArrayBuffer(event.target.files[0]);
     fileName = event.target.files[0].name;
 
@@ -383,7 +394,7 @@ function handleFileSelect(event) {
         console.log(error);
     };
     reader.onload = async function () {
-        let enc = new TextDecoder("utf-8");
+        let enc = new TextDecoder('utf-8');
         let arr = new Uint8Array(reader.result);
         let decodedText = enc.decode(arr);
 
@@ -455,10 +466,11 @@ function populateCultAndCharacterStats() {
         obj.RecipesDiscovered.splice(obj.RecipesDiscovered.indexOf(115), 1);
     }
     obj.RecipesDiscovered.forEach(function (element) {
-        document.querySelector('input[name="RecipesDiscovered"][value="' + element + '"]').checked = true
+        document.querySelector('input[name="RecipesDiscovered"][value="' + element + '"]').checked = true;
     });
 }
 
+// ! Inventory Items
 function populateInventoryItems() {
     document.querySelectorAll('input[name="Items"]').forEach(function (element) {
         // * element.id = "Items_0" --> We only want the number
@@ -467,10 +479,22 @@ function populateInventoryItems() {
     });
 }
 
+// ! Tarot Cards
+function populateTarotCards() {
+    obj.PlayerFoundTrinkets.forEach(element => document.querySelector('input[name="TarotCards"][value="' + element + '"]').checked = true);
+}
+
 function populateCurrentFollowers() {
     // ! Current Follower Stats
-    var container = document.getElementById("nav-followers");
+    var container = document.getElementById('nav-followers');
     var content;
+
+    if (obj.Followers.length === 0) {
+        content = '<p>No Followers found</p></div>';
+        container.insertAdjacentHTML('beforeend', content);
+        return;
+    }
+
     obj.Followers.forEach(function (result, i) {
         if (i == 0) {
             content = '<div class="row">';
@@ -618,7 +642,7 @@ function populateCurrentFollowers() {
                                     <image id="FollowerNecklacePreview_${result.ID}" class="mx-auto d-block" height="80px" width="70px" src="assets/Necklace_Preview/${result.Necklace}.png" alt="Necklace Preview not available">
                                     <div class="text-center mt-4">
                                         <span id="FollowerNecklacePreviewText_${result.ID}" class="text-muted mb-3"></span>
-                                    </div> 
+                                    </div>
                                 </div>
                             </div>
 
@@ -1055,8 +1079,15 @@ function populateCurrentFollowers() {
 
 function populateRecruitingFollowers() {
     // ! Recruit Follower Stats
-    var container = document.getElementById("nav-recruiting-followers");
+    var container = document.getElementById('nav-recruiting-followers');
     var content;
+
+    if (obj.Followers_Recruit.length === 0) {
+        content = '<p>No Followers found</p></div>';
+        container.insertAdjacentHTML('beforeend', content);
+        return;
+    }
+
     obj.Followers_Recruit.forEach(function (result, i) {
         if (i == 0) {
             content = '<div class="row">';
@@ -1204,7 +1235,7 @@ function populateRecruitingFollowers() {
                                     <image id="FollowerNecklacePreview_${result.ID}" class="mx-auto d-block" height="80px" width="70px" src="assets/Necklace_Preview/${result.Necklace}.png" alt="Necklace Preview not available">
                                     <div class="text-center mt-4">
                                         <span id="FollowerNecklacePreviewText_${result.ID}" class="text-muted mb-3"></span>
-                                    </div> 
+                                    </div>
                                 </div>
                             </div>
 
@@ -1641,8 +1672,15 @@ function populateRecruitingFollowers() {
 
 function populateDeadFollowers() {
     // ! Dead Follower Stats
-    var container = document.getElementById("nav-dead-followers");
+    var container = document.getElementById('nav-dead-followers');
     var content;
+
+    if (obj.Followers_Dead.length == 0) {
+        content = '<p>No Followers found</p></div>';
+        container.insertAdjacentHTML('beforeend', content);
+        return;
+    }
+
     obj.Followers_Dead.forEach(function (result, i) {
         if (i == 0) {
             content = '<div class="row">';
@@ -1791,7 +1829,7 @@ function populateDeadFollowers() {
                                     <image id="FollowerNecklacePreview_${result.ID}" class="mx-auto d-block" height="80px" width="70px" src="assets/Necklace_Preview/${result.Necklace}.png" alt="Necklace Preview not available">
                                     <div class="text-center mt-4">
                                         <span id="FollowerNecklacePreviewText_${result.ID}" class="text-muted mb-3"></span>
-                                    </div> 
+                                    </div>
                                 </div>
                             </div>
 
