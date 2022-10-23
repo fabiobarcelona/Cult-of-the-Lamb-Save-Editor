@@ -90,12 +90,14 @@ function buildJSON() {
             obj.items[itemIndex].quantity = Number(element.value);
             obj.items[itemIndex].UnreservedQuantity = Number(element.value);
         } else {
-            // ? If the item is not present in the inventory, we add it
-            obj.items.push({
-                'type': (element.id).match(/\d/g).join(''),
-                'quantity': Number(element.value),
-                'UnreservedQuantity': Number(element.value)
-            });
+            // ? If the item is not present in the inventory and quantity is not 0, we add it
+            if (Number(element.value) > 0) {
+                obj.items.push({
+                    'type': (element.id).match(/\d/g).join(''),
+                    'quantity': Number(element.value),
+                    'UnreservedQuantity': Number(element.value)
+                });
+            }
         }
     });
 
