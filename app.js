@@ -320,11 +320,6 @@ function copyTextToClipboard(field) {
 
 }
 
-function getFollowerSkinName(skinName) {
-    let found = skinName.match(/[a-zA-Z_ ]/g);
-    return found.join('');
-}
-
 function handleSubmit(event) {
     event.preventDefault();
     if (event.submitter.id === 'formSubmitBtn') {
@@ -509,7 +504,7 @@ function populateCurrentFollowers() {
         content +=
             `<div class="col">
                 <div class="card" style="width: 16rem;">
-                    <img src="assets/Follower_Forms/${getFollowerSkinName(result.SkinName)}.webp" onerror="this.src='assets/Follower_Forms/Unknown.png'" class="card-img-top" id="FollowerPortrait_${result.ID}" height="224px" width="120px" alt="Picture not available">
+                    <img src="assets/Follower_Forms/${result.SkinName}.png" onerror="this.src='assets/Follower_Forms/Unknown.png'" class="card-img-top" id="FollowerPortrait_${result.ID}" alt="Picture not available">
                     <div class="card-body">
                         <h5 class="card-title">
                             ${result.Name}
@@ -611,12 +606,12 @@ function populateCurrentFollowers() {
                                     <hr/>
 
                                     <label for="FollowerSkinName_${result.ID}" >Follower Skin:</label>
-                                    <select class="form-select" id="FollowerSkinName_${result.ID}" onchange="document.getElementById('FollowerSkinNamePreview_${result.ID}').src = 'assets/Follower_Forms/' + this.value + '.webp' ">
+                                    <select class="form-select" id="FollowerSkinName_${result.ID}" onchange="document.getElementById('FollowerSkinNamePreview_${result.ID}').src = 'assets/Follower_Forms/' + this.value + '.png' ">
                                         `;
 
         // ! Make sure only unlocked skins are available
         obj.FollowerSkinsUnlocked.forEach((skin) => {
-            content += `<option value="${skin}" ${getFollowerSkinName(result.SkinName) == getFollowerSkinName(skin) ? 'selected' : ''}>${skin}</option>`;
+            content += `<option value="${skin}" ${result.SkinName == skin ? 'selected' : ''}>${skin}</option>`;
         });
 
         content += `
@@ -624,7 +619,7 @@ function populateCurrentFollowers() {
 
                                     <br/>
                                     <p>Skin Preview:</p>
-                                    <image id="FollowerSkinNamePreview_${result.ID}" class="mx-auto d-block" src="assets/Follower_Forms/${result.SkinName}.webp" alt="Form Preview not available">
+                                    <image id="FollowerSkinNamePreview_${result.ID}" class="mx-auto d-block" src="assets/Follower_Forms/${result.SkinName}.png" alt="Form Preview not available">
                                 </div>
                                 <div class="col">
                                     <label for="FollowerNecklace_${result.ID}" >Follower Necklace: </label>
@@ -1102,7 +1097,7 @@ function populateRecruitingFollowers() {
         content +=
             `<div class="col">
                 <div class="card" style="width: 16rem;">
-                    <img src="assets/Follower_Forms/${getFollowerSkinName(result.SkinName)}.webp" onerror="this.src='assets/Follower_Forms/Unknown.png'" class="card-img-top" id="FollowerPortrait_${result.ID}" height="224px" width="120px" alt="Picture not available">
+                    <img src="assets/Follower_Forms/${result.SkinName}.png" onerror="this.src='assets/Follower_Forms/Unknown.png'" class="card-img-top" id="FollowerPortrait_${result.ID}" alt="Picture not available">
                     <div class="card-body">
                         <h5 class="card-title">
                             ${result.Name}
@@ -1204,12 +1199,12 @@ function populateRecruitingFollowers() {
                                     <hr/>
 
                                     <label for="FollowerSkinName_${result.ID}" >Follower Skin:</label>
-                                    <select class="form-select" id="FollowerSkinName_${result.ID}" onchange="document.getElementById('FollowerSkinNamePreview_${result.ID}').src = 'assets/Follower_Forms/' + this.value + '.webp' ">
+                                    <select class="form-select" id="FollowerSkinName_${result.ID}" onchange="document.getElementById('FollowerSkinNamePreview_${result.ID}').src = 'assets/Follower_Forms/' + this.value + '.png' ">
                                         `;
 
         // ! Make sure only unlocked skins are available
         obj.FollowerSkinsUnlocked.forEach((skin) => {
-            content += `<option value="${skin}" ${getFollowerSkinName(result.SkinName) == getFollowerSkinName(skin) ? 'selected' : ''}>${skin}</option>`;
+            content += `<option value="${skin}" ${result.SkinName == skin ? 'selected' : ''}>${skin}</option>`;
         });
 
         content += `
@@ -1217,7 +1212,7 @@ function populateRecruitingFollowers() {
 
                                     <br/>
                                     <p>Skin Preview:</p>
-                                    <image id="FollowerSkinNamePreview_${result.ID}" class="mx-auto d-block" src="assets/Follower_Forms/${result.SkinName}.webp" alt="Form Preview not available">
+                                    <image id="FollowerSkinNamePreview_${result.ID}" class="mx-auto d-block" src="assets/Follower_Forms/${result.SkinName}.png" alt="Form Preview not available">
                                 </div>
                                 <div class="col">
                                     <label for="FollowerNecklace_${result.ID}" >Follower Necklace: </label>
@@ -1695,7 +1690,7 @@ function populateDeadFollowers() {
         content +=
             `<div class="col">
                 <div class="card" style="width: 16rem;">
-                    <img src="assets/Follower_Forms/${getFollowerSkinName(result.SkinName)}.webp" onerror="this.src='assets/Follower_Forms/Unknown.png'" class="card-img-top" id="FollowerPortrait_${result.ID}" height="224px" width="120px" alt="Picture not available">
+                    <img src="assets/Follower_Forms/${result.SkinName}.png" onerror="this.src='assets/Follower_Forms/Unknown.png'" class="card-img-top" id="FollowerPortrait_${result.ID}" alt="Picture not available">
                     <div class="card-body">
                         <h5 class="card-title">
                             ${result.Name}
@@ -1798,12 +1793,12 @@ function populateDeadFollowers() {
                                     <hr/>
 
                                     <label for="FollowerSkinName_${result.ID}" >Follower Skin:</label>
-                                    <select class="form-select" id="FollowerSkinName_${result.ID}" onchange="document.getElementById('FollowerSkinNamePreview_${result.ID}').src = 'assets/Follower_Forms/' + this.value + '.webp' ">
+                                    <select class="form-select" id="FollowerSkinName_${result.ID}" onchange="document.getElementById('FollowerSkinNamePreview_${result.ID}').src = 'assets/Follower_Forms/' + this.value + '.png' ">
                                         `;
 
         // ! Make sure only unlocked skins are available
         obj.FollowerSkinsUnlocked.forEach((skin) => {
-            content += `<option value="${skin}" ${getFollowerSkinName(result.SkinName) == getFollowerSkinName(skin) ? 'selected' : ''}>${skin}</option>`;
+            content += `<option value="${skin}" ${result.SkinName == skin ? 'selected' : ''}>${skin}</option>`;
         });
 
         content += `
@@ -1811,7 +1806,7 @@ function populateDeadFollowers() {
 
                                     <br/>
                                     <p>Skin Preview:</p>
-                                    <image id="FollowerSkinNamePreview_${result.ID}" class="mx-auto d-block" src="assets/Follower_Forms/${result.SkinName}.webp" alt="Form Preview not available">
+                                    <image id="FollowerSkinNamePreview_${result.ID}" class="mx-auto d-block" src="assets/Follower_Forms/${result.SkinName}.png" alt="Form Preview not available">
                                 </div>
                                 <div class="col">
                                     <label for="FollowerNecklace_${result.ID}" >Follower Necklace: </label>
