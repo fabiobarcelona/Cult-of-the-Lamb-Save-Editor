@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/pwa": "^3.3.5",
+    "@popperjs/core": "^2.11.6",
+    "@types/bootstrap": "^5.2.5",
+    "bootstrap": "^5.2.2",
+    "nuxt": "3.0.0-rc.12",
+    "sass": "^1.55.0"
+  },
+  "packageManager": "yarn@3.2.4"
+}
