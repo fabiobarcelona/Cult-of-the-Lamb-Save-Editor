@@ -79,7 +79,7 @@ defineExpose({
                     </p>
                     <label>Save file location Windows:</label>
                     <div class="input-group mb-5">
-                        <input type="text" class="form-control" id="WindowsSaveFilePath"
+                        <input type="text" class="form-control"
                             value="%USERPROFILE%\AppData\LocalLow\Massive Monster\Cult Of The Lamb\saves"
                             aria-label="Windows Save File Location" disabled>
                         <div class="input-group-append">
@@ -92,7 +92,7 @@ defineExpose({
 
                     <label>Save file location macOS:</label>
                     <div class="input-group mb-5">
-                        <input type="text" class="form-control" id="macOSSaveFilePath"
+                        <input type="text" class="form-control"
                             value="~/Library/Application Support/Massive Monster/Cult Of The Lamb/saves"
                             aria-label="macOS Save File Location" disabled>
                         <div class="input-group-append">
