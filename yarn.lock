@@ -670,6 +670,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pinia/nuxt@npm:^0.4.3":
+  version: 0.4.3
+  resolution: "@pinia/nuxt@npm:0.4.3"
+  dependencies:
+    "@nuxt/kit": ^3.0.0-rc.11
+    pinia: ">=2.0.23"
+  checksum: 0243a9139fa2ad520e42abeecc169350d05f6e9a67cfe00a7c5facddf9e23dab17558e4dcb621c3b2b5508753a9bccb1539318f61ebdfd1983958def784cf7a6
+  languageName: node
+  linkType: hard
+
 "@popperjs/core@npm:^2.11.6, @popperjs/core@npm:^2.9.2":
   version: 2.11.6
   resolution: "@popperjs/core@npm:2.11.6"
@@ -975,7 +985,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/devtools-api@npm:^6.4.5":
+"@vue/devtools-api@npm:^6.4.4, @vue/devtools-api@npm:^6.4.5":
   version: 6.4.5
   resolution: "@vue/devtools-api@npm:6.4.5"
   checksum: 40c5adc8788cb283972ce09ba7ce105fa894f4decec9168829cc8e6211462763402442e6c31be76f9da62b0e74ae724971b924571367b4ac89b94dc6894e2d07
@@ -4557,6 +4567,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pinia@npm:>=2.0.23":
+  version: 2.0.23
+  resolution: "pinia@npm:2.0.23"
+  dependencies:
+    "@vue/devtools-api": ^6.4.4
+    vue-demi: "*"
+  peerDependencies:
+    "@vue/composition-api": ^1.4.0
+    typescript: ">=4.4.4"
+    vue: ^2.6.14 || ^3.2.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+    typescript:
+      optional: true
+  checksum: 004c76d80bc1127a25b26f92616f1243c570c6be90b04be83aa95108274036b64ed0678e537f3213c8b8f3dd7bcffb52e768e7445a1fd9378cb1db15ada92f83
+  languageName: node
+  linkType: hard
+
 "pkg-types@npm:^0.3.5":
   version: 0.3.6
   resolution: "pkg-types@npm:0.3.6"
@@ -5248,6 +5277,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@nuxtjs/pwa": ^3.3.5
+    "@pinia/nuxt": ^0.4.3
     "@popperjs/core": ^2.11.6
     "@types/bootstrap": ^5.2.5
     bootstrap: ^5.2.2

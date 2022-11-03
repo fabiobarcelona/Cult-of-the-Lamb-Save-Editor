@@ -1,8 +1,6 @@
-import path from "node:path";
-
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/pwa"],  
+  modules: ["@pinia/nuxt", "@nuxtjs/pwa"],
   vite: {
     build: {
       sourcemap: true,
@@ -12,7 +10,7 @@ export default defineNuxtConfig({
     strict: true,
     tsConfig: {
       skipLibCheck: true,
-    }
+    },
   },
   sourcemap: true,
   ssr: false,
