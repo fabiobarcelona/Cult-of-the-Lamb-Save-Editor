@@ -46,9 +46,11 @@ const loadTestData = async () => {
       <form id="form">
         <Navbar />
         <div class="tab-content my-3">
-          <NuxtLayout>
-            <NuxtPage />
-          </NuxtLayout>
+          <div class="tab-pane fade active show" role="tabpanel" aria-labelledby="nav-buildings-tab">
+            <NuxtLayout>
+              <NuxtPage />
+            </NuxtLayout>
+          </div>
         </div>
       </form>
       <Footer />
