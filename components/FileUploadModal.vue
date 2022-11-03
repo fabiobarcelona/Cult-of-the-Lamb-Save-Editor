@@ -11,6 +11,7 @@ const fileInputForm = ref<HTMLInputElement>();
 
 const emit = defineEmits<{
     (e: 'data', data: Data): void
+    (e: 'testData'): void
 }>();
 
 const copyToClipboard = (text: string) => {
@@ -110,7 +111,7 @@ defineExpose({
                             real save file,
                             click the button below to load a test save file.
                         </p>
-                        <button class="btn btn-outline-secondary" onclick="loadTestData()" type="button">Load test
+                        <button class="btn btn-outline-secondary" @click="$emit('testData')" type="button">Load test
                             data</button>
                     </div>
                 </div>

@@ -17,12 +17,16 @@ onMounted(() => {
 const onFileData = (data: Data) => {
   modal?.hide();
 }
+
+const loadTestData = () => {
+  modal?.hide();
+}
 </script>
 
 <template>
   <div class="d-flex flex-column min-vh-100">
     <div class="container-fluid">
-      <FileUploadModal ref="fileUploadModal" @data="onFileData" />
+      <FileUploadModal ref="fileUploadModal" @data="onFileData" @test-data="loadTestData" />
     </div>
   </div>
 </template>
