@@ -1,0 +1,3 @@
+<template>
+    Tarot-Cards
+</template>

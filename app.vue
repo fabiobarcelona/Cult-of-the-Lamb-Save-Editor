@@ -43,9 +43,15 @@ const loadTestData = async () => {
   <div class="d-flex flex-column min-vh-100">
     <div class="container-fluid">
       <FileUploadModal ref="fileUploadModal" @data="onFileData" @test-data="loadTestData" />
-      <div>
-        <p>{{ saveData.saveData }}</p>
-      </div>
+      <form id="form">
+        <Navbar />
+        <div class="tab-content my-3">
+          <NuxtLayout>
+            <NuxtPage />
+          </NuxtLayout>
+        </div>
+      </form>
+      <Footer />
     </div>
   </div>
 </template>

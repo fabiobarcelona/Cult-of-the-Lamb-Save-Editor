@@ -1,0 +1,3 @@
+<template>
+    Inventory Editor
+</template>

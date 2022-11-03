@@ -1,0 +1,3 @@
+<template>
+    Recruiting Followers
+</template>

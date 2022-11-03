@@ -1,2 +1,57 @@
-// Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
+
+body {
+    background-color: #f8f8f8;
+    padding: 1rem;
+}
+
+table,
+th,
+td {
+    border: 1px double;
+    border-color: #ccc;
+}
+
+h3 {
+    text-align: center;
+}
+
+pre {
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    text-align: center;
+}
+
+i.bi {
+    font-size: 13px;
+}
+
+#form {
+    padding: 1rem;
+    margin-bottom: 5rem;
+}
+
+.footer {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.alignleft {
+    width: 33.33333%;
+    text-align: left;
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+
+.aligncenter {
+    width: 33.33333%;
+    text-align: center;
+}
