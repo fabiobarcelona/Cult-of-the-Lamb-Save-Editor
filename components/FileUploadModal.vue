@@ -1,59 +1,10 @@
-<script setup lang="ts">
-import { Modal } from "bootstrap";
-
-export type Data = {
-    name: string;
-    data: Uint8Array
-}
-
-const fileUploadModal = ref<HTMLDivElement>();
-const fileInputForm = ref<HTMLInputElement>();
-
-const emit = defineEmits<{
-    (e: 'data', data: Data): void
-    (e: 'testData'): void
-}>();
-
-const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-};
-
-let uploadModal = ref<Modal>();
-
-onMounted(() => {
-    if (!fileUploadModal.value || !fileInputForm.value) return;
-
-    uploadModal.value = new Modal(fileUploadModal.value, {
-        keyboard: false,
-        backdrop: "static",
-    });
-
-    fileUploadModal.value.onchange = (ev: Event) => {
-        const file = (ev.target as any).files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.readAsArrayBuffer((ev.target as any).files[0]);
-
-        reader.onloadend = () => {
-            const data = new Uint8Array(reader.result as ArrayBuffer);
-            emit('data', { name: file.name, data });
-        };
-    };
-});
-
-defineExpose({
-    modal: uploadModal
-})
-</script>
-
 <template>
     <div class="modal fade" ref="fileUploadModal" tabindex="-1" aria-labelledby="fileUploadModalLabel">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Upload your save file</h5>
-                    <img src="~/assets/lamb.gif" alt="lamb" width="64" height="64">
+                    <NuxtImg src="/lamb.gif" alt="lamb" width="64" height="64" />
                 </div>
                 <div class="modal-body">
                     <h1 class="text-center">Cult of the Lamb - Save File Editor</h1>
@@ -118,3 +69,52 @@ defineExpose({
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+import { Modal } from "bootstrap";
+
+export type Data = {
+    name: string;
+    data: Uint8Array
+}
+
+const fileUploadModal = ref<HTMLDivElement>();
+const fileInputForm = ref<HTMLInputElement>();
+
+const emit = defineEmits<{
+    (e: 'data', data: Data): void
+    (e: 'testData'): void
+}>();
+
+const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+};
+
+let uploadModal = ref<Modal>();
+
+onMounted(() => {
+    if (!fileUploadModal.value || !fileInputForm.value) return;
+
+    uploadModal.value = new Modal(fileUploadModal.value, {
+        keyboard: false,
+        backdrop: "static",
+    });
+
+    fileUploadModal.value.onchange = (ev: Event) => {
+        const file = (ev.target as any).files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.readAsArrayBuffer((ev.target as any).files[0]);
+
+        reader.onloadend = () => {
+            const data = new Uint8Array(reader.result as ArrayBuffer);
+            emit('data', { name: file.name, data });
+        };
+    };
+});
+
+defineExpose({
+    modal: uploadModal
+})
+</script>

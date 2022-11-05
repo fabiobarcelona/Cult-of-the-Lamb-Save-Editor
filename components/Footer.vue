@@ -1,21 +1,3 @@
-<script setup lang="ts">
-import { useSaveData } from "~/stores/saveData";
-
-const saveData = useSaveData();
-
-const downloadSaveFile = async (e: MouseEvent) => {
-    e.preventDefault();
-    if (!document) return;
-    const blob = new Blob([await saveData.exportSave(saveData.fileData!.encrypted)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = saveData.fileData!.name;
-    anchor.click();
-    URL.revokeObjectURL(url);
-};
-</script>
-
 <template>
     <div>
         <footer class="footer fixed-bottom bg-light py-2">
@@ -28,3 +10,21 @@ const downloadSaveFile = async (e: MouseEvent) => {
         </footer>
     </div>
 </template>
+
+<script setup lang="ts">
+import { useSaveData } from "~/stores/saveData";
+
+const saveStore = useSaveData();
+
+const downloadSaveFile = async (e: MouseEvent) => {
+    e.preventDefault();
+    if (!document) return;
+    const blob = new Blob([await saveStore.exportSave()], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = saveStore.fileData!.name;
+    anchor.click();
+    URL.revokeObjectURL(url);
+};
+</script>
