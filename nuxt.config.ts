@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   ssr: false,
   modules: ["@nuxt/image-edge", "@pinia/nuxt"],
-  css: ["@/assets/styles/global.scss"],
+  css: ["@/assets/scss/global.scss"],
   typescript: {
     shim: false,
     strict: true,
