@@ -52,4 +52,8 @@ const loadTestData = async () => {
     });
     modal?.hide();
 }
+
+definePageMeta({
+    title: "Cult of the Lamb - Save Editor"
+})
 </script>
