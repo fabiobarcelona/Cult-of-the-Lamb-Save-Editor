@@ -7,3 +7,7 @@
     </NuxtLayout>
   </div>
 </template>
+
+<script setup lang="ts">
+import "source-map-support/register";
+</script>
