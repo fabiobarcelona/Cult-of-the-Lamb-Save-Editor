@@ -53,7 +53,7 @@ const loadTestData = async () => {
     modal?.hide();
 }
 
-definePageMeta({
+useHead({
     title: "Cult of the Lamb - Save Editor"
 })
 </script>
