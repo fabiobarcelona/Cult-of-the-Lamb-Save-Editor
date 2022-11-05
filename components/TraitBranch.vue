@@ -20,7 +20,7 @@
                                 <td class="col">
                                     <input type="checkbox" class="form-check-input"
                                         :checked="selectedTrait[index] === 1"
-                                        @click="() => { selectedTrait[index] = 1; updateClick(); }">
+                                        @click="() => { selectedTrait[index] = selectedTrait[index] === 1 ? null as any : 1; updateClick(); }">
                                 </td>
                                 <td class="col" style="background-color:black;">
                                     <NuxtImg :src="traitData.image" quality="100" alt="Trait Preview not available" />
@@ -56,7 +56,7 @@
                                 <td class="col">
                                     <input type="checkbox" class="form-check-input"
                                         :checked="selectedTrait[index] === 2"
-                                        @click="() => { selectedTrait[index] = 2; updateClick(); }">
+                                        @click="() => { selectedTrait[index] = selectedTrait[index] === 2 ? null as any : 2; updateClick(); }">
                                 </td>
                                 <td class="col" style="background-color:black;">
                                     <NuxtImg :src="traitData.image" quality="100" alt="Trait Preview not available" />
