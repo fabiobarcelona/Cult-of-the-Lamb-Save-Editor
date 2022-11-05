@@ -1,3 +1,5 @@
 <template>
-    Followers
+    <div>
+        Followers
+    </div>
 </template>

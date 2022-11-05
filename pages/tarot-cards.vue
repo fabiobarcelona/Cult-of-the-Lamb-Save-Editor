@@ -1,3 +1,5 @@
 <template>
-    Tarot-Cards
+    <div>
+        Tarot-Cards
+    </div>
 </template>

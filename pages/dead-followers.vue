@@ -1,3 +1,5 @@
 <template>
-    Dead Followers
+    <div>
+        Dead Followers
+    </div>
 </template>

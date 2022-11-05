@@ -1,3 +1,5 @@
 <template>
-    Recruiting Followers
+    <div>
+        Recruiting Followers
+    </div>
 </template>

@@ -1,3 +1,5 @@
 <template>
-    Inventory Editor
+    <div>
+        Inventory Editor
+    </div>
 </template>
