@@ -131,6 +131,7 @@ const updateSelected = () => {
 
 watch(() => props.leftBranch, updateSelected);
 watch(() => props.rightBranch, updateSelected);
+watch(() => saveStore.saveData, updateSelected);
 
 onMounted(() => {
     updateSelected();
