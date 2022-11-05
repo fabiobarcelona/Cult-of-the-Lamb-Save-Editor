@@ -70,7 +70,7 @@
             <hr />
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <button v-for="(data, index) of TraitData"
+                    <button v-for="(data, index) of traitData"
                         :class="[SelectedTraitTab === index ? 'active' : '', 'nav-link']" data-bs-toggle="tab"
                         type="button" tabindex="-1" role="tab" :aria-selected="SelectedTraitTab === index"
                         @click="() => SelectedTraitTab = index">
@@ -78,8 +78,8 @@
                     </button>
                 </div>
             </nav>
-            <TraitBranch :left-branch="TraitData[SelectedTraitTab].leftBranch"
-                :right-branch="TraitData[SelectedTraitTab].rightBranch" />
+            <TraitBranch :left-branch="traitData[SelectedTraitTab].leftBranch"
+                :right-branch="traitData[SelectedTraitTab].rightBranch" />
         </div>
     </div>
 </template>
@@ -88,19 +88,7 @@
 import { useSaveData } from "~/stores/saveData";
 import { useSiteData } from "~/stores/siteData";
 
-const deathCatBeatenWarningModal = ref(null);
-
-const siteData = useSiteData();
-
-const deathCatClick = () => {
-    if (siteData.deathCatWarningAcknowledged || !deathCatBeatenWarningModal.value) return;
-    (deathCatBeatenWarningModal.value as any).modal?.toggle();
-    siteData.deathCatWarningAcknowledged = true;
-}
-
-const SelectedTraitTab = ref<number>(0);
-
-const TraitData = [
+const traitData = [
     {
         name: "Afterlife",
         leftBranch: [{
@@ -217,21 +205,6 @@ const TraitData = [
     }
 ]
 
-const saveStore = useSaveData();
-
-const setDungeonUnlockState = (id: number, state: boolean) => {
-    if (!saveStore.saveData) return;
-
-    if (state) {
-        if (saveStore.saveData.UnlockedDungeonDoor.includes(id)) return;
-        saveStore.saveData.UnlockedDungeonDoor.push(id);
-    } else {
-        saveStore.saveData.UnlockedDungeonDoor = saveStore.saveData.UnlockedDungeonDoor.filter(
-            (dungeonId: number) => dungeonId !== id
-        );
-    }
-}
-
 const dungeonMap = [
     [
         {
@@ -254,4 +227,29 @@ const dungeonMap = [
         },
     ],
 ]
+
+const saveStore = useSaveData();
+const siteData = useSiteData();
+
+const deathCatBeatenWarningModal = ref(null);
+const SelectedTraitTab = ref<number>(0);
+
+const deathCatClick = () => {
+    if (siteData.deathCatWarningAcknowledged || !deathCatBeatenWarningModal.value) return;
+    (deathCatBeatenWarningModal.value as any).modal?.toggle();
+    siteData.deathCatWarningAcknowledged = true;
+}
+
+const setDungeonUnlockState = (id: number, state: boolean) => {
+    if (!saveStore.saveData) return;
+
+    if (state) {
+        if (saveStore.saveData.UnlockedDungeonDoor.includes(id)) return;
+        saveStore.saveData.UnlockedDungeonDoor.push(id);
+    } else {
+        saveStore.saveData.UnlockedDungeonDoor = saveStore.saveData.UnlockedDungeonDoor.filter(
+            (dungeonId: number) => dungeonId !== id
+        );
+    }
+}
 </script>
