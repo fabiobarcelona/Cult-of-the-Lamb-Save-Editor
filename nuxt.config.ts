@@ -2,17 +2,9 @@
 export default defineNuxtConfig({
   ssr: false,
   modules: ["@nuxt/image-edge", "@pinia/nuxt"],
-  vite: {
-    build: {
-      sourcemap: true,
-    },
-  },
-  sourcemap: true,
   typescript: {
     strict: true,
+    shim: true,
     typeCheck: true,
-    tsConfig: {
-      skipLibCheck: true,
-    },
   },
 });
