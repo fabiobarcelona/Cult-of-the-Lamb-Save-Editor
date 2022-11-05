@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 
 export const useSaveData = defineStore("saveData", () => {
-  const saveData = ref<any>();
-  const fileData = ref<{ name: string; encrypted: boolean }>();
+  const saveData = useState<any>();
+  const fileData = useState<{ name: string; encrypted: boolean }>();
 
   const setSaveData = (newSaveData: any) => {
     saveData.value = newSaveData;
