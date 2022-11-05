@@ -18,8 +18,9 @@
 <script setup lang="ts">
 import { Data } from "../components/FileUploadModal.vue";
 import { useSaveData } from "~/stores/saveData";
-import testSave from '~/static/test_save.json';
 import { type Modal } from "bootstrap";
+
+const { data: testSave } = useFetch<any>('/data/test_save.json');
 
 const saveStore = useSaveData();
 
@@ -36,23 +37,18 @@ onMounted(() => {
 const onFileData = async (data: Data) => {
     // TODO: Error handling
     await saveStore.importSave(data.data);
-    saveStore.$patch({
-        fileData: {
-            name: data.name,
-            encrypted: data.data[0] === 69
-        }
-    });
-
+    saveStore.setFileData({
+        name: data.name,
+        encrypted: data.data[0] === 69
+    })
     modal?.hide();
 }
 
 const loadTestData = async () => {
-    saveStore.$patch({
-        saveData: testSave as any,
-        fileData: {
-            name: 'test_save.json',
-            encrypted: false
-        }
+    saveStore.setSaveData(testSave.value);
+    saveStore.setFileData({
+        name: 'test_save.json',
+        encrypted: false
     });
     modal?.hide();
 }

@@ -14,7 +14,7 @@
                     <br />
                     <h4>Dungeon Doors Unlocked</h4>
                     <div class="row mb-4">
-                        <div class="col" v-for="(dungeon, index) in dungeonMap" :key="`dungeon_col_${index}`">
+                        <div class="col" v-for="(dungeon, index) in dungeonData" :key="`dungeon_col_${index}`">
                             <div v-for="dungeonData of dungeon" :key="`dungeon_col_${index}_${dungeonData.id}`">
                                 <input type="checkbox" class="form-check-input" :id="`dungeon_${dungeonData.id}`"
                                     :checked="saveStore.saveData.UnlockedDungeonDoor.includes(dungeonData.id)"
@@ -78,7 +78,7 @@
                     </button>
                 </div>
             </nav>
-            <TraitBranch :left-branch="traitData[SelectedTraitTab].leftBranch"
+            <TraitBranch v-if="traitData" :left-branch="traitData[SelectedTraitTab].leftBranch"
                 :right-branch="traitData[SelectedTraitTab].rightBranch" />
         </div>
     </div>
@@ -88,145 +88,8 @@
 import { useSaveData } from "~/stores/saveData";
 import { useSiteData } from "~/stores/siteData";
 
-const traitData = [
-    {
-        name: "Afterlife",
-        leftBranch: [{
-            id: 9,
-            image: "/Traits/9.png",
-            name: "Belief in Sacrifice",
-            description: "Gain 20 Faith whenever a follower is sacrificed."
-        },
-        {
-            id: 30,
-            image: "/Traits/30.png",
-            name: "Respect Your Elders",
-            description: "Gain 10 Faith when a Follower becomes an elder."
-        }
-        ],
-        rightBranch: [{
-            id: 3,
-            image: "/Traits/3.png",
-            name: "Belief in Afterlife",
-            description: "Death is not the end. When a Follower dies only lose -5 faith instead of -20."
-        },
-        {
-            id: 31,
-            image: "/Traits/31.png",
-            name: "Good Die Young",
-            description: "Gain 10 Faith if an elder is sacrificed, murdered or consumed, but lose 20 Faith if an elder dies naturally."
-        }
-        ]
-    },
-    {
-        name: "Work and Worship",
-        leftBranch: [{
-            id: 11,
-            image: "/Traits/11.png",
-            name: "Faithful",
-            description: "Generates Devotion 15% faster."
-        }],
-        rightBranch: [{
-            id: 24,
-            image: "/Traits/24.png",
-            name: "Industrious",
-            description: "Increased work speed by 15%."
-        }]
-    },
-    {
-        name: "Possessions",
-        leftBranch: [{
-            id: 18,
-            image: "/Traits/18.png",
-            name: "Materialistic",
-            description: "Gain Faith when building better sleeping quarters."
-        },
-        {
-            id: 27,
-            image: "/Traits/27.png",
-            name: "Sacral Architecture",
-            description: "Gain 5 Faith when a building is constructed."
-        }],
-        rightBranch: [{
-            id: 19,
-            image: "/Traits/19.png",
-            name: "False Idols",
-            description: "Gain 7 Faith when a decoration is built."
-        },
-        {
-            id: 26,
-            image: "/Traits/26.png",
-            name: "Devotee",
-            description: "Gain more Faith when you give a sermon."
-        }]
-    },
-    {
-        name: "Law and Order",
-        leftBranch: [{
-            id: 7,
-            image: "/Traits/7.png",
-            name: "Belief in Original Sin",
-            description: "All are born guilty. Reduced Faith loss when putting a Follower in jail who is not dissenting."
-        }],
-        rightBranch: [{
-            id: 8,
-            image: "/Traits/8.png",
-            name: "Absolution",
-            description: "Freedom above all else. Every day that begins without anyone in prison, gain +10 Faith."
-        }]
-    },
-    {
-        name: "Sustenance",
-        leftBranch: [{
-            id: 5,
-            image: "/Traits/5.png",
-            name: "Cannibal",
-            description: "Gain +5 Faith when a Follower eats a meal made from Follower meat."
-        },
-        {
-            id: 28,
-            image: "/Traits/28.png",
-            name: "Substances Encouraged",
-            description: "Gain 20 Faith when Brainwashing Ritual is performed."
-        }
-        ],
-        rightBranch: [{
-            id: 6,
-            image: "/Traits/6.png",
-            name: "Grass Eater",
-            description: "No longer lose Faith when a follower eats a Grass Meal."
-        },
-        {
-            id: 29,
-            image: "/Traits/29.png",
-            name: "Prohibitionist",
-            description: "Work speed and devotion generation increased by 10%, but 50% chance of Followers becoming sick after the Brainwashing ritual."
-        }]
-    }
-]
-
-const dungeonMap = [
-    [
-        {
-            name: "Darkwood",
-            id: 7,
-        },
-        {
-            name: "Anura",
-            id: 8,
-        },
-    ],
-    [
-        {
-            name: "Anchordeep",
-            id: 9,
-        },
-        {
-            name: "Silk Cradle",
-            id: 10,
-        },
-    ],
-]
+const { data: dungeonData } = useFetch<{ id: number, name: string }[][]>('/data/dungeonData.json');
+const { data: traitData } = useFetch<{ name: string, leftBranch: { id: number, image: string, name: string, description: string }[], rightBranch: { id: number, image: string, name: string, description: string }[] }[]>('/data/traitData.json');
 
 const saveStore = useSaveData();
 const siteData = useSiteData();
