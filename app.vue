@@ -1,4 +1,4 @@
-<style lang="scss" src="~/assets/scss/main.scss" />
+<style lang="scss" src="~/assets/scss/global.scss" />
 
 <template>
   <div>
