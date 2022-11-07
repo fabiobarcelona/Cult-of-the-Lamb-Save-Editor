@@ -149,17 +149,4 @@ const deathCatClick = () => {
     (deathCatBeatenWarningModal.value as any).modal?.toggle();
     siteData.deathCatWarningAcknowledged = true;
 }
-
-const setDungeonUnlockState = (id: number, state: boolean) => {
-    if (!saveStore.saveData) return;
-
-    if (state) {
-        if (saveStore.saveData.UnlockedDungeonDoor.includes(id)) return;
-        saveStore.saveData.UnlockedDungeonDoor.push(id);
-    } else {
-        saveStore.saveData.UnlockedDungeonDoor = saveStore.saveData.UnlockedDungeonDoor.filter(
-            (dungeonId: number) => dungeonId !== id
-        );
-    }
-}
 </script>

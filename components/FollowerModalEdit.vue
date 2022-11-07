@@ -15,26 +15,30 @@
                                 corrupt your save file, back up your save first.</span><br>
 
                             <label>Follower Level:</label>
-                            <input type="number" class="form-control" v-model="props.followerData.XPLevel"><br>
+                            <input type="number" class="form-control" min="0" v-model="props.followerData.XPLevel"><br>
 
                             <label>Follower Age:</label>
-                            <input type="number" class="form-control" v-model="props.followerData.Age"><br>
+                            <input type="number" class="form-control" min="0" v-model="props.followerData.Age"><br>
 
                             <label>Follower Life Expectancy:</label>
-                            <input type="number" class="form-control" v-model="props.followerData.LifeExpectancy"><br>
+                            <input type="number" class="form-control" min="0"
+                                v-model="props.followerData.LifeExpectancy"><br>
                         </div>
                         <div class="col">
                             <label>Follower Name:</label>
                             <input type="text" class="form-control" v-model="props.followerData.Name"><br>
 
                             <label>Day Joined:</label>
-                            <input type="number" class="form-control" v-model="props.followerData.DayJoined"><br>
+                            <input type="number" class="form-control" min="0"
+                                v-model="props.followerData.DayJoined"><br>
 
                             <label>Days in your Cult:</label>
-                            <input type="number" class="form-control" v-model="props.followerData.MemberDuration"><br>
+                            <input type="number" class="form-control" min="0"
+                                v-model="props.followerData.MemberDuration"><br>
 
                             <label>Sacrificial Value:</label>
-                            <input type="number" class="form-control" v-model="props.followerData.SacrificialValue"><br>
+                            <input type="number" class="form-control" min="0"
+                                v-model="props.followerData.SacrificialValue"><br>
                         </div>
                     </div>
 
@@ -55,14 +59,11 @@
                                 <option value="7">Elderly Clothes</option>
                                 <option value="8">Holiday Shirt</option>
                             </select>
-
                             <br>
                             <p>Outfit Preview:</p>
                             <img id="FollowerOutfitPreview_1" class="mx-auto d-block" src="assets/Outfit_Preview/3.png"
                                 alt="Outfit Preview not available">
-
                             <hr>
-
                             <label for="FollowerSkinName_1">Follower Skin:</label>
                             <select class="form-select" id="FollowerSkinName_1"
                                 onchange="document.getElementById('FollowerSkinNamePreview_1').src = 'assets/Follower_Forms/' + this.value + '.webp' ">
@@ -78,11 +79,6 @@
                                 <option value="Boss Burrow Worm">Boss Burrow Worm</option>
                                 <option value="Cow">Cow</option>
                             </select>
-
-                            <br>
-                            <p>Skin Preview:</p>
-                            <img id="FollowerSkinNamePreview_1" class="mx-auto d-block"
-                                src="assets/Follower_Forms/Fox.webp" alt="Form Preview not available">
                         </div>
                         <div class="col">
                             <label for="FollowerNecklace_1">Follower Necklace: </label>
@@ -96,39 +92,34 @@
                                 <option value="48">Natures Necklace</option>
                                 <option value="49">Moon Necklace</option>
                             </select>
-
-                            <br>
-                            <p>Necklace Preview:</p>
-                            <img id="FollowerNecklacePreview_1" class="mx-auto d-block"
-                                src="assets/Necklace_Preview/0.png" alt="Necklace Preview not available" width="70px"
-                                height="80px">
-                            <div class="text-center mt-4">
-                                <span id="FollowerNecklacePreviewText_1" class="text-muted mb-3"></span>
-                            </div>
                         </div> -->
+                        <div class="col">
+                            <div class="d-grid align-items-center justify-content-center">
+                                <NuxtImg
+                                    :src='`https://cotl.xl0.org/v1/follower/${props.followerData.SkinName}${props.followerData.SkinVariation > 0 ? props.followerData.SkinVariation : ""}?colour_set=${props.followerData.SkinColour}${props.followerData.OldAge ? "&add_skin=Other%2FOld" : ""}${props.followerData.Necklace > 0 ? "&add_skin=Necklaces%2FNecklace_" + necklaceMap.get(props.followerData.Necklace) ?? 1 : ""}${props.followerData.DissentDuration > 0 ? "&animation=Other%2FDissenter" : "&animation=Avatars%2Fidle"}`'
+                                    alt="Picture not available" quality="100" fit="inside" />
+                            </div>
+                        </div>
                     </div>
 
                     <hr>
 
                     <div class="row">
                         <div class="col">
-                            <input type="checkbox" class="form-check-input" name="FollowerIsStarving"
-                                id="FollowerIsStarving_1">
-                            <label class="form-check-label" for="FollowerIsStarving_1">Starving Indicator</label><br>
+                            <input type="checkbox" class="form-check-input" v-model="props.followerData.IsStarving">
+                            <label class="form-check-label">&nbsp;Starving Indicator</label><br>
 
-                            <input type="checkbox" class="form-check-input" name="FollowerMarriedToLeader"
-                                id="FollowerMarriedToLeader_1">
-                            <label class="form-check-label" for="FollowerMarriedToLeader_1">Married to
+                            <input type="checkbox" class="form-check-input"
+                                v-model="props.followerData.MarriedToLeader">
+                            <label class="form-check-label">&nbsp;Married to
                                 Leader</label><br>
                         </div>
                         <div class="col">
-                            <input type="checkbox" class="form-check-input" name="FollowerTaxEnforcer"
-                                id="FollowerTaxEnforcer_1">
-                            <label class="form-check-label" for="FollowerTaxEnforcer_1">Tax Enforcer</label><br>
+                            <input type="checkbox" class="form-check-input" v-model="props.followerData.TaxEnforcer">
+                            <label class="form-check-label">&nbsp;Tax Enforcer</label><br>
 
-                            <input type="checkbox" class="form-check-input" name="FollowerFaithEnforcer"
-                                id="FollowerFaithEnforcer_1">
-                            <label class="form-check-label" for="FollowerFaithEnforcer_1">Faith Enforcer</label><br>
+                            <input type="checkbox" class="form-check-input" v-model="props.followerData.FaithEnforcer">
+                            <label class="form-check-label">&nbsp;Faith Enforcer</label><br>
                         </div>
                     </div>
 
@@ -508,51 +499,51 @@
 
                     <div class="row">
                         <div class="col">
-                            <label for="FollowerAdoration_1">Adoration (XP to next level): </label>
-                            <input type="range" class="form-range" min="0" max="100" step="1" id="FollowerAdoration_1"
-                                value="10" oninput="$('#FollowerAdorationRange_1').html($(this).val())">
-                            <p id="FollowerAdorationRange_1">10</p>
+                            <label>Adoration (XP to next level): </label>
+                            <input type="range" class="form-range" min="0" max="100" step="1"
+                                v-model="props.followerData.Adoration">
+                            <p>{{ props.followerData.Adoration }}</p>
 
-                            <label for="FollowerFaith_1">Faith: </label>
-                            <input type="range" class="form-range" min="0" max="100" step="1" id="FollowerFaith_1"
-                                value="50" oninput="$('#FollowerFaithRange_1').html($(this).val())">
-                            <p id="FollowerFaithRange_1">50</p>
+                            <label>Faith: </label>
+                            <input type="range" class="form-range" min="0" max="100" step="1"
+                                v-model="props.followerData.Faith">
+                            <p>{{ props.followerData.Faith }}</p>
 
-                            <label for="FollowerHappiness_1">Happiness: </label>
-                            <input type="range" class="form-range" min="0" max="100" step="1" id="FollowerHappiness_1"
-                                value="72" oninput="$('#FollowerHappinessRange_1').html($(this).val())">
-                            <p id="FollowerHappinessRange_1">72</p>
+                            <label>Happiness: </label>
+                            <input type="range" class="form-range" min="0" max="100" step="1"
+                                v-model="props.followerData.Happiness">
+                            <p>{{ props.followerData.Happiness }}</p>
 
-                            <label for="FollowerIllness_1">Illness: </label>
-                            <input type="range" class="form-range" min="0" max="100" step="1" id="FollowerIllness_1"
-                                value="0" oninput="$('#FollowerIllnessRange_1').html($(this).val())">
-                            <p id="FollowerIllnessRange_1">0</p>
+                            <label>Illness: </label>
+                            <input type="range" class="form-range" min="0" max="100" step="1"
+                                v-model="props.followerData.Illness" />
+                            <p>{{ props.followerData.Illness }}</p>
 
-                            <label for="FollowerReeducation_1">Reeducation: </label>
-                            <input type="range" class="form-range" min="0" max="100" step="1" id="FollowerReeducation_1"
-                                value="64" oninput="$('#FollowerReeducationRange_1').html($(this).val())">
-                            <p id="FollowerReeducationRange_1">64</p>
+                            <label>Reeducation: </label>
+                            <input type="range" class="form-range" min="0" max="100" step="1"
+                                v-model="props.followerData.Reeducation" />
+                            <p>{{ props.followerData.Reeducation }}</p>
                         </div>
                         <div class="col">
-                            <label for="FollowerExhaustion_1">Exhaustion: </label>
-                            <input type="range" class="form-range" min="0" max="100" step="1" id="FollowerExhaustion_1"
-                                value="0" oninput="$('#FollowerExhaustionRange_1').html($(this).val())">
-                            <p id="FollowerExhaustionRange_1">0</p>
+                            <label>Exhaustion: </label>
+                            <input type="range" class="form-range" min="0" max="100" step="1"
+                                v-model="props.followerData.Exhaustion" />
+                            <p>{{ props.followerData.Exhaustion }}</p>
 
-                            <label for="FollowerRest_1">Rest: </label>
-                            <input type="range" class="form-range" min="0" max="100" step="1" id="FollowerRest_1"
-                                value="22" oninput="$('#FollowerRestRange_1').html($(this).val())">
-                            <p id="FollowerRestRange_1">22</p>
+                            <label>Rest: </label>
+                            <input type="range" class="form-range" min="0" max="100" step="1"
+                                v-model="props.followerData.Rest" />
+                            <p>{{ props.followerData.Rest }}</p>
 
-                            <label for="FollowerStarvation_1">Starvation: </label>
-                            <input type="range" class="form-range" min="0" max="100" step="1" id="FollowerStarvation_1"
-                                value="0" oninput="$('#FollowerStarvationRange_1').html($(this).val())">
-                            <p id="FollowerStarvationRange_1">0</p>
+                            <label>Starvation: </label>
+                            <input type="range" class="form-range" min="0" max="100" step="1"
+                                v-model="props.followerData.Starvation" />
+                            <p>{{ props.followerData.Starvation }}</p>
 
-                            <label for="FollowerSatiation_1">Satiation: </label>
-                            <input type="range" class="form-range" min="0" max="100" step="1" id="FollowerSatiation_1"
-                                value="29" oninput="$('#FollowerSatiationRange_1').html($(this).val())">
-                            <p id="FollowerSatiationRange_1">29</p>
+                            <label>Satiation: </label>
+                            <input type="range" class="form-range" min="0" max="100" step="1"
+                                v-model="props.followerData.Satiation" />
+                            <p>{{ props.followerData.Satiation }}</p>
                         </div>
                     </div>
                 </div>
@@ -566,6 +557,14 @@ import { Modal } from "bootstrap";
 
 const followerModalElement = ref<HTMLElement>();
 const followerModal = ref<Modal>();
+
+const necklaceMap = new Map([
+    [45, 1],
+    [46, 2],
+    [47, 3],
+    [48, 4],
+    [49, 5]
+])
 
 onMounted(() => {
     if (!followerModalElement.value) return;
