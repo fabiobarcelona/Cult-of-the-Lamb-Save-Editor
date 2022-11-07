@@ -3,7 +3,7 @@
         <FollowerModalEdit ref="followerModalEdit" :follower-data="selectedFollower" v-if="selectedFollower" />
         <div class="row row-cols-8 g-4 mb-4 gap-3">
             <div class="card" v-for="follower in saveStore.saveData.Followers" style="width: 16rem;">
-                <NuxtImg
+                <NuxtImg preload loading="eager"
                     :src='`https://cotl.xl0.org/v1/follower/${follower.SkinName}${follower.SkinVariation > 0 ? follower.SkinVariation : ""}?format=png&only_head=true&colour_set=${follower.SkinColour}${follower.OldAge ? "&add_skin=Other%2FOld" : ""}${follower.Necklace > 0 ? "&add_skin=Necklaces%2FNecklace_" + necklaceMap.get(follower.Necklace) ?? 1 : ""}${follower.DissentDuration > 0 ? "&animation=Other%2FDissenter" : "&animation=Avatars%2Favatar-normal"}`'
                     class="card-img-top" alt="Picture not available" quality="100" width="120px" height="224px"
                     fit="inside" />

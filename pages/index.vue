@@ -101,8 +101,9 @@
                                 v-model="saveStore.saveData.RecipesDiscovered">
                         </td>
                         <td>
-                            <NuxtImg :src="recipe.image" alt="Cooking Recipe Preview not available" quality="100"
-                                width="85px" height="80px" fit="inside" preload />
+                            <NuxtImg preload loading="eager" :src="recipe.image"
+                                alt="Cooking Recipe Preview not available" quality="100" width="85px" height="80px"
+                                fit="inside" />
 
                         </td>
                         <td>

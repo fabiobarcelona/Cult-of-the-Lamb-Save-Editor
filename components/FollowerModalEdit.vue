@@ -95,9 +95,9 @@
                         </div> -->
                         <div class="col">
                             <div class="d-grid align-items-center justify-content-center">
-                                <NuxtImg
-                                    :src='`https://cotl.xl0.org/v1/follower/${props.followerData.SkinName}${props.followerData.SkinVariation > 0 ? props.followerData.SkinVariation : ""}?colour_set=${props.followerData.SkinColour}${props.followerData.OldAge ? "&add_skin=Other%2FOld" : ""}${props.followerData.Necklace > 0 ? "&add_skin=Necklaces%2FNecklace_" + necklaceMap.get(props.followerData.Necklace) ?? 1 : ""}${props.followerData.DissentDuration > 0 ? "&animation=Other%2FDissenter" : "&animation=Avatars%2Fidle"}`'
-                                    alt="Picture not available" quality="100" fit="inside" />
+                                <NuxtImg preload loading="eager"
+                                    :src='`https://cotl.xl0.org/v1/follower/${props.followerData.SkinName}${props.followerData.SkinVariation > 0 ? props.followerData.SkinVariation : ""}?colour_set=${props.followerData.SkinColour}&fps=60&format=apng${props.followerData.OldAge ? "&add_skin=Other%2FOld" : ""}${props.followerData.Necklace > 0 ? "&add_skin=Necklaces%2FNecklace_" + necklaceMap.get(props.followerData.Necklace) ?? 1 : ""}${props.followerData.DissentDuration > 0 ? "&animation=Other%2FDissenter" : "&animation=Avatars%2Fidle"}`'
+                                    alt="Preview not available" quality="100" fit="inside" />
                             </div>
                         </div>
                     </div>

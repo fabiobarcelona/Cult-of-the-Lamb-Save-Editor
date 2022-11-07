@@ -4,7 +4,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Upload your save file</h5>
-                    <NuxtImg src="/lamb.gif" alt="lamb" width="64" height="64" preload />
+                    <NuxtImg preload loading="eager" src="https://cotl.xl0.org/v1/player/Lamb?format=apng&fps=60&animation=dance" alt="lamb" width="64" height="64" />
                 </div>
                 <div class="modal-body">
                     <h1 class="text-center">Cult of the Lamb - Save File Editor</h1>
