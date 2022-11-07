@@ -142,6 +142,7 @@
                                 <tbody>
 
                                     <!-- TODO: v-for -->
+                                    <!-- 
                                     <tr class="d-flex">
                                         <td class="col-1">
                                             <input type="checkbox" class="form-check-input" name="FollowerTraits_1"
@@ -162,7 +163,6 @@
                                                 falling ill.</label>
                                         </td>
                                     </tr>
-                                    <!-- 
                                     <tr class="d-flex">
                                         <td class="col-1">
                                             <input type="checkbox" class="form-check-input" name="FollowerTraits_1"
