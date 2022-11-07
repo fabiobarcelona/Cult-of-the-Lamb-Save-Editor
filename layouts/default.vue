@@ -20,7 +20,7 @@ import { Data } from "../components/FileUploadModal.vue";
 import { useSaveData } from "~/stores/saveData";
 import { type Modal } from "bootstrap";
 
-const { data: testSave } = useFetch<any>('/data/test_save.json');
+const { data: testSave } = useFetch<any>('/data/testSave.json');
 
 const saveStore = useSaveData();
 
@@ -47,7 +47,7 @@ const onFileData = async (data: Data) => {
 const loadTestData = async () => {
     saveStore.setSaveData(testSave.value);
     saveStore.setFileData({
-        name: 'test_save.json',
+        name: 'testSave.json',
         encrypted: false
     });
     modal?.hide();

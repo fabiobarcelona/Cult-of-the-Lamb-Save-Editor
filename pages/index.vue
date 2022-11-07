@@ -80,6 +80,54 @@
             </nav>
             <TraitBranch v-if="traitData" :left-branch="traitData[SelectedTraitTab].leftBranch"
                 :right-branch="traitData[SelectedTraitTab].rightBranch" />
+            <h2>Cooking Recipes</h2>
+            <hr />
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Unlocked?</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Effects</th>
+                        <th>Ingredients</th>
+                        <th>Category</th>
+                        <th>Quality</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="recipe in recipeData">
+                        <td>
+                            <input type="checkbox" class="form-check-input"
+                                :checked="saveStore.saveData.RecipesDiscovered.includes(recipe.id)"
+                                @click="handleRecipe(recipe.id)">
+                        </td>
+                        <td>
+                            <NuxtImg :src="recipe.image" alt="Cooking Recipe Preview not available" quality="100"
+                                width="85px" height="80px" fit="inside" />
+
+                        </td>
+                        <td>
+                            {{ recipe.name }}
+                        </td>
+                        <td>
+                            {{ recipe.description }}
+                        </td>
+                        <td>
+                            {{ recipe.effect }}
+                        </td>
+                        <td>
+                            {{ recipe.ingredient }}
+                        </td>
+                        <td>
+                            {{ recipe.category }}
+                        </td>
+                        <td>
+                            {{ recipe.quality }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </template>
@@ -88,14 +136,23 @@
 import { useSaveData } from "~/stores/saveData";
 import { useSiteData } from "~/stores/siteData";
 
-const { data: dungeonData } = useFetch<{ id: number, name: string }[][]>('/data/dungeonData.json');
 const { data: traitData } = useFetch<{ name: string, leftBranch: { id: number, image: string, name: string, description: string }[], rightBranch: { id: number, image: string, name: string, description: string }[] }[]>('/data/traitData.json');
+const { data: recipeData } = useFetch<{ id: number, image: string, name: string, description: string, effect: string, ingredient: string, category: string, quality: string }[]>('/data/cookingRecipe.json');
+const { data: dungeonData } = useFetch<{ id: number, name: string }[][]>('/data/dungeonData.json');
 
 const saveStore = useSaveData();
 const siteData = useSiteData();
 
 const deathCatBeatenWarningModal = ref(null);
 const SelectedTraitTab = ref<number>(0);
+
+const handleRecipe = (id: number) => {
+    if (saveStore.saveData.RecipesDiscovered.includes(id)) {
+        saveStore.saveData.RecipesDiscovered = saveStore.saveData.RecipesDiscovered.filter((x: number) => x !== id);
+    } else {
+        saveStore.saveData.RecipesDiscovered.push(id);
+    }
+}
 
 const deathCatClick = () => {
     if (siteData.deathCatWarningAcknowledged || !deathCatBeatenWarningModal.value) return;
