@@ -14,11 +14,10 @@
                     <br />
                     <h4>Dungeon Doors Unlocked</h4>
                     <div class="row mb-4">
-                        <div class="col" v-for="(dungeon, index) in dungeonData" :key="`dungeon_col_${index}`">
-                            <div v-for="dungeonData of dungeon" :key="`dungeon_col_${index}_${dungeonData.id}`">
+                        <div class="col" v-for="dungeon in dungeonData">
+                            <div v-for="dungeonData of dungeon">
                                 <input type="checkbox" class="form-check-input" :id="`dungeon_${dungeonData.id}`"
-                                    :checked="saveStore.saveData.UnlockedDungeonDoor.includes(dungeonData.id)"
-                                    @click="(event) => setDungeonUnlockState(dungeonData.id, (event.target as HTMLInputElement).checked)">
+                                    :value="dungeonData.id" v-model="saveStore.saveData.UnlockedDungeonDoor">
                                 <label class="form-check-label" :for="`dungeon_${dungeonData.id}`">&nbsp;{{
                                         dungeonData.name
                                 }}</label>
@@ -98,13 +97,12 @@
                 <tbody>
                     <tr v-for="recipe in recipeData">
                         <td>
-                            <input type="checkbox" class="form-check-input"
-                                :checked="saveStore.saveData.RecipesDiscovered.includes(recipe.id)"
-                                @click="handleRecipe(recipe.id)">
+                            <input type="checkbox" class="form-check-input" :value="recipe.id"
+                                v-model="saveStore.saveData.RecipesDiscovered">
                         </td>
                         <td>
                             <NuxtImg :src="recipe.image" alt="Cooking Recipe Preview not available" quality="100"
-                                width="85px" height="80px" fit="inside" />
+                                width="85px" height="80px" fit="inside" preload />
 
                         </td>
                         <td>
@@ -145,14 +143,6 @@ const siteData = useSiteData();
 
 const deathCatBeatenWarningModal = ref(null);
 const SelectedTraitTab = ref<number>(0);
-
-const handleRecipe = (id: number) => {
-    if (saveStore.saveData.RecipesDiscovered.includes(id)) {
-        saveStore.saveData.RecipesDiscovered = saveStore.saveData.RecipesDiscovered.filter((x: number) => x !== id);
-    } else {
-        saveStore.saveData.RecipesDiscovered.push(id);
-    }
-}
 
 const deathCatClick = () => {
     if (siteData.deathCatWarningAcknowledged || !deathCatBeatenWarningModal.value) return;

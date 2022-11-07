@@ -8,7 +8,7 @@
                     <div class="card">
                         <div class="text-center bg-light">
                             <NuxtImg class="card-img-top my-2 w-auto" :alt="item.name" :src="item.image" width="116px"
-                                height="82px" fit="inside" />
+                                height="82px" fit="inside" preload />
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ item.name }}</h5>

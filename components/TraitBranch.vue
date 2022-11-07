@@ -23,7 +23,7 @@
                                         @click="() => { selectedTrait[index] = selectedTrait[index] === 1 ? null as any : 1; updateClick(); }">
                                 </td>
                                 <td class="col" style="background-color:black;">
-                                    <NuxtImg :src="traitData.image" quality="100" alt="Trait Preview not available" />
+                                    <NuxtImg :src="traitData.image" quality="100" alt="Trait Preview not available" preload />
                                 </td>
                                 <td class="col">
                                     <label class="form-check-label" :for="`CultTraits_${traitData.id}`">{{
@@ -59,7 +59,7 @@
                                         @click="() => { selectedTrait[index] = selectedTrait[index] === 2 ? null as any : 2; updateClick(); }">
                                 </td>
                                 <td class="col" style="background-color:black;">
-                                    <NuxtImg :src="traitData.image" quality="100" alt="Trait Preview not available" />
+                                    <NuxtImg :src="traitData.image" quality="100" alt="Trait Preview not available" preload />
                                 </td>
                                 <td class="col">
                                     <label class="form-check-label" :for="`CultTraits_${traitData.id}`">{{
