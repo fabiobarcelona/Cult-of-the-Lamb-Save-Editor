@@ -1,0 +1,32 @@
+[
+{
+    "name": "Currency",
+    "items": [
+      {
+        "id": 20,
+        "image": "/Items/.png",
+        "name": ""
+      }
+    ]
+  },
+  {
+    "name": "Food",
+    "items": [
+      {
+        "id": 1,
+        "image": "/Items/.png",
+        "name": ""
+      }
+    ]
+  },
+  {
+    "name": "Other",
+    "items": [
+      {
+        "id": 1,
+        "image": "/Items/.png",
+        "name": ""
+      }
+    ]
+  }
+]
