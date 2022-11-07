@@ -126,12 +126,12 @@
                             <hr>
                             <table class="table">
                                 <thead>
-                                    <tr class="d-flex">
-                                        <th class="col-1">Unlocked?</th>
-                                        <th class="col-1">Image</th>
-                                        <th class="col-1">Effect</th>
-                                        <th class="col-3">Name</th>
-                                        <th class="col-6">Description</th>
+                                    <tr>
+                                        <th class="col">Unlocked?</th>
+                                        <th class="col">Image</th>
+                                        <th class="col">Effect</th>
+                                        <th class="col">Name</th>
+                                        <th class="col">Description</th>
                                     </tr>
                                 </thead>
                                 <tbody>
