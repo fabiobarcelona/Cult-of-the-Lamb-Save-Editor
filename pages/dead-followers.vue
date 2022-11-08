@@ -2,7 +2,7 @@
     <div v-if="saveStore.saveData">
         <div v-if="saveStore.saveData.Followers_Dead.length > 0">
             <FollowerModalEdit v-if="selectedFollower" ref="followerModalEdit" :follower-data="selectedFollower" />
-            <div class="row row-cols-8 g-4 mb-4 gap-3">
+            <div class="row row-cols-5 g-4 mb-4 gap-3">
                 <div v-for="follower in saveStore.saveData.Followers_Dead" class="card" style="width: 16rem;">
                     <NuxtImg loading="eager" :src='constructFollowerPreviewUrl(follower, true)' class="card-img-top"
                         alt="Picture not available" quality="100" width="120px" height="224px" fit="inside" />
