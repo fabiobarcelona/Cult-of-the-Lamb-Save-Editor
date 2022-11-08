@@ -14,7 +14,7 @@
                     <br />
                     <h4>Dungeon Doors Unlocked</h4>
                     <div class="row mb-4">
-                        <div class="col" v-for="dungeon in dungeonData">
+                        <div v-for="dungeon in dungeonData" class="col">
                             <div v-for="dungeonData of dungeon">
                                 <input v-model="saveStore.saveData.UnlockedDungeonDoor" type="checkbox"
                                     class="form-check-input" :id="`dungeon_${dungeonData.id}`" :value="dungeonData.id">
@@ -97,8 +97,8 @@
                 <tbody>
                     <tr v-for="recipe in recipeData">
                         <td>
-                            <input type="checkbox" class="form-check-input" :value="recipe.id"
-                                v-model="saveStore.saveData.RecipesDiscovered">
+                            <input v-model="saveStore.saveData.RecipesDiscovered" type="checkbox"
+                                class="form-check-input" :value="recipe.id">
                         </td>
                         <td>
                             <NuxtImg preload loading="eager" :src="recipe.image"

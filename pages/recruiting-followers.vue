@@ -1,8 +1,8 @@
 <template>
     <div v-if="saveStore.saveData">
-        <FollowerModalEdit ref="followerModalEdit" :follower-data="selectedFollower" v-if="selectedFollower" />
+        <FollowerModalEdit v-if="selectedFollower" ref="followerModalEdit" :follower-data="selectedFollower" />
         <div class="row row-cols-8 g-4 mb-4 gap-3">
-            <div class="card" v-for="follower in saveStore.saveData.Followers_Recruit" style="width: 16rem;">
+            <div v-for="follower in saveStore.saveData.Followers_Recruit" style="width: 16rem;" class="card">
                 <NuxtImg preload loading="eager" :src='constructFollowerPreviewUrl(follower, true)' class="card-img-top"
                     alt="Picture not available" quality="100" width="120px" height="224px" fit="inside" />
                 <div class="card-body">

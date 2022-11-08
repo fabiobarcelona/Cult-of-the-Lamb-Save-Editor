@@ -10,35 +10,37 @@
                     <div class="row">
                         <div class="col">
                             <label>Follower ID:</label>
-                            <input v-model="props.followerData.ID" type="number" class="form-control">
+                            <input v-model.number="props.followerData.ID" type="number" class="form-control">
                             <span class="text-danger fw-bold" style="font-size:14px;">Changing IDs is dangerous and can
                                 corrupt your save file, back up your save first.</span><br>
 
                             <label>Follower Level:</label>
-                            <input type="number" class="form-control" min="0" v-model="props.followerData.XPLevel"><br>
+                            <input v-model.number="props.followerData.XPLevel" type="number" class="form-control"
+                                min="0"><br>
 
                             <label>Follower Age:</label>
-                            <input type="number" class="form-control" min="0" v-model="props.followerData.Age"><br>
+                            <input v-model.number="props.followerData.Age" type="number" class="form-control"
+                                min="0"><br>
 
                             <label>Follower Life Expectancy:</label>
-                            <input v-model="props.followerData.LifeExpectancy" type="number" class="form-control"
+                            <input v-model.number="props.followerData.LifeExpectancy" type="number" class="form-control"
                                 min="0"><br>
                         </div>
                         <div class="col">
                             <label>Follower Name:</label>
-                            <input v-model="props.followerData.Name" type="text" class="form-control"><br>
+                            <input v-model.number="props.followerData.Name" type="text" class="form-control"><br>
 
                             <label>Day Joined:</label>
-                            <input v-model="props.followerData.DayJoined" type="number" class="form-control"
+                            <input v-model.number="props.followerData.DayJoined" type="number" class="form-control"
                                 min="0"><br>
 
                             <label>Days in your Cult:</label>
-                            <input v-model="props.followerData.MemberDuration" type="number" class="form-control"
+                            <input v-model.number="props.followerData.MemberDuration" type="number" class="form-control"
                                 min="0"><br>
 
                             <label>Sacrificial Value:</label>
-                            <input v-model="props.followerData.SacrificialValue" type="number" class="form-control"
-                                min="0"><br>
+                            <input v-model.number="props.followerData.SacrificialValue" type="number"
+                                class="form-control" min="0"><br>
                         </div>
                     </div>
 
@@ -68,7 +70,8 @@
                         <div class="col">
                             <label>Follower Variant:</label>
                             <select v-model.number="props.followerData.SkinVariation" class="form-select">
-                                <option :value="props.followerData.SkinVariation === 1 ? 1 : 0">Default</option>
+                                <option v-if="props.followerData.SkinVariation === 1" value="1">Default</option>
+                                <option v-else value="0">Default</option>
                                 <option
                                     v-for="followerSkin in followerSkinList?.filter((s) => s.value === props.followerData.SkinName)[0].variant"
                                     :value="followerSkin">{{
@@ -142,9 +145,9 @@
                                                 alt="Trait Preview not available" quality="100" fit="inside" />
                                         </td>
                                         <td class="col">
-                                            <span class="text-success"
-                                                v-if="trait.effect === 'Positive'">Positive</span>
-                                            <span class="text-danger" v-else>Negative</span>
+                                            <span v-if="trait.effect === 'Positive'"
+                                                class="text-success">Positive</span>
+                                            <span v-else class="text-danger">Negative</span>
                                         </td>
                                         <td class="col">
                                             {{ trait.name }}

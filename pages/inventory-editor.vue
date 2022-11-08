@@ -4,7 +4,7 @@
             <h2>{{ itemList.name }}</h2>
             <hr />
             <div class="row row-cols-8 g-4 mb-4">
-                <div class="col" v-for="item in itemList.items">
+                <div v-for="item in itemList.items" class="col">
                     <div class="card">
                         <div class="text-center bg-light">
                             <NuxtImg preload loading="eager" class="card-img-top my-2 w-auto" :alt="item.name"
