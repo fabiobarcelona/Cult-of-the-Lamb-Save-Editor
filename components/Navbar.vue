@@ -1,18 +1,15 @@
 <template>
-    <div>
-        <nav>
-            <div class="nav nav-tabs" role="tablist">
-                <NuxtLink v-for="(text, link) in routeList" :to="link"
-                    style="color: inherit; text-decoration: inherit;">
-                    <button class="nav-link" type="button" role="tab" :aria-selected="isActive(link)" :class="{
-                        active: isActive(link)
-                    }">
-                        {{ text }}
-                    </button>
-                </NuxtLink>
-            </div>
-        </nav>
-    </div>
+    <nav>
+        <div class="nav nav-tabs" role="tablist">
+            <NuxtLink v-for="(text, link) in routeList" :to="link" style="color: inherit; text-decoration: inherit;">
+                <button class="nav-link" type="button" role="tab" :aria-selected="isActive(link)" :class="{
+                    active: isActive(link)
+                }">
+                    {{ text }}
+                </button>
+            </NuxtLink>
+        </div>
+    </nav>
 </template>
 
 <script setup lang="ts">

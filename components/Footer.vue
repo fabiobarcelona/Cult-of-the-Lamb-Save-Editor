@@ -1,14 +1,12 @@
 <template>
-    <div>
-        <footer class="footer fixed-bottom bg-light py-2">
-            <p class="alignleft">
-                <span class="text-muted text-center">Made with ❤ by SavagE & hayper</span>
-            </p>
-            <p class="aligncenter">
-                <input type="submit" class="btn btn-lg btn-primary" form="form" value="Save" @click="downloadSaveFile">
-            </p>
-        </footer>
-    </div>
+    <footer class="footer fixed-bottom bg-light py-2">
+        <p class="alignleft">
+            <span class="text-muted text-center">Made with ❤ by SavagE & hayper</span>
+        </p>
+        <p class="aligncenter">
+            <input type="submit" class="btn btn-lg btn-primary" form="form" value="Save" @click="downloadSaveFile">
+        </p>
+    </footer>
 </template>
 
 <script setup lang="ts">

@@ -1,5 +1,15 @@
 @import "bootstrap/scss/bootstrap";
 
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.1s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(0.5rem);
+}
+
 body {
   background-color: #f8f8f8;
   padding: 1rem;

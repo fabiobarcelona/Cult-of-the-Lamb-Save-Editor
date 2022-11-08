@@ -42,7 +42,6 @@
                                 <label for="RatauKilled">&nbsp;Ratau Killed</label>
                             </div>
                         </div>
-
                         <DeathCatBeatenWarningModal ref="deathCatBeatenWarningModal" />
                     </div>
                 </div>

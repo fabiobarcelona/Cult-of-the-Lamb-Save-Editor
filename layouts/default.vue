@@ -1,12 +1,15 @@
 <template>
     <div class="d-flex flex-column min-vh-100">
+        <NuxtLoadingIndicator />
         <div class="container-fluid">
             <FileUploadModal ref="fileUploadModal" @data="onFileData" @test-data="loadTestData" />
             <form id="form">
                 <Navbar />
                 <div class="tab-content my-3">
                     <div class="tab-pane fade active show" role="tabpanel" aria-labelledby="nav-buildings-tab">
-                        <slot />
+                        <main>
+                            <slot />
+                        </main>
                     </div>
                 </div>
             </form>
@@ -21,17 +24,12 @@ import { useSaveData } from "~/stores/saveData";
 import { type Modal } from "bootstrap";
 
 const { data: testSave } = useFetch<any>('/data/testSave.json');
-
 const saveStore = useSaveData();
 
-const fileUploadModal = ref(null);
-let modal: Modal | undefined;
+const fileUploadModal = ref<HTMLDivElement & { modal: Modal | undefined }>();
 
 onMounted(() => {
-    if (!fileUploadModal.value) return;
-
-    modal = (fileUploadModal.value as any).modal;
-    modal?.toggle();
+    fileUploadModal.value?.modal?.toggle();
 });
 
 const onFileData = async (data: Data) => {
@@ -41,7 +39,7 @@ const onFileData = async (data: Data) => {
         name: data.name,
         encrypted: data.data[0] === 69
     })
-    modal?.hide();
+    fileUploadModal.value?.modal?.hide();
 }
 
 const loadTestData = async () => {
@@ -50,10 +48,6 @@ const loadTestData = async () => {
         name: 'testSave.json',
         encrypted: false
     });
-    modal?.hide();
+    fileUploadModal.value?.modal?.hide();
 }
-
-useHead({
-    title: "Cult of the Lamb - Save Editor"
-})
 </script>
