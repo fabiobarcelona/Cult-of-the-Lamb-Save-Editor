@@ -1,11 +1,36 @@
 [
-{
+  {
     "name": "Currency",
     "items": [
       {
+        "id": 1,
+        "image": "/Items/1.png",
+        "name": "Lumber"
+      },
+      {
+        "id": 2,
+        "image": "/Items/2.png",
+        "name": "Stone"
+      },
+      {
+        "id": 9,
+        "image": "/Items/9.png",
+        "name": "Bone"
+      },
+      {
         "id": 20,
-        "image": "/Items/.png",
-        "name": ""
+        "image": "/Items/20.png",
+        "name": "Coin"
+      },
+      {
+        "id": 22,
+        "image": "/Items/22.png",
+        "name": "Heart of a Heretic"
+      },
+      {
+        "id": 114,
+        "image": "/Items/114.png",
+        "name": "Holy Talisman"
       }
     ]
   },
@@ -13,9 +38,54 @@
     "name": "Food",
     "items": [
       {
-        "id": 1,
-        "image": "/Items/.png",
-        "name": ""
+        "id": 6,
+        "image": "/Items/6.png",
+        "name": "Meat"
+      },
+      {
+        "id": 21,
+        "image": "/Items/21.png",
+        "name": "Berry"
+      },
+      {
+        "id": 28,
+        "image": "/Items/28.png",
+        "name": "Salmon"
+      },
+      {
+        "id": 33,
+        "image": "/Items/33.png",
+        "name": "Minnow"
+      },
+      {
+        "id": 34,
+        "image": "/Items/34.png",
+        "name": "Tuna"
+      },
+      {
+        "id": 35,
+        "image": "/Items/35.png",
+        "name": "Grass"
+      },
+      {
+        "id": 39,
+        "image": "/Items/39.png",
+        "name": "Fertilizer"
+      },
+      {
+        "id": 50,
+        "image": "/Items/50.png",
+        "name": "Pumpkin"
+      },
+      {
+        "id": 62,
+        "image": "/Items/62.png",
+        "name": "Follower Meat"
+      },
+      {
+        "id": 91,
+        "image": "/Items/91.png",
+        "name": "Crab"
       }
     ]
   },

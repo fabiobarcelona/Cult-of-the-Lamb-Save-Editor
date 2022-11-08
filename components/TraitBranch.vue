@@ -83,10 +83,6 @@
 </template>
 
 <script setup lang="ts">
-import { useSaveData } from "~/stores/saveData";
-
-const saveStore = useSaveData();
-
 type TraitData = {
     id: number;
     image: string;
@@ -99,12 +95,13 @@ const selectedTrait = ref<number[]>([]);
 const props = defineProps<{
     leftBranch: TraitData[];
     rightBranch: TraitData[];
+    saveData: any;
 }>();
 
 const updateClick = () => {
     const checkTrait = (id: number, value: boolean) => {
-        if (value && !saveStore.saveData.CultTraits.includes(id)) saveStore.saveData.CultTraits.push(id);
-        else if (!value) saveStore.saveData.CultTraits = saveStore.saveData.CultTraits.filter(
+        if (value && !props.saveData.CultTraits.includes(id)) props.saveData.CultTraits.push(id);
+        else if (!value) props.saveData.CultTraits = props.saveData.CultTraits.filter(
             (traitId: number) => traitId !== id
         );
     }
@@ -116,13 +113,11 @@ const updateClick = () => {
 }
 
 const updateSelected = () => {
-    if (saveStore.saveData) {
+    if (props.saveData) {
         const checkBranch = (traits: TraitData[], value: number) => {
-            for (const [index, trait] of traits.entries()) {
-                if (saveStore.saveData.CultTraits.includes(trait.id)) {
+            for (const [index, trait] of traits.entries())
+                if (props.saveData.CultTraits.includes(trait.id))
                     selectedTrait.value[index] = value;
-                }
-            }
         }
 
         selectedTrait.value = [];
@@ -133,7 +128,7 @@ const updateSelected = () => {
 
 watch(() => props.leftBranch, updateSelected);
 watch(() => props.rightBranch, updateSelected);
-watch(() => saveStore.saveData, updateSelected);
+watch(() => props.saveData, updateSelected);
 
 onMounted(() => {
     updateSelected();

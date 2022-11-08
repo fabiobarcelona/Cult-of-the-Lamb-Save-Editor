@@ -78,7 +78,7 @@
                 </div>
             </nav>
             <TraitBranch v-if="traitData" :left-branch="traitData[SelectedTraitTab].leftBranch"
-                :right-branch="traitData[SelectedTraitTab].rightBranch" />
+                :right-branch="traitData[SelectedTraitTab].rightBranch" :save-data="saveStore.saveData" />
             <h2>Cooking Recipes</h2>
             <hr />
             <table class="table">
