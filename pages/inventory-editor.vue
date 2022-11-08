@@ -16,8 +16,9 @@
                         <div class="card-footer">
                             <div class="input-group">
                                 <span class="input-group-text">x</span>
-                                <input type="number" class="form-control"
-                                    v-model="saveStore.saveData.items.filter((d: any) => d.type === item.id)[0].quantity">
+                                <input
+                                    v-model="saveStore.saveData.items.filter((d: any) => d.type === item.id)[0].quantity"
+                                    type="number" class="form-control">
                             </div>
                         </div>
                     </div>

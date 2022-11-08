@@ -6,18 +6,18 @@
             <div class="row mb-2">
                 <div class="col">
                     <label for="CultName">Cult Name:</label>
-                    <input type="text" class="form-control" id="CultName" v-model="saveStore.saveData.CultName" />
+                    <input v-model="saveStore.saveData.CultName" type="text" class="form-control" id="CultName" />
                     <br />
                     <label for="CurrentDayIndex">Current Day:</label>
-                    <input type="number" class="form-control" id="CurrentDayIndex"
-                        v-model="saveStore.saveData.CurrentDayIndex" />
+                    <input v-model="saveStore.saveData.CurrentDayIndex" type="number" class="form-control"
+                        id="CurrentDayIndex" />
                     <br />
                     <h4>Dungeon Doors Unlocked</h4>
                     <div class="row mb-4">
                         <div class="col" v-for="dungeon in dungeonData">
                             <div v-for="dungeonData of dungeon">
-                                <input type="checkbox" class="form-check-input" :id="`dungeon_${dungeonData.id}`"
-                                    :value="dungeonData.id" v-model="saveStore.saveData.UnlockedDungeonDoor">
+                                <input v-model="saveStore.saveData.UnlockedDungeonDoor" type="checkbox"
+                                    class="form-check-input" :id="`dungeon_${dungeonData.id}`" :value="dungeonData.id">
                                 <label class="form-check-label" :for="`dungeon_${dungeonData.id}`">&nbsp;{{
                                         dungeonData.name
                                 }}</label>
@@ -33,13 +33,13 @@
                         <div class="card card-body">
                             <div class="row">
                                 <div class="col">
-                                    <input type="checkbox" class="form-check-input" id="DeathCatBeaten"
-                                        v-model="saveStore.saveData.DeathCatBeaten" @click="deathCatClick">
+                                    <input v-model="saveStore.saveData.DeathCatBeaten" type="checkbox"
+                                        class="form-check-input" id="DeathCatBeaten" @click="deathCatClick">
                                     <label for="DeathCatBeaten">&nbsp;The One Who Waits Beaten</label>
                                 </div>
                                 <div class="col">
-                                    <input type="checkbox" class="form-check-input" id="RatauKilled"
-                                        v-model="saveStore.saveData.RatauKilled">
+                                    <input v-model="saveStore.saveData.RatauKilled" type="checkbox"
+                                        class="form-check-input" id="RatauKilled">
                                     <label for="RatauKilled">&nbsp;Ratau Killed</label>
                                 </div>
                             </div>
@@ -52,17 +52,17 @@
                     <label for="PLAYER_HEALTH">Red Hearts: <span class="text-muted" style="font-size:12px;">1 unit =
                             half a
                             heart (i.e 10 = 5 hearts)</span></label>
-                    <input type="number" class="form-control" id="PLAYER_HEALTH"
-                        v-model="saveStore.saveData.PLAYER_HEALTH"><br>
+                    <input v-model="saveStore.saveData.PLAYER_HEALTH" type="number" class="form-control"
+                        id="PLAYER_HEALTH"><br>
                     <label for="PLAYER_SPIRIT_HEARTS">Spirit Hearts:</label>
-                    <input type="number" class="form-control" id="PLAYER_SPIRIT_HEARTS"
-                        v-model="saveStore.saveData.PLAYER_SPIRIT_HEARTS"><br>
+                    <input v-model="saveStore.saveData.PLAYER_SPIRIT_HEARTS" type="number" class="form-control"
+                        id="PLAYER_SPIRIT_HEARTS"><br>
                     <label for="PLAYER_BLACK_HEARTS">Diseased Hearts:</label>
-                    <input type="number" class="form-control" id="PLAYER_BLACK_HEARTS"
-                        v-model="saveStore.saveData.PLAYER_BLACK_HEARTS"><br>
+                    <input v-model="saveStore.saveData.PLAYER_BLACK_HEARTS" type="number" class="form-control"
+                        id="PLAYER_BLACK_HEARTS"><br>
                     <label for="PLAYER_BLUE_HEARTS">Blue Hearts:</label>
-                    <input type="number" class="form-control" id="PLAYER_BLUE_HEARTS"
-                        v-model="saveStore.saveData.PLAYER_BLUE_HEARTS"><br>
+                    <input v-model="saveStore.saveData.PLAYER_BLUE_HEARTS" type="number" class="form-control"
+                        id="PLAYER_BLUE_HEARTS"><br>
                 </div>
             </div>
             <h2>Cult Traits</h2>
