@@ -1,4 +1,6 @@
 @import "bootstrap/scss/bootstrap";
+@import "bootstrap-dark-5/dist/css/bootstrap-dark-plugin";
+@import "vanilla-jsoneditor/themes/jse-theme-dark.css";
 
 .page-enter-active,
 .page-leave-active {
@@ -11,7 +13,6 @@
 }
 
 body {
-  background-color: #f8f8f8;
   padding: 1rem;
 }
 
@@ -19,7 +20,6 @@ table,
 th,
 td {
   border: 1px double;
-  border-color: #ccc;
 }
 
 h3 {
@@ -64,4 +64,8 @@ i.bi {
 .aligncenter {
   width: 33.33333%;
   text-align: center;
+}
+
+.footer {
+  background-color: var(--bs-body-bg);
 }

@@ -1,6 +1,6 @@
 <template>
     <div v-if="saveStore.saveData">
-        <JsonEditorVue v-model="saveStore.saveData" />
+        <JsonEditorVue v-model="saveStore.saveData" class="jse-theme-dark" />
     </div>
     <p v-else>Load a save file!</p>
 </template>

@@ -1,10 +1,10 @@
 <template>
-    <footer class="footer fixed-bottom bg-light py-2">
+    <footer class="footer fixed-bottom py-2">
         <p class="alignleft">
             <span class="text-muted text-center">Made with ❤ by SavagE & hayper</span>
         </p>
         <p class="aligncenter">
-            <input type="submit" class="btn btn-lg btn-primary" form="form" value="Save" @click="downloadSaveFile">
+            <input type="submit" class="btn btn-lg btn-primary bg-dark" form="form" value="Save" @click="downloadSaveFile">
         </p>
     </footer>
 </template>
