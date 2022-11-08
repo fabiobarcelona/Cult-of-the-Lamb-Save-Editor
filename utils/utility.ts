@@ -19,7 +19,7 @@ export const necklaceMap = new Map([
   Ghost,
 */
 export const outfitMap = new Map([
-  [0, null],
+  [0, "Clothes/Rags"],
   [1, "Clothes/Sherpa"],
   [2, null],
   [3, null],
@@ -43,7 +43,8 @@ export const constructFollowerPreviewUrl = (
 
   url.searchParams.append("colour_set", follower.SkinColour);
 
-  if (follower.OldAge || follower.Outfit === 7) url.searchParams.append("add_skin", "Other/Old");
+  if (follower.OldAge || follower.Outfit === 7)
+    url.searchParams.append("add_skin", "Other/Old");
 
   if (follower.BrainwashedUntil > 0)
     url.searchParams.append("add_skin", "Other/Brainwashed");

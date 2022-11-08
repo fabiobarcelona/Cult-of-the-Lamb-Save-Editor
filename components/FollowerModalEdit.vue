@@ -46,46 +46,46 @@
 
                     <div class="row">
                         <!-- TODO: Make this vfor -->
-                        <!-- TODO: add support for outfit -->
                         <div class="col">
                             <label>Follower Outfit:</label>
                             <select class="form-select" v-model.number="props.followerData.Outfit">
-                                <option :value="0">Pre Indoctrination clothes</option>
-                                <option :value="1">Mission Backpack</option>
-                                <option :value="2">Warrior Armor and Sword</option>
-                                <option :value="3">Indoctrinated Clothes</option>
-                                <option :value="7">Elderly Clothes</option>
-                                <option :value="8">Holiday Shirt</option>
+                                <option value="0">Pre Indoctrination clothes</option>
+                                <option value="1">Mission Backpack</option>
+                                <option value="2">Warrior Armor and Sword</option>
+                                <option value="3">Indoctrinated Clothes</option>
+                                <option value="7">Elderly Clothes</option>
+                                <option value="8">Holiday Shirt</option>
                             </select>
                         </div>
-                        <!-- TODO: Make this vfor -->
                         <div class="col">
                             <label>Follower Skin:</label>
                             <select class="form-select" v-model="props.followerData.SkinName">
-                                <option value="Cat">Cat</option>
-                                <option value="Dog">Dog</option>
-                                <option value="Pig">Pig</option>
-                                <option value="Deer">Deer</option>
-                                <option value="Fox">Fox</option>
-                                <option value="Deer_ritual">Deer Ritual</option>
-                                <option value="Boss Mama Worm">Boss Mama Worm</option>
-                                <option value="Rabbit">Rabbit</option>
-                                <option value="Boss Mama Maggot">Boss Mama Maggot</option>
-                                <option value="Boss Burrow Worm">Boss Burrow Worm</option>
-                                <option value="Cow">Cow</option>
-                                <option value="TwitchPoggers">POGGERS!</option>
+                                <option v-for="followerSkin in followerSkinList" :value="followerSkin.value">{{
+                                        followerSkin.name
+                                }}</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label>Follower Variant:</label>
+                            <select class="form-select" v-model.number="props.followerData.SkinVariation">
+                                <option value="0">Default</option>
+                                <option
+                                    v-for="followerSkin in followerSkinList?.filter((s) => s.value === props.followerData.SkinName)[0].variant"
+                                    :value="followerSkin">{{
+                                            followerSkin
+                                    }}</option>
                             </select>
                         </div>
                         <!-- TODO: Make this vfor -->
                         <div class="col">
                             <label>Follower Necklace: </label>
                             <select class="form-select" v-model.number="props.followerData.Necklace">
-                                <option :value="0">None</option>
-                                <option :value="45">Flower Necklace</option>
-                                <option :value="46">Feather Necklace</option>
-                                <option :value="47">Skull Necklace</option>
-                                <option :value="48">Natures Necklace</option>
-                                <option :value="49">Moon Necklace</option>
+                                <option value="0">None</option>
+                                <option value="45">Flower Necklace</option>
+                                <option value="46">Feather Necklace</option>
+                                <option value="47">Skull Necklace</option>
+                                <option value="48">Natures Necklace</option>
+                                <option value="49">Moon Necklace</option>
                             </select>
                         </div>
                     </div>
@@ -225,14 +225,7 @@ const followerModalElement = ref<HTMLElement>();
 const followerModal = ref<Modal>();
 
 const { data: followerTraitList } = useFetch<{ id: number, image: string, effect: "Positive" | "Negative", name: string, description: string }[]>("/data/followerTrait.json");
-
-const necklaceMap = new Map([
-    [45, 1],
-    [46, 2],
-    [47, 3],
-    [48, 4],
-    [49, 5]
-])
+const { data: followerSkinList } = useFetch<{ name: string; value: string; variant: number[]; }[]>("/data/followerSkin.json");
 
 onMounted(() => {
     if (!followerModalElement.value) return;
