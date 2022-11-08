@@ -1,5 +1,6 @@
 <template>
-    <footer class="footer fixed-bottom py-2">
+    <footer class="d-flex flex-row flex-wrap fixed-bottom py-2">
+        <!-- TODO: Grid -->
         <p class="alignleft">
             <span class="text-muted text-center">Made with ❤ by SavagE & hayper</span>
         </p>

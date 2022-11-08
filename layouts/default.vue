@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex flex-column min-vh-100">
+    <div class="d-flex flex-column min-vh-100 p-1">
         <NuxtLoadingIndicator />
         <div class="container-fluid">
             <FileUploadModal ref="fileUploadModal" @data="onFileData" @test-data="loadTestData" />

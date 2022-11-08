@@ -12,10 +12,6 @@
   filter: blur(0.5rem);
 }
 
-body {
-  padding: 1rem;
-}
-
 table,
 th,
 td {
@@ -24,10 +20,6 @@ td {
 
 h3 {
   text-align: center;
-}
-
-pre {
-  overflow: hidden;
 }
 
 table {
@@ -40,18 +32,9 @@ table {
   text-align: center;
 }
 
-i.bi {
-  font-size: 13px;
-}
-
 #form {
   padding: 1rem;
   margin-bottom: 5rem;
-}
-
-.footer {
-  display: flex;
-  flex-flow: row wrap;
 }
 
 .alignleft {
@@ -66,6 +49,6 @@ i.bi {
   text-align: center;
 }
 
-.footer {
+footer {
   background-color: var(--bs-body-bg);
 }
