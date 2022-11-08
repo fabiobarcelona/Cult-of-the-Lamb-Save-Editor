@@ -3,7 +3,7 @@
         <FollowerModalEdit v-if="selectedFollower" ref="followerModalEdit" :follower-data="selectedFollower" />
         <div class="row row-cols-8 g-4 mb-4 gap-3">
             <div v-for="follower in saveStore.saveData.Followers_Dead" class="card" style="width: 16rem;">
-                <NuxtImg preload loading="eager" :src='constructFollowerPreviewUrl(follower, true)' class="card-img-top"
+                <NuxtImg loading="eager" :src='constructFollowerPreviewUrl(follower, true)' class="card-img-top"
                     alt="Picture not available" quality="100" width="120px" height="224px" fit="inside" />
                 <div class="card-body">
                     <h5 class="card-title">

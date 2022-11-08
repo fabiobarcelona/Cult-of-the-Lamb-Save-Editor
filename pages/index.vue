@@ -101,7 +101,7 @@
                                 class="form-check-input" :value="recipe.id">
                         </td>
                         <td>
-                            <NuxtImg preload loading="eager" :src="recipe.image"
+                            <NuxtImg loading="eager" :src="recipe.image"
                                 alt="Cooking Recipe Preview not available" quality="100" width="85px" height="80px"
                                 fit="inside" />
 

@@ -95,7 +95,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="d-grid align-items-center justify-content-center">
-                                <NuxtImg preload loading="eager" :src='constructFollowerPreviewUrl(props.followerData)'
+                                <NuxtImg loading="eager" :src='constructFollowerPreviewUrl(props.followerData)'
                                     alt="Preview not available" quality="100" fit="inside" />
                             </div>
                         </div>
@@ -141,7 +141,7 @@
                                                 class="form-check-input" :value="trait.id">
                                         </td>
                                         <td class="col" style="background-color:black;">
-                                            <NuxtImg preload loading="eager" :src="trait.image"
+                                            <NuxtImg loading="eager" :src="trait.image"
                                                 alt="Trait Preview not available" quality="100" fit="inside" />
                                         </td>
                                         <td class="col">
