@@ -1,32 +1,35 @@
 <template>
     <div v-if="saveStore.saveData">
-        <FollowerModalEdit v-if="selectedFollower" ref="followerModalEdit" :follower-data="selectedFollower" />
-        <div class="row row-cols-8 g-4 mb-4 gap-3">
-            <div v-for="follower in saveStore.saveData.Followers_Recruit" style="width: 16rem;" class="card">
-                <NuxtImg loading="eager" :src='constructFollowerPreviewUrl(follower, true)' class="card-img-top"
-                    alt="Picture not available" quality="100" width="120px" height="224px" fit="inside" />
-                <div class="card-body">
-                    <h5 class="card-title">
-                        {{ follower.Name }}
-                    </h5>
-                    <p class="card-text">
-                        Level: <b>{{ follower.XPLevel }}</b>
-                    </p>
-                    <div class="row">
-                        <div class="col">
-                            <button type="button" class="btn btn-danger" @click="() => deleteFollower(follower.ID)">
-                                Delete
-                            </button>
-                        </div>
-                        <div class="col text-end">
-                            <button type="button" class="btn btn-primary" @click="() => editFollower(follower)">
-                                Edit
-                            </button>
+        <div v-if="saveStore.saveData.Followers_Recruit.length > 0">
+            <FollowerModalEdit v-if="selectedFollower" ref="followerModalEdit" :follower-data="selectedFollower" />
+            <div class="row row-cols-8 g-4 mb-4 gap-3">
+                <div v-for="follower in saveStore.saveData.Followers_Recruit" style="width: 16rem;" class="card">
+                    <NuxtImg loading="eager" :src='constructFollowerPreviewUrl(follower, true)' class="card-img-top"
+                        alt="Picture not available" quality="100" width="120px" height="224px" fit="inside" />
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ follower.Name }}
+                        </h5>
+                        <p class="card-text">
+                            Level: <b>{{ follower.XPLevel }}</b>
+                        </p>
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn btn-danger" @click="() => deleteFollower(follower.ID)">
+                                    Delete
+                                </button>
+                            </div>
+                            <div class="col text-end">
+                                <button type="button" class="btn btn-primary" @click="() => editFollower(follower)">
+                                    Edit
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <p v-else>You don't have a recruiting follower!</p>
     </div>
 </template>
 

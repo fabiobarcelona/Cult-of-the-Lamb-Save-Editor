@@ -1,5 +1,6 @@
 <template>
     <div v-if="saveStore.saveData">
+        <div v-if="saveStore.saveData.Followers.length > 0">
         <FollowerModalEdit v-if="selectedFollower" ref="followerModalEdit" :follower-data="selectedFollower" />
         <div class="row row-cols-8 g-4 mb-4 gap-3">
             <div v-for="follower in saveStore.saveData.Followers" class="card" style="width: 16rem;">
@@ -27,6 +28,8 @@
                 </div>
             </div>
         </div>
+    </div>
+        <p v-else>You have no follower! Go get some!</p>
     </div>
 </template>
 
