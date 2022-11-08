@@ -68,7 +68,7 @@
                         <div class="col">
                             <label>Follower Variant:</label>
                             <select v-model.number="props.followerData.SkinVariation" class="form-select">
-                                <option :value="props.followerData.SkinVariation === 1 ? 0 : 0">Default</option>
+                                <option :value="props.followerData.SkinVariation === 1 ? 1 : 0">Default</option>
                                 <option
                                     v-for="followerSkin in followerSkinList?.filter((s) => s.value === props.followerData.SkinName)[0].variant"
                                     :value="followerSkin">{{
