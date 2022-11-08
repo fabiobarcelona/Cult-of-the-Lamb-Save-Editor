@@ -99,7 +99,7 @@
                             :value="recipe.id">
                     </td>
                     <td>
-                        <div class="image-container">
+                        <div class="center-container">
                             <NuxtImg loading="eager" :src="recipe.image" alt="Image not available"
                                 class="image-inner smalls-ize" quality="100" width="64px" height="64px" fit="inside" />
                         </div>

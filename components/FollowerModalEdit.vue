@@ -136,7 +136,7 @@
                                                 class="form-check-input" :value="trait.id">
                                         </td>
                                         <td class="col-1" style="background-color:black;">
-                                            <div class="image-container">
+                                            <div class="center-container">
                                                 <NuxtImg loading="eager" :src="trait.image"
                                                     class="image-inner small-size" alt="Image not available"
                                                     width="64" height="64" quality="100" fit="inside" />
