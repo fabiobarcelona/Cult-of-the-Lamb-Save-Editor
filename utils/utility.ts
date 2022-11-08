@@ -37,7 +37,7 @@ export const constructFollowerPreviewUrl = (
 ): string => {
   const url = new URL(
     `https://cotl.xl0.org/v1/follower/${follower.SkinName}${
-      follower.SkinVariation > 0 ? follower.SkinVariation : ""
+      follower.SkinVariation > 1 ? follower.SkinVariation : ""
     }`
   );
 
