@@ -1,7 +1,8 @@
 <template>
-    <div>
+    <div v-if="saveStore.saveData">
         <JsonEditorVue v-model="saveStore.saveData" />
     </div>
+    <p v-else>Load a save file!</p>
 </template>
 
 <script setup lang="ts">

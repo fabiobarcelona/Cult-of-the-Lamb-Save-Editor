@@ -25,6 +25,7 @@
             </div>
         </div>
     </div>
+    <p v-else>Load a save file!</p>
 </template>
 
 <script setup lang="ts">

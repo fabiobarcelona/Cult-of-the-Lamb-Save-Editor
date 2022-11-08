@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="saveStore.saveData">
         <h2>Tarot Cards</h2>
         <hr>
         <table class="table">
@@ -38,6 +38,7 @@
             </tbody>
         </table>
     </div>
+    <p v-else>Load a save file!</p>
 </template>
 
 <script setup lang="ts">

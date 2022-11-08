@@ -31,6 +31,7 @@
         </div>
         <p v-else>You have no dead follower! Go kill some!</p>
     </div>
+    <p v-else>Load a save file!</p>
 </template>
 
 <script setup lang="ts">
