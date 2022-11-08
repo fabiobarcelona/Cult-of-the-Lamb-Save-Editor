@@ -99,9 +99,10 @@
                             :value="recipe.id">
                     </td>
                     <td>
-                        <NuxtImg loading="eager" :src="recipe.image" alt="Cooking Recipe Preview not available"
-                            quality="100" width="85px" height="80px" fit="inside" />
-
+                        <div class="image-container">
+                            <NuxtImg loading="eager" :src="recipe.image" alt="Image not available"
+                                class="image-inner smalls-ize" quality="100" width="64px" height="64px" fit="inside" />
+                        </div>
                     </td>
                     <td>
                         {{ recipe.name }}

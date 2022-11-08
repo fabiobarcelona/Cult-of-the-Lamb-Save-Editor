@@ -29,7 +29,7 @@
                         <div class="col">
                             <label>Follower Name:</label>
                             <input v-model.number="props.followerData.Name" type="text" class="form-control"><br>
-
+                            <div class="pt-4"></div>
                             <label>Day Joined:</label>
                             <input v-model.number="props.followerData.DayJoined" type="number" class="form-control"
                                 min="0"><br>
@@ -43,9 +43,7 @@
                                 class="form-control" min="0"><br>
                         </div>
                     </div>
-
                     <hr>
-
                     <div class="row">
                         <!-- TODO: Make this vfor -->
                         <div class="col">
@@ -92,38 +90,35 @@
                             </select>
                         </div>
                     </div>
+                    <br />
+                    <div class="row">
+                        <label>Follower Attribute: </label>
+                        <div class="col">
+                            <input v-model="props.followerData.IsStarving" type="checkbox" class="form-check-input" id="stravingIndicator">
+                            <label class="form-check-label" for="stravingIndicator">&nbsp;Starving Indicator</label><br>
+                            <input v-model="props.followerData.MarriedToLeader" type="checkbox"
+                                class="form-check-input" id="marriedToLeader">
+                            <label class="form-check-label" for="marriedToLeader">&nbsp;Married to
+                                Leader</label><br>
+                        </div>
+                        <div class="col">
+                            <input v-model="props.followerData.TaxEnforcer" type="checkbox" class="form-check-input" id="taxEnforcer">
+                            <label class="form-check-label" for="taxEnforcer">&nbsp;Tax Enforcer</label><br>
+                            <input v-model="props.followerData.FaithEnforcer" type="checkbox" class="form-check-input" id="faithEnforcer">
+                            <label class="form-check-label" for="faithEnforcer">&nbsp;Faith Enforcer</label><br>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col">
-                            <div class="d-grid align-items-center justify-content-center">
+                            <div class="d-grid align-items-center justify-content-center py-3">
                                 <NuxtImg loading="eager" :src='constructFollowerPreviewUrl(props.followerData)'
                                     alt="Preview not available" quality="100" fit="inside" />
                             </div>
                         </div>
                     </div>
-                    <hr>
                     <div class="row">
                         <div class="col">
-                            <input v-model="props.followerData.IsStarving" type="checkbox" class="form-check-input">
-                            <label class="form-check-label">&nbsp;Starving Indicator</label><br>
-                            <input v-model="props.followerData.MarriedToLeader" type="checkbox"
-                                class="form-check-input">
-                            <label class="form-check-label">&nbsp;Married to
-                                Leader</label><br>
-                        </div>
-                        <div class="col">
-                            <input v-model="props.followerData.TaxEnforcer" type="checkbox" class="form-check-input">
-                            <label class="form-check-label">&nbsp;Tax Enforcer</label><br>
-                            <input v-model="props.followerData.FaithEnforcer" type="checkbox" class="form-check-input">
-                            <label class="form-check-label">&nbsp;Faith Enforcer</label><br>
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <div class="row">
-                        <div class="col">
-                            <h4>Follower Traits</h4>
-                            <hr>
+                            <hr />
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -136,15 +131,18 @@
                                 </thead>
                                 <tbody>
                                     <tr v-for="trait in followerTraitList">
-                                        <td class="col">
+                                        <td class="col-1">
                                             <input v-model="props.followerData.Traits" type="checkbox"
                                                 class="form-check-input" :value="trait.id">
                                         </td>
-                                        <td class="col" style="background-color:black;">
-                                            <NuxtImg loading="eager" :src="trait.image"
-                                                alt="Trait Preview not available" quality="100" fit="inside" />
+                                        <td class="col-1" style="background-color:black;">
+                                            <div class="image-container">
+                                                <NuxtImg loading="eager" :src="trait.image"
+                                                    class="image-inner small-size" alt="Image not available"
+                                                    width="64" height="64" quality="100" fit="inside" />
+                                            </div>
                                         </td>
-                                        <td class="col">
+                                        <td class="col-1">
                                             <span v-if="trait.effect === 'Positive'"
                                                 class="text-success">Positive</span>
                                             <span v-else class="text-danger">Negative</span>
@@ -160,9 +158,7 @@
                             </table>
                         </div>
                     </div>
-
                     <hr>
-
                     <div class="row">
                         <div class="col">
                             <label>Adoration (XP to next level): </label>

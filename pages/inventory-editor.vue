@@ -6,9 +6,9 @@
             <div class="row row-cols-5 g-4 mb-4">
                 <div v-for="item in itemList.items" class="col">
                     <div class="card">
-                        <div class="text-center bg-light">
-                            <NuxtImg loading="eager" class="card-img-top my-2 w-auto" :alt="item.name" :src="item.image"
-                                width="128px" height="128px" fit="inside" />
+                        <div class="text-center bg-light image-container">
+                            <NuxtImg loading="eager" class="card-img-top large-size image-inner" alt="Image not available"
+                                :src="item.image" width="256px" height="256px" fit="inside" />
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ item.name }}</h5>

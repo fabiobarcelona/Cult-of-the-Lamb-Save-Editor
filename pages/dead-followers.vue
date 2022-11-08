@@ -4,10 +4,10 @@
             <FollowerModalEdit v-if="selectedFollower" ref="followerModalEdit" :follower-data="selectedFollower" />
             <div class="row row-cols-5 g-4 mb-4 gap-3">
                 <div v-for="follower in saveStore.saveData.Followers_Dead" class="card" style="width: 16rem;">
-                    <div class="d-flex flex-row justify-content-center align-items-center">
-                        <NuxtImg loading="eager" :src='constructFollowerPreviewUrl(follower, true)' class="card-img-top"
-                            alt="Picture not available" width="256" height="256" quality="100" fit="inside"
-                            style="object-fit: scale-down; width: 256px; height: 256px;" />
+                    <div class="image-container">
+                        <NuxtImg loading="eager" :src='constructFollowerPreviewUrl(follower, true)'
+                            class="card-img-top image-inner large-size" alt="Image not available"
+                            width="256" height="256" quality="100" fit="inside" />
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">
