@@ -30,5 +30,6 @@ const routeList = {
     "/recruiting-followers": "Recruiting Followers",
     "/dead-followers": "Dead Followers",
     "/building-unlocks": "Building Unlocks",
+    "/raw": "Raw"
 }
 </script>
