@@ -1,12 +1,12 @@
 <template>
-    <footer class="d-flex flex-row flex-wrap fixed-bottom py-2">
-        <!-- TODO: Grid -->
-        <p class="alignleft">
+    <footer class="d-flex fixed-bottom justify-between align-items-center p-3">
+        <div class="position-absolute">
             <span class="text-muted text-center">Made with ❤ by SavagE & hayper</span>
-        </p>
-        <p class="aligncenter">
-            <input type="submit" class="btn btn-lg btn-primary bg-dark" form="form" value="Save" @click="downloadSaveFile">
-        </p>
+        </div>
+        <div class="mx-auto">
+            <input type="submit" class="btn btn-lg btn-primary bg-dark" form="form" value="Save"
+                @click="downloadSaveFile">
+        </div>
     </footer>
 </template>
 
