@@ -15,9 +15,7 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const isActive = (path: string) => {
-    return route.path === path;
-}
+const isActive = (path: string) => route.path === path;
 
 const routeList = {
     "/": "Cult & Character",
