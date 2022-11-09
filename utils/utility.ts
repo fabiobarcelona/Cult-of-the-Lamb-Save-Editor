@@ -43,29 +43,51 @@ export const constructFollowerPreviewUrl = (
 
   url.searchParams.append("colour_set", follower.SkinColour);
 
-  if (follower.OldAge || follower.Outfit === 7)
-    url.searchParams.append("add_skin", "Other/Old");
+  let illnessThreshold = 50;
+  if (follower.Traits.includes(20)) illnessThreshold = 20;
+  else if (follower.Traits.includes(15)) illnessThreshold = 75;
 
-  if (follower.BrainwashedUntil > 0)
-    url.searchParams.append("add_skin", "Other/Brainwashed");
-  else if (follower.DissentDuration > 0)
-    url.searchParams.append("add_skin", "Other/Dissenter");
+  // TODO: Figure out how illness works
+  // const isIll = follower.Illness >= illnessThreshold;
+  const isIll = false;
+  const isStraving = follower.Starvation >= 30;
+  const isTired = follower.Exhaustion >= 20;
+  const isDissenting = follower.DissentDuration > 0 || follower.Dissent >= 80;
+  const isAngry = 25 > follower.Happiness;
+  const isVeryAngry = 10 > follower.Happiness;
+  const isBrainwashed = follower.BrainwashDuration > 0;
+  const isOld = follower.OldAge || follower.Outfit === 7;
+  const isGhost = follower.Outfit === 9;
+
+  if (isOld) url.searchParams.append("add_skin", "Other/Old");
+
+  if (isBrainwashed) url.searchParams.append("add_skin", "Other/Brainwashed");
+  else if (isDissenting) url.searchParams.append("add_skin", "Other/Dissenter");
+
+  let animation = "";
+  if (headOnly) {
+    if (isIll) animation = "Avatars/avatar-sick";
+    else if (isStraving) animation = "Avatars/avatar-sad";
+    else if (isTired) animation = "Avatars/avatar-tired";
+    else if (isAngry) animation = "Avatars/avatar-unhappy";
+    else if (isVeryAngry) animation = "Avatars/avatar-angry";
+    else animation = "Avatars/avatar-normal";
+  } else {
+    if (isGhost) animation = "Ghost/idle-ghost";
+    else if (isIll) animation = "Sick/idle-sick";
+    else if (isStraving) animation = "Hungry/idle-hungry";
+    else if (isTired) animation = "Fatigued/idle-fatigued";
+    else animation = "idle";
+  }
+  url.searchParams.append("animation", animation);
 
   if (headOnly) {
     url.searchParams.append("start_time", "0");
     url.searchParams.append("format", "png");
     url.searchParams.append("only_head", "true");
-    url.searchParams.append(
-      "animation",
-      follower.IsStarving ? "Avatars/avatar-sad" : "Avatars/avatar-normal"
-    );
   } else {
     url.searchParams.append("format", "apng");
     url.searchParams.append("fps", "60");
-    url.searchParams.append(
-      "animation",
-      follower.IsStarving > 0 ? "Hungry/idle-hungry" : "Avatars/idle"
-    );
 
     if (follower.Outfit !== 7 && outfitMap.get(follower.Outfit) != null)
       url.searchParams.append("add_skin", outfitMap.get(follower.Outfit)!);

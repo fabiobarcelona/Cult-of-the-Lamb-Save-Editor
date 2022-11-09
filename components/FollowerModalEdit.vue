@@ -51,7 +51,6 @@
                             <select v-model.number="props.followerData.Outfit" class="form-select">
                                 <option value="0">Pre Indoctrination clothes</option>
                                 <option value="1">Mission Backpack</option>
-                                <option value="2">Warrior Armor and Sword</option>
                                 <option value="3">Indoctrinated Clothes</option>
                                 <option value="7">Elderly Clothes</option>
                                 <option value="8">Holiday Shirt</option>
@@ -94,17 +93,20 @@
                     <div class="row">
                         <label>Follower Attribute: </label>
                         <div class="col">
-                            <input v-model="props.followerData.IsStarving" type="checkbox" class="form-check-input" id="stravingIndicator">
+                            <input v-model="props.followerData.IsStarving" type="checkbox" class="form-check-input"
+                                id="stravingIndicator">
                             <label class="form-check-label" for="stravingIndicator">&nbsp;Starving Indicator</label><br>
-                            <input v-model="props.followerData.MarriedToLeader" type="checkbox"
-                                class="form-check-input" id="marriedToLeader">
+                            <input v-model="props.followerData.MarriedToLeader" type="checkbox" class="form-check-input"
+                                id="marriedToLeader">
                             <label class="form-check-label" for="marriedToLeader">&nbsp;Married to
                                 Leader</label><br>
                         </div>
                         <div class="col">
-                            <input v-model="props.followerData.TaxEnforcer" type="checkbox" class="form-check-input" id="taxEnforcer">
+                            <input v-model="props.followerData.TaxEnforcer" type="checkbox" class="form-check-input"
+                                id="taxEnforcer">
                             <label class="form-check-label" for="taxEnforcer">&nbsp;Tax Enforcer</label><br>
-                            <input v-model="props.followerData.FaithEnforcer" type="checkbox" class="form-check-input" id="faithEnforcer">
+                            <input v-model="props.followerData.FaithEnforcer" type="checkbox" class="form-check-input"
+                                id="faithEnforcer">
                             <label class="form-check-label" for="faithEnforcer">&nbsp;Faith Enforcer</label><br>
                         </div>
                     </div>
@@ -138,8 +140,8 @@
                                         <td class="col-1" style="background-color:black;">
                                             <div class="center-container">
                                                 <NuxtImg loading="eager" :src="trait.image"
-                                                    class="image-inner small-size" alt="Image not available"
-                                                    width="64" height="64" quality="100" fit="inside" />
+                                                    class="image-inner small-size" alt="Image not available" width="64"
+                                                    height="64" quality="100" fit="inside" />
                                             </div>
                                         </td>
                                         <td class="col-1">
@@ -199,7 +201,7 @@
 
                             <label>Starvation: </label>
                             <input v-model.number="props.followerData.Starvation" type="range" class="form-range"
-                                min="0" max="100" step="1" />
+                                min="0" max="75" step="1" />
                             <p>{{ props.followerData.Starvation }}</p>
 
                             <label>Satiation: </label>
