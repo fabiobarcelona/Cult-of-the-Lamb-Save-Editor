@@ -55,7 +55,10 @@ export const constructFollowerPreviewUrl = (
     url.searchParams.append("start_time", "0");
     url.searchParams.append("format", "png");
     url.searchParams.append("only_head", "true");
-    url.searchParams.append("animation", "Avatars/avatar-normal");
+    url.searchParams.append(
+      "animation",
+      follower.IsStarving ? "Avatars/avatar-sad" : "Avatars/avatar-normal"
+    );
   } else {
     url.searchParams.append("format", "apng");
     url.searchParams.append("fps", "60");
