@@ -20,8 +20,8 @@
                             :value="tarotCard.id">
                     </td>
                     <td class="col">
-                        <NuxtImg loading="eager" :src="tarotCard.image" alt="Picture not available" class="image-inner"
-                            quality="100" fit="inside" />
+                        <NuxtImg loading="eager" :src="tarotCard.image" alt="Picture not available"
+                            class="tarot-card-size image-inner" quality="100" fit="inside" />
                     </td>
                     <td class="col">
                         <label class="form-check-label">{{ tarotCard.name }}</label>
