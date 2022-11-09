@@ -1,121 +1,121 @@
 [
   {
-    "id": 1,
-    "image": "/Traits/1.png",
+    "id": 23,
+    "image": "/Traits/23.png",
     "effect": "Positive",
-    "name": "",
-    "description": ""
+    "name": "Coprophiliac",
+    "description": "Gain 10 Faith when falling ill."
+  },
+  {
+    "id": 21,
+    "image": "/Traits/21.png",
+    "effect": "Positive",
+    "name": "Gullible",
+    "description": "15% easier to level up."
+  },
+  {
+    "id": 11,
+    "image": "/Traits/11.png",
+    "effect": "Positive",
+    "name": "Faithful",
+    "description": "Generates Devotion 15% faster."
+  },
+  {
+    "id": 24,
+    "image": "/Traits/24.png",
+    "effect": "Positive",
+    "name": "Industrious",
+    "description": "Increased work speed by 15%."
+  },
+  {
+    "id": 18,
+    "image": "/Traits/18.png",
+    "effect": "Positive",
+    "name": "Materialistic",
+    "description": "Gain Faith when building better sleeping quarters."
+  },
+  {
+    "id": 2,
+    "image": "/Traits/2.png",
+    "effect": "Positive",
+    "name": "Naturally Obedient",
+    "description": "On recruiting this Follower immediately gain 10 Faith."
+  },
+  {
+    "id": 16,
+    "image": "/Traits/16.png",
+    "effect": "Positive",
+    "name": "Strong Constitution",
+    "description": "Heals 15% faster when sick and in bed rest."
+  },
+  {
+    "id": 17,
+    "image": "/Traits/17.png",
+    "effect": "Positive",
+    "name": "Zealous",
+    "description": "Ignores dissenters when they preach."
+  },
+  {
+    "id": 32,
+    "image": "/Traits/32.png",
+    "effect": "Positive",
+    "name": "Immortal",
+    "description": "Will never reach old age."
+  },
+  {
+    "id": 20,
+    "image": "/Traits/20.png",
+    "effect": "Negative",
+    "name": "Cynical",
+    "description": "15% harder to level up."
+  },
+  {
+    "id": 12,
+    "image": "/Traits/12.png",
+    "effect": "Negative",
+    "name": "Faithless",
+    "description": "Generates Devotion 15% slower."
+  },
+  {
+    "id": 22,
+    "image": "/Traits/22.png",
+    "effect": "Negative",
+    "name": "Germaphobe",
+    "description": "Lose 10 Faith when falling ill."
   },
   {
     "id": 1,
     "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
+    "effect": "Negative",
+    "name": "Natural Skeptic",
+    "description": "On recruiting Follower immediately lose 10 Faith."
   },
   {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
+    "id": 15,
+    "image": "/Traits/15.png",
+    "effect": "Negative",
+    "name": "Sickly",
+    "description": "Heals 15% slower when sick and in bed rest."
   },
   {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
+    "id": 25,
+    "image": "/Traits/25.png",
+    "effect": "Negative",
+    "name": "Sloth",
+    "description": "Work and devotion generation speed reduced by 10%."
   },
   {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
+    "id": 4,
+    "image": "/Traits/4.png",
+    "effect": "Negative",
+    "name": "Terrified of Death",
+    "description": "Lose -5 Faith whenever another Follower dies."
   },
   {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
-  },
-  {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
-  },
-  {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
-  },
-  {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
-  },
-  {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
-  },
-  {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
-  },
-  {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
-  },
-  {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
-  },
-  {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
-  },
-  {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
-  },
-  {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
-  },
-  {
-    "id": 1,
-    "image": "/Traits/1.png",
-    "effect": "Positive",
-    "name": "",
-    "description": ""
+    "id": 10,
+    "image": "/Traits/10.png",
+    "effect": "Negative",
+    "name": "Against Sacrifice",
+    "description": "-5 Faith when a Follower is Sacrificed."
   }
 ]
