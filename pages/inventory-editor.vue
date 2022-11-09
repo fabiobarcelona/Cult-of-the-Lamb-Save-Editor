@@ -7,8 +7,8 @@
                 <div v-for="item in itemList.items" class="col">
                     <div class="card">
                         <div class="text-center bg-light center-container">
-                            <NuxtImg loading="eager" class="card-img-top large-size image-inner" alt="Image not available"
-                                :src="item.image" width="256px" height="256px" fit="inside" />
+                            <NuxtImg loading="eager" class="card-img-top small-size image-inner"
+                                alt="Image not available" :src="item.image" width="64px" height="64px" fit="inside" />
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ item.name }}</h5>

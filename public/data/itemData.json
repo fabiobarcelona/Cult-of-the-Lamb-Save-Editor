@@ -86,6 +86,46 @@
         "id": 91,
         "image": "/Items/91.png",
         "name": "Crab"
+      },
+      {
+        "id": 92,
+        "image": "/Items/92.png",
+        "name": "Lobster"
+      },
+      {
+        "id": 93,
+        "image": "/Items/93.png",
+        "name": "Octopus"
+      },
+      {
+        "id": 94,
+        "image": "/Items/94.png",
+        "name": "Squid"
+      },
+      {
+        "id": 95,
+        "image": "/Items/95.png",
+        "name": "Swordfish"
+      },
+      {
+        "id": 96,
+        "image": "/Items/96.png",
+        "name": "Blowfish"
+      },
+      {
+        "id": 97,
+        "image": "/Items/97.png",
+        "name": "Beetroot"
+      },
+      {
+        "id": 102,
+        "image": "/Items/102.png",
+        "name": "Cauliflower"
+      },
+      {
+        "id": 105,
+        "image": "/Items/105.png",
+        "name": "Morsel"
       }
     ]
   },
@@ -93,9 +133,119 @@
     "name": "Other",
     "items": [
       {
-        "id": 1,
-        "image": "/Items/.png",
-        "name": ""
+        "id": 8,
+        "image": "/Items/8.png",
+        "name": "Berry Bush Seed"
+      },
+      {
+        "id": 43,
+        "image": "/Items/43.png",
+        "name": "Small Gift"
+      },
+      {
+        "id": 44,
+        "image": "/Items/44.png",
+        "name": "Big Gift"
+      },
+      {
+        "id": 45,
+        "image": "Items/45.png",
+        "name": "Flower Necklace"
+      },
+      {
+        "id": 46,
+        "image": "/Items/46.png",
+        "name": "Feather Necklace"
+      },
+      {
+        "id": 47,
+        "image": "/Items/47.png",
+        "name": "Skull Necklace"
+      },
+      {
+        "id": 48,
+        "image": "/Items/48.png",
+        "name": "Natures Necklace"
+      },
+      {
+        "id": 49,
+        "image": "/Items/49.png",
+        "name": "Moon Necklace"
+      },
+      {
+        "id": 51,
+        "image": "/Items/51.png",
+        "name": "Pumpkin Seed"
+      },
+      {
+        "id": 55,
+        "image": "/Items/55.png",
+        "name": "Camellia"
+      },
+      {
+        "id": 29,
+        "image": "/Items/29.png",
+        "name": "Menticide Mushroom"
+      },
+      {
+        "id": 70,
+        "image": "/Items/70.png",
+        "name": "Menticide Mushroom Spore"
+      },
+      {
+        "id": 72,
+        "image": "/Items/72.png",
+        "name": "Camellia Seed"
+      },
+      {
+        "id": 81,
+        "image": "/Items/81.png",
+        "name": "Wooden Planks"
+      },
+      {
+        "id": 82,
+        "image": "/Items/82.png",
+        "name": "Gold Nugget"
+      },
+      {
+        "id": 83,
+        "image": "/Items/83.png",
+        "name": "Gold Nugget"
+      },
+      {
+        "id": 86,
+        "image": "/Items/86.png",
+        "name": "Gold Bars"
+      },
+      {
+        "id": 89,
+        "image": "/Items/89.png",
+        "name": "Crystal Shards"
+      },
+      {
+        "id": 90,
+        "image": "/Items/90.png",
+        "name": "Spider Silk"
+      },
+      {
+        "id": 98,
+        "image": "/Items/98.png",
+        "name": "Beetroot Seed"
+      },
+      {
+        "id": 101,
+        "image": "/Items/101.png",
+        "name": "Eye of the Witness"
+      },
+      {
+        "id": 103,
+        "image": "/Items/103.png",
+        "name": "Cauliflower Seed"
+      },
+      {
+        "id": 117,
+        "image": "/Items/117.png",
+        "name": "Shell"
       }
     ]
   }
