@@ -118,10 +118,13 @@ export const constructFollowerPreviewUrl = (
     getPropertyCaseInsensitive(follower, "Outfit") === 7;
   const isGhost = getPropertyCaseInsensitive(follower, "Outfit") === 9;
 
-  if (isOld) url.searchParams.append("add_skin", "Other/Old");
+  if (!isDead) {
+    if (isOld) url.searchParams.append("add_skin", "Other/Old");
 
-  if (isBrainwashed) url.searchParams.append("add_skin", "Other/Brainwashed");
-  else if (isDissenting) url.searchParams.append("add_skin", "Other/Dissenter");
+    if (isBrainwashed) url.searchParams.append("add_skin", "Other/Brainwashed");
+    else if (isDissenting)
+      url.searchParams.append("add_skin", "Other/Dissenter");
+  }
 
   let animation = "";
   if (headOnly) {
