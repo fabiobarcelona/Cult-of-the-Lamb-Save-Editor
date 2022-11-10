@@ -35,11 +35,7 @@ export const constructFollowerPreviewUrl = (
   follower: any,
   headOnly = false
 ): string => {
-  const url = new URL(
-    `https://cotl.xl0.org/v1/follower/${follower.SkinName}${
-      follower.SkinVariation > 1 ? follower.SkinVariation : ""
-    }`
-  );
+  const url = new URL(`https://cotl.xl0.org/v1/follower/${follower.SkinName}`);
 
   url.searchParams.append("colour_set", follower.SkinColour);
 

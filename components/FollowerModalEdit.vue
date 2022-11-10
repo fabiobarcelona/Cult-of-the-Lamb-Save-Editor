@@ -56,23 +56,21 @@
                                 <option value="8">Holiday Shirt</option>
                             </select>
                         </div>
-                        <div class="col">
+                        <div v-if="followerSkinList" class="col">
                             <label>Follower Skin:</label>
-                            <select v-model="props.followerData.SkinName" class="form-select">
-                                <option v-for="followerSkin in followerSkinList" :value="followerSkin.value">{{
+                            <select v-model.number="props.followerData.SkinCharacter" class="form-select">
+                                <option v-for="(followerSkin, index) of followerSkinList" :value="index">{{
                                         followerSkin.name
                                 }}</option>
                             </select>
                         </div>
-                        <div class="col">
+                        <div v-if="followerSkinList" class="col">
                             <label>Follower Variant:</label>
                             <select v-model.number="props.followerData.SkinVariation" class="form-select">
-                                <option v-if="props.followerData.SkinVariation === 1" value="1">Default</option>
-                                <option v-else value="0">Default</option>
                                 <option
-                                    v-for="followerSkin in followerSkinList?.filter((s) => s.value === props.followerData.SkinName)[0].variant"
-                                    :value="followerSkin">{{
-                                            followerSkin
+                                    v-for="(unused, index) of followerSkinList[props.followerData.SkinCharacter].variant"
+                                    :value="index">{{
+                                            index === 0 ? "Default" : index
                                     }}</option>
                             </select>
                         </div>
@@ -224,7 +222,7 @@ const followerModalElement = ref<HTMLElement>();
 const followerModal = ref<Modal>();
 
 const { data: followerTraitList } = useFetch<{ id: number, image: string, effect: "Positive" | "Negative", name: string, description: string }[]>("/data/followerTrait.json");
-const { data: followerSkinList } = useFetch<{ name: string; value: string; variant: number[]; }[]>("/data/followerSkin.json");
+const { data: followerSkinList } = useFetch<{ name: string; variant: string[]; }[]>("/data/followerSkin.json");
 
 onMounted(() => {
     if (!followerModalElement.value) return;
@@ -233,6 +231,19 @@ onMounted(() => {
         keyboard: false
     });
 });
+
+const updateSkin = () => {
+    if (!followerSkinList.value) return;
+    let skinName = followerSkinList.value[props.followerData.SkinCharacter].variant[props.followerData.SkinVariation];
+    if (!skinName) {
+        props.followerData.SkinVariation = 0;
+        skinName = followerSkinList.value[props.followerData.SkinCharacter].variant[props.followerData.SkinVariation];
+    };
+    props.followerData.SkinName = skinName;
+}
+
+watch(() => props.followerData.SkinCharacter, updateSkin);
+watch(() => props.followerData.SkinVariation, updateSkin);
 
 const props = defineProps<{ followerData: any }>();
 
