@@ -28,7 +28,7 @@
     "variant": ["Horse", "Horse2", "Horse3"]
   },
   {
-    "name": "DeerRitual",
+    "name": "Deer Ritual",
     "variant": ["Deer_ritual", "Deer_ritual2", "Deer_ritual3"]
   },
   {
@@ -232,23 +232,23 @@
     "variant": ["Cthulhu", "Cthulhu2", "Cthulhu3"]
   },
   {
-    "name": "TwitchMouse",
+    "name": "Twitch Mouse",
     "variant": ["TwitchMouse", "TwitchMouse2", "TwitchMouse3"]
   },
   {
-    "name": "TwitchCat",
+    "name": "Twitch Cat",
     "variant": ["TwitchCat", "TwitchCat2", "TwitchCat3"]
   },
   {
-    "name": "TwitchDog",
+    "name": "Twitch Dog",
     "variant": ["TwitchDog"]
   },
   {
-    "name": "TwitchDogAlt",
+    "name": "Twitch Dog (Alt)",
     "variant": ["TwitchDogAlt"]
   },
   {
-    "name": "TwitchPoggers",
+    "name": "Twitch Poggers",
     "variant": ["TwitchPoggers"]
   },
   {
@@ -268,11 +268,11 @@
     "variant": ["Crow", "Crow2", "Crow3"]
   },
   {
-    "name": "BatDemon",
+    "name": "Bat Demon",
     "variant": ["BatDemon", "BatDemon2", "BatDemon3"]
   },
   {
-    "name": "DeerSkull",
+    "name": "Deer Skull",
     "variant": ["DeerSkull", "DeerSkull2", "DeerSkull3"]
   }
 ]
