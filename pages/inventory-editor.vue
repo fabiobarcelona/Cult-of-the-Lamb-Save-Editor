@@ -29,6 +29,7 @@
 </template>
 
 <script setup lang="ts">
+import { getPropertyCaseInsensitive, setPropertyCaseInsensitive } from '~/utils/utility';
 import { useSaveData } from '~/stores/saveData';
 
 type a = HTMLInputElement
@@ -37,21 +38,21 @@ const { data: itemData } = useFetch<{ name: string, items: { id: number, image: 
 
 const saveStore = useSaveData();
 
-const itemQuantity = (id: number) => saveStore.saveData?.items.find((item: any) => item.type === id)?.quantity ?? 0;
+const itemQuantity = (id: number) => getPropertyCaseInsensitive(saveStore.saveData, "items")?.find((item: any) => item.type === id)?.quantity ?? 0;
 
 const setItemQuantity = (id: number, quantity: number) => {
     if (!saveStore.saveData) return;
 
-    saveStore.saveData.items = saveStore.saveData.items.filter((item: any) => item.quantity > 0 && ((quantity <= 0 && item.type !== id) || quantity > 0));
+    setPropertyCaseInsensitive(saveStore.saveData, "items", getPropertyCaseInsensitive(saveStore.saveData, "items")?.filter((item: any) => item.quantity > 0 && ((quantity <= 0 && item.type !== id) || quantity > 0)));
     if (quantity <= 0) return;
 
-    const item = saveStore.saveData.items.find((item: any) => item.type === id);
+    const item = getPropertyCaseInsensitive(saveStore.saveData, "items")?.find((item: any) => item.type === id);
 
     if (item) {
         item.quantity = quantity;
         item.UnreservedQuantity = quantity;
     } else {
-        saveStore.saveData?.items.push({ type: id, quantity, QuantityReserved: 0, UnreservedQuantity: quantity });
+        getPropertyCaseInsensitive(saveStore.saveData, "items")?.push({ type: id, quantity, QuantityReserved: 0, UnreservedQuantity: quantity });
     }
 }
 </script>

@@ -31,13 +31,72 @@ export const outfitMap = new Map([
   [9, "Other/Ghost"],
 ]);
 
+/**
+ * https://stackoverflow.com/questions/12484386/access-javascript-property-case-insensitively
+ * @param object - the object
+ * @param key - the key
+ * @return value
+ */
+export const getPropertyCaseInsensitive = (object: any, key: string): any => {
+  if (!object) return undefined;
+
+  console.log(object, key);
+
+  const asLowercase = key.toLowerCase();
+  return object[
+    (Object.keys(object).find((k: string) => k.toLowerCase() === asLowercase) ??
+      key) as string
+  ];
+};
+
+/**
+ * https://stackoverflow.com/questions/12484386/access-javascript-property-case-insensitively
+ * @param object - the object
+ * @param key - the key
+ * @param value - the value
+ */
+export const setPropertyCaseInsensitive = (
+  object: any,
+  key: string,
+  value: any
+): any => {
+  if (!object) return undefined;
+
+  const asLowercase = key.toLowerCase();
+  object[
+    Object.keys(object).find((k: string) => k.toLowerCase() === asLowercase) ??
+      key
+  ] = value;
+};
+
+export const generateObjectInsensitiveComputed = (
+  objFunc: () => any,
+  property: string
+) =>
+  computed({
+    get() {
+      return getPropertyCaseInsensitive(objFunc(), property);
+    },
+    set(value) {
+      setPropertyCaseInsensitive(objFunc(), property, value);
+    },
+  });
+
 export const constructFollowerPreviewUrl = (
   follower: any,
   headOnly = false
 ): string => {
-  const url = new URL(`https://cotl.xl0.org/v1/follower/${follower.SkinName}`);
+  const url = new URL(
+    `https://cotl.xl0.org/v1/follower/${getPropertyCaseInsensitive(
+      follower,
+      "SkinName"
+    )}`
+  );
 
-  url.searchParams.append("colour_set", follower.SkinColour);
+  url.searchParams.append(
+    "colour_set",
+    getPropertyCaseInsensitive(follower, "SkinColour")
+  );
 
   let illnessThreshold = 50;
   if (follower.Traits.includes(20)) illnessThreshold = 20;
@@ -46,14 +105,19 @@ export const constructFollowerPreviewUrl = (
   // TODO: Figure out how illness works
   // const isIll = follower.Illness >= illnessThreshold;
   const isIll = false;
-  const isStraving = follower.Starvation >= 30;
-  const isTired = follower.Exhaustion >= 20;
-  const isDissenting = follower.DissentDuration > 0 || follower.Dissent >= 80;
-  const isAngry = 25 > follower.Happiness;
-  const isVeryAngry = 10 > follower.Happiness;
-  const isBrainwashed = follower.BrainwashDuration > 0;
-  const isOld = follower.OldAge || follower.Outfit === 7;
-  const isGhost = follower.Outfit === 9;
+  const isStraving = getPropertyCaseInsensitive(follower, "Starvation") >= 30;
+  const isTired = getPropertyCaseInsensitive(follower, "Exhaustion") >= 20;
+  const isDissenting =
+    getPropertyCaseInsensitive(follower, "DissentDuration") > 0 ||
+    getPropertyCaseInsensitive(follower, "Dissent") >= 80;
+  const isAngry = 25 > getPropertyCaseInsensitive(follower, "Happiness");
+  const isVeryAngry = 10 > getPropertyCaseInsensitive(follower, "Happiness");
+  const isBrainwashed =
+    getPropertyCaseInsensitive(follower, "BrainwashDuration") > 0;
+  const isOld =
+    getPropertyCaseInsensitive(follower, "OldAge") ||
+    getPropertyCaseInsensitive(follower, "Outfit") === 7;
+  const isGhost = getPropertyCaseInsensitive(follower, "Outfit") === 9;
 
   if (isOld) url.searchParams.append("add_skin", "Other/Old");
 
@@ -85,19 +149,27 @@ export const constructFollowerPreviewUrl = (
     url.searchParams.append("format", "apng");
     url.searchParams.append("fps", "60");
 
-    if (follower.Outfit !== 7 && outfitMap.get(follower.Outfit) != null)
-      url.searchParams.append("add_skin", outfitMap.get(follower.Outfit)!);
-
-    if (follower.Necklace > 0)
+    if (
+      getPropertyCaseInsensitive(follower, "Outfit") !== 7 &&
+      outfitMap.get(getPropertyCaseInsensitive(follower, "Outfit")) != null
+    )
       url.searchParams.append(
         "add_skin",
-        `Necklaces/Necklace_${necklaceMap.get(follower.Necklace) ?? 0}`
+        outfitMap.get(getPropertyCaseInsensitive(follower, "Outfit"))!
       );
 
-    if (follower.TaxEnforcer)
+    if (getPropertyCaseInsensitive(follower, "Necklace") > 0)
+      url.searchParams.append(
+        "add_skin",
+        `Necklaces/Necklace_${
+          necklaceMap.get(getPropertyCaseInsensitive(follower, "Necklace")) ?? 0
+        }`
+      );
+
+    if (getPropertyCaseInsensitive(follower, "TaxEnforcer"))
       url.searchParams.append("add_skin", "Hats/Enforcer");
 
-    if (follower.FaithEnforcer)
+    if (getPropertyCaseInsensitive(follower, "FaithEnforcer"))
       url.searchParams.append("add_skin", "Hats/FaithEnforcer");
   }
 

@@ -89,6 +89,8 @@
 </template>
 
 <script setup lang="ts">
+import { getPropertyCaseInsensitive, setPropertyCaseInsensitive } from '~/utils/utility';
+
 type TraitData = {
     id: number;
     image: string;
@@ -106,10 +108,14 @@ const props = defineProps<{
 
 const updateClick = () => {
     const checkTrait = (id: number, value: boolean) => {
-        if (value && !props.saveData.CultTraits.includes(id)) props.saveData.CultTraits.push(id);
-        else if (!value) props.saveData.CultTraits = props.saveData.CultTraits.filter(
-            (traitId: number) => traitId !== id
-        );
+        const cultTraits = getPropertyCaseInsensitive(props.saveData, "CultTraits");
+
+        if (value && cultTraits) cultTraits.push(id);
+        else if (!value) {
+            setPropertyCaseInsensitive(props.saveData, "CultTraits",  cultTraits.filter(
+                (traitId: number) => traitId !== id
+            ));
+        }
     }
 
     for (const [index, value] of selectedTrait.value.entries()) {
@@ -121,8 +127,10 @@ const updateClick = () => {
 const updateSelected = () => {
     if (props.saveData) {
         const checkBranch = (traits: TraitData[], value: number) => {
+            const cultTraits = getPropertyCaseInsensitive(props.saveData, "CultTraits");
+
             for (const [index, trait] of traits.entries())
-                if (props.saveData.CultTraits.includes(trait.id))
+                if (cultTraits.includes(trait.id))
                     selectedTrait.value[index] = value;
         }
 

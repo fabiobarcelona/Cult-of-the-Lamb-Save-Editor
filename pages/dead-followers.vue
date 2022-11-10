@@ -1,24 +1,26 @@
 <template>
     <div v-if="saveStore.saveData">
-        <div v-if="saveStore.saveData.Followers_Dead.length > 0">
+        <div v-if="getPropertyCaseInsensitive(saveStore.saveData, 'Followers_Dead').length > 0">
             <FollowerModalEdit v-if="selectedFollower" ref="followerModalEdit" :follower-data="selectedFollower" />
             <div class="row row-cols-5 g-4 mb-4 gap-3">
-                <div v-for="follower in saveStore.saveData.Followers_Dead" class="card" style="width: 16rem;">
+                <div v-for="follower in getPropertyCaseInsensitive(saveStore.saveData, 'Followers_Dead')" class="card"
+                    style="width: 16rem;">
                     <div class="center-container">
                         <NuxtImg loading="eager" :src='constructFollowerPreviewUrl(follower, true)'
-                            class="card-img-top image-inner large-size" alt="Image not available"
-                            width="256" height="256" quality="100" fit="inside" />
+                            class="card-img-top image-inner large-size" alt="Image not available" width="256"
+                            height="256" quality="100" fit="inside" />
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">
-                            {{ follower.Name }}
+                            {{ getPropertyCaseInsensitive(follower, 'Name') }}
                         </h5>
                         <p class="card-text">
-                            Level: <b>{{ follower.XPLevel }}</b>
+                            Level: <b>{{ getPropertyCaseInsensitive(follower, 'XPLevel') }}</b>
                         </p>
                         <div class="row">
                             <div class="col">
-                                <button type="button" class="btn btn-danger" @click="() => deleteFollower(follower.ID)">
+                                <button type="button" class="btn btn-danger"
+                                    @click="() => deleteFollower(getPropertyCaseInsensitive(follower, 'ID'))">
                                     Delete
                                 </button>
                             </div>
@@ -38,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { constructFollowerPreviewUrl } from '~/utils/utility';
+import { constructFollowerPreviewUrl, getPropertyCaseInsensitive, setPropertyCaseInsensitive } from '~/utils/utility';
 import { useSaveData } from '~/stores/saveData';
 
 const selectedFollower = ref<any>();
@@ -59,7 +61,7 @@ const editFollower = async (followerData: number) => {
 
 const deleteFollower = (id: number) => {
     if (!saveStore.saveData) return;
-    saveStore.saveData.Followers_Dead = saveStore.saveData.Followers_Dead.filter((follower: any) => follower.ID !== id);
+    setPropertyCaseInsensitive(saveStore.saveData, "Followers_Dead", getPropertyCaseInsensitive(saveStore.saveData, "Followers_Dead").filter((follower: any) => follower.ID !== id));
 }
 
 const saveStore = useSaveData();

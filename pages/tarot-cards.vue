@@ -16,7 +16,7 @@
             <tbody>
                 <tr v-for="tarotCard in tarotCardList">
                     <td class="col">
-                        <input v-model="saveStore.saveData.PlayerFoundTrinkets" type="checkbox" class="form-check-input"
+                        <input v-model="playerFoundTrinkets" type="checkbox" class="form-check-input"
                             :value="tarotCard.id">
                     </td>
                     <td class="col">
@@ -43,9 +43,12 @@
 </template>
 
 <script setup lang="ts">
+import { generateObjectInsensitiveComputed } from "~/utils/utility";
 import { useSaveData } from "~/stores/saveData";
 
 const { data: tarotCardList } = useFetch<{ id: number, image: string, name: string, effect: string, effect_1: string, effect_2: string }[]>("/data/tarotCard.json");
 
 const saveStore = useSaveData();
+
+const playerFoundTrinkets = generateObjectInsensitiveComputed(() => saveStore.saveData, "PlayerFoundTrinkets");
 </script>

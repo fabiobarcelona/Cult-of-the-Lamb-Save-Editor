@@ -5,18 +5,17 @@
         <div class="row mb-2">
             <div class="col">
                 <label for="CultName">Cult Name:</label>
-                <input v-model="saveStore.saveData.CultName" type="text" class="form-control" id="CultName" />
+                <input v-model="cultName" type="text" class="form-control" id="CultName" />
                 <br />
                 <label for="CurrentDayIndex">Current Day:</label>
-                <input v-model="saveStore.saveData.CurrentDayIndex" type="number" class="form-control"
-                    id="CurrentDayIndex" />
+                <input v-model="currentDayIndex" type="number" class="form-control" id="CurrentDayIndex" />
                 <br />
                 <h4>Dungeon Doors Unlocked</h4>
                 <div class="row mb-4">
                     <div v-for="dungeon in dungeonData" class="col">
                         <div v-for="dungeonData of dungeon">
-                            <input v-model="saveStore.saveData.UnlockedDungeonDoor" type="checkbox"
-                                class="form-check-input" :id="`dungeon_${dungeonData.id}`" :value="dungeonData.id">
+                            <input v-model="unlockedDungeonDoor" type="checkbox" class="form-check-input"
+                                :id="`dungeon_${dungeonData.id}`" :value="dungeonData.id">
                             <label class="form-check-label" :for="`dungeon_${dungeonData.id}`">&nbsp;{{
                                     dungeonData.name
                             }}</label>
@@ -32,13 +31,12 @@
                     <div class="card card-body">
                         <div class="row">
                             <div class="col">
-                                <input v-model="saveStore.saveData.DeathCatBeaten" type="checkbox"
-                                    class="form-check-input" id="DeathCatBeaten" @click="deathCatClick">
+                                <input v-model="deathCatBeaten" type="checkbox" class="form-check-input"
+                                    id="DeathCatBeaten" @click="deathCatClick">
                                 <label for="DeathCatBeaten">&nbsp;The One Who Waits Beaten</label>
                             </div>
                             <div class="col">
-                                <input v-model="saveStore.saveData.RatauKilled" type="checkbox" class="form-check-input"
-                                    id="RatauKilled">
+                                <input v-model="ratauKilled" type="checkbox" class="form-check-input" id="RatauKilled">
                                 <label for="RatauKilled">&nbsp;Ratau Killed</label>
                             </div>
                         </div>
@@ -50,17 +48,13 @@
                 <label for="PLAYER_HEALTH">Red Hearts: <span class="text-muted" style="font-size:12px;">1 unit =
                         half a
                         heart (i.e 10 = 5 hearts)</span></label>
-                <input v-model="saveStore.saveData.PLAYER_HEALTH" type="number" class="form-control"
-                    id="PLAYER_HEALTH"><br>
+                <input v-model="playerHealth" type="number" class="form-control" id="PLAYER_HEALTH"><br>
                 <label for="PLAYER_SPIRIT_HEARTS">Spirit Hearts:</label>
-                <input v-model="saveStore.saveData.PLAYER_SPIRIT_HEARTS" type="number" class="form-control"
-                    id="PLAYER_SPIRIT_HEARTS"><br>
+                <input v-model="playerSpiritHealth" type="number" class="form-control" id="PLAYER_SPIRIT_HEARTS"><br>
                 <label for="PLAYER_BLACK_HEARTS">Diseased Hearts:</label>
-                <input v-model="saveStore.saveData.PLAYER_BLACK_HEARTS" type="number" class="form-control"
-                    id="PLAYER_BLACK_HEARTS"><br>
+                <input v-model="playerBlackHealth" type="number" class="form-control" id="PLAYER_BLACK_HEARTS"><br>
                 <label for="PLAYER_BLUE_HEARTS">Blue Hearts:</label>
-                <input v-model="saveStore.saveData.PLAYER_BLUE_HEARTS" type="number" class="form-control"
-                    id="PLAYER_BLUE_HEARTS"><br>
+                <input v-model="playerBlueHealth" type="number" class="form-control" id="PLAYER_BLUE_HEARTS"><br>
             </div>
         </div>
         <h2>Cult Traits</h2>
@@ -95,8 +89,7 @@
             <tbody>
                 <tr v-for="recipe in recipeData">
                     <td>
-                        <input v-model="saveStore.saveData.RecipesDiscovered" type="checkbox" class="form-check-input"
-                            :value="recipe.id">
+                        <input v-model="recipesDiscovered" type="checkbox" class="form-check-input" :value="recipe.id">
                     </td>
                     <td>
                         <div class="center-container">
@@ -130,6 +123,7 @@
 </template>
 
 <script setup lang="ts">
+import { generateObjectInsensitiveComputed } from "~/utils/utility";
 import { useSaveData } from "~/stores/saveData";
 import { useSiteData } from "~/stores/siteData";
 
@@ -139,6 +133,20 @@ const { data: dungeonData } = useFetch<{ id: number, name: string }[][]>('/data/
 
 const saveStore = useSaveData();
 const siteData = useSiteData();
+
+const unlockedDungeonDoor = generateObjectInsensitiveComputed(() => saveStore.saveData, "UnlockedDungeonDoor");
+const currentDayIndex = generateObjectInsensitiveComputed(() => saveStore.saveData, "CurrentDayIndex");
+const cultName = generateObjectInsensitiveComputed(() => saveStore.saveData, "CultName");
+
+const deathCatBeaten = generateObjectInsensitiveComputed(() => saveStore.saveData, "DeathCatBeaten");
+const ratauKilled = generateObjectInsensitiveComputed(() => saveStore.saveData, "RatauKilled");
+
+const playerHealth = generateObjectInsensitiveComputed(() => saveStore.saveData, "PLAYER_HEALTH");
+const playerSpiritHealth = generateObjectInsensitiveComputed(() => saveStore.saveData, "PLAYER_SPIRIT_HEARTS");
+const playerBlackHealth = generateObjectInsensitiveComputed(() => saveStore.saveData, "PLAYER_BLACK_HEARTS");
+const playerBlueHealth = generateObjectInsensitiveComputed(() => saveStore.saveData, "PLAYER_BLUE_HEARTS");
+
+const recipesDiscovered = generateObjectInsensitiveComputed(() => saveStore.saveData, "RecipesDiscovered");
 
 const deathCatBeatenWarningModal = ref(null);
 const SelectedTraitTab = ref<number>(0);
