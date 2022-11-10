@@ -40,8 +40,6 @@ export const outfitMap = new Map([
 export const getPropertyCaseInsensitive = (object: any, key: string): any => {
   if (!object) return undefined;
 
-  console.log(object, key);
-
   const asLowercase = key.toLowerCase();
   return object[
     (Object.keys(object).find((k: string) => k.toLowerCase() === asLowercase) ??
