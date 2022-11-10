@@ -1,7 +1,8 @@
 <template>
     <div v-if="saveStore.saveData">
         <div v-if="getPropertyCaseInsensitive(saveStore.saveData, 'Followers_Dead').length > 0">
-            <FollowerModalEdit v-if="selectedFollower" ref="followerModalEdit" :follower-data="selectedFollower" :is-dead="true" />
+            <FollowerModalEdit v-if="selectedFollower" ref="followerModalEdit" :follower-data="selectedFollower"
+                :is-dead="true" />
             <div class="row row-cols-5 g-4 mb-4 gap-3">
                 <div v-for="follower in getPropertyCaseInsensitive(saveStore.saveData, 'Followers_Dead')" class="card"
                     style="width: 16rem;">
@@ -24,7 +25,15 @@
                                     Delete
                                 </button>
                             </div>
-                            <div class="col text-end">
+                            <div class="col">
+                                <button type="button" class="btn btn-success"
+                                    @click="() => reviveFollower(getPropertyCaseInsensitive(follower, 'ID'))">
+                                    Revive
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
                                 <button type="button" class="btn btn-primary" @click="() => editFollower(follower)">
                                     Edit
                                 </button>
@@ -59,9 +68,15 @@ const editFollower = async (followerData: number) => {
     followerModalEdit.value?.modal?.toggle();
 }
 
+const reviveFollower = async (id: number) => {
+    if (!saveStore.saveData) return;
+    getPropertyCaseInsensitive(saveStore.saveData, "Followers").push(getPropertyCaseInsensitive(saveStore.saveData, "Followers_Dead").find((follower: any) => getPropertyCaseInsensitive(follower, "ID") === id));
+    deleteFollower(id);
+}
+
 const deleteFollower = (id: number) => {
     if (!saveStore.saveData) return;
-    setPropertyCaseInsensitive(saveStore.saveData, "Followers_Dead", getPropertyCaseInsensitive(saveStore.saveData, "Followers_Dead").filter((follower: any) => follower.ID !== id));
+    setPropertyCaseInsensitive(saveStore.saveData, "Followers_Dead", getPropertyCaseInsensitive(saveStore.saveData, "Followers_Dead").filter((follower: any) => getPropertyCaseInsensitive(follower, "ID") !== id));
 }
 
 const saveStore = useSaveData();

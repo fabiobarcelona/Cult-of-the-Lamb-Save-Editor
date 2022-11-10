@@ -61,7 +61,7 @@ const editFollower = async (followerData: number) => {
 
 const deleteFollower = (id: number) => {
     if (!saveStore.saveData) return;
-    setPropertyCaseInsensitive(saveStore.saveData, "Followers", getPropertyCaseInsensitive(saveStore.saveData, "Followers").filter((follower: any) => follower.ID !== id));
+    setPropertyCaseInsensitive(saveStore.saveData, "Followers", getPropertyCaseInsensitive(saveStore.saveData, "Followers").filter((follower: any) => getPropertyCaseInsensitive(follower, "ID") === id));
 }
 
 const saveStore = useSaveData();
