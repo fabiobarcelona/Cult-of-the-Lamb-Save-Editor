@@ -99,12 +99,10 @@ export const constructFollowerPreviewUrl = (
   );
 
   let illnessThreshold = 50;
-  if (follower.Traits.includes(20)) illnessThreshold = 20;
-  else if (follower.Traits.includes(15)) illnessThreshold = 75;
+  if (follower.Traits.includes(16)) illnessThreshold = 75;
+  else if (follower.Traits.includes(15)) illnessThreshold = 25;
 
-  // TODO: Figure out how illness works
-  // const isIll = follower.Illness >= illnessThreshold;
-  const isIll = false;
+  const isIll = follower.Illness >= illnessThreshold;
   const isStraving = getPropertyCaseInsensitive(follower, "Starvation") >= 30;
   const isTired = getPropertyCaseInsensitive(follower, "Exhaustion") >= 20;
   const isDissenting =
