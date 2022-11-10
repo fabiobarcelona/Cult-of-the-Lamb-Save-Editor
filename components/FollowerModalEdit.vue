@@ -97,7 +97,8 @@
                     <div class="row">
                         <div class="col">
                             <div class="d-grid align-items-center justify-content-center py-3">
-                                <NuxtImg loading="eager" :src='constructFollowerPreviewUrl(props.followerData)'
+                                <NuxtImg loading="eager"
+                                    :src='constructFollowerPreviewUrl(props.followerData, false, props.isDead)'
                                     alt="Preview not available" quality="100" fit="inside" />
                             </div>
                         </div>
@@ -222,7 +223,7 @@ const updateSkin = () => {
 watch(() => getPropertyCaseInsensitive(props.followerData, "SkinCharacter"), updateSkin);
 watch(() => getPropertyCaseInsensitive(props.followerData, "SkinVariation"), updateSkin);
 
-const props = defineProps<{ followerData: any }>();
+const props = defineProps<{ followerData: any, isDead?: boolean }>();
 
 const id = generateObjectInsensitiveComputed(() => props.followerData, "ID");
 const xpLevel = generateObjectInsensitiveComputed(() => props.followerData, "XPLevel");

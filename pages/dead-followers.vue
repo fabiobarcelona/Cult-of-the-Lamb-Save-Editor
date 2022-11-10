@@ -1,12 +1,12 @@
 <template>
     <div v-if="saveStore.saveData">
         <div v-if="getPropertyCaseInsensitive(saveStore.saveData, 'Followers_Dead').length > 0">
-            <FollowerModalEdit v-if="selectedFollower" ref="followerModalEdit" :follower-data="selectedFollower" />
+            <FollowerModalEdit v-if="selectedFollower" ref="followerModalEdit" :follower-data="selectedFollower" :is-dead="true" />
             <div class="row row-cols-5 g-4 mb-4 gap-3">
                 <div v-for="follower in getPropertyCaseInsensitive(saveStore.saveData, 'Followers_Dead')" class="card"
                     style="width: 16rem;">
                     <div class="center-container">
-                        <NuxtImg loading="eager" :src='constructFollowerPreviewUrl(follower, true)'
+                        <NuxtImg loading="eager" :src='constructFollowerPreviewUrl(follower, true, true)'
                             class="card-img-top image-inner large-size" alt="Image not available" width="256"
                             height="256" quality="100" fit="inside" />
                     </div>
