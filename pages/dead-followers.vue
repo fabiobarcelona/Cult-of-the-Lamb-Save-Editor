@@ -25,17 +25,18 @@
                                     Delete
                                 </button>
                             </div>
-                            <div class="col">
-                                <button type="button" class="btn btn-success"
-                                    @click="() => reviveFollower(getPropertyCaseInsensitive(follower, 'ID'))">
-                                    Revive
+                            <div class="col text-end">
+                                <button type="button" class="btn btn-primary" @click="() => editFollower(follower)">
+                                    Edit
                                 </button>
                             </div>
                         </div>
+                        <div class="py-1" />
                         <div class="row">
-                            <div class="col">
-                                <button type="button" class="btn btn-primary" @click="() => editFollower(follower)">
-                                    Edit
+                            <div class="col center-container">
+                                <button type="button" class="btn btn-success"
+                                    @click="() => reviveFollower(getPropertyCaseInsensitive(follower, 'ID'))">
+                                    Revive
                                 </button>
                             </div>
                         </div>
