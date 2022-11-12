@@ -18,6 +18,7 @@ useHead({
   },
   link: [
     { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+    { rel: "preconnect", href: "https://rsms.me/", crossorigin: "" },
     { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" }
   ],
   meta: [
