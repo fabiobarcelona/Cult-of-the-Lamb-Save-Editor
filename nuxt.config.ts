@@ -5,6 +5,21 @@ export default defineNuxtConfig({
   css: ["@/assets/scss/global.scss"],
   app: {
     pageTransition: { name: "page", mode: "out-in" },
+    head: {
+      title: "Cult of the Lamb - Save editor",
+      htmlAttrs: {
+        lang: "en",
+      },
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: "preconnect", href: "https://cotl.xl0.org/", crossorigin: "" },
+        { rel: "dns-prefetch", href: "https://cotl.xl0.org/" },
+      ],
+      meta: [
+        { name: "color-scheme", content: "dark" },
+        { name: "theme-color", content: "#eeeeee" },
+      ],
+    },
   },
   typescript: {
     shim: false,
