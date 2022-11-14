@@ -20,13 +20,13 @@
     "name": "Faithful",
     "description": "Generates Devotion 15% faster."
   },
-  {
-    "id": 24,
-    "image": "/Traits/24.png",
-    "effect": "Positive",
-    "name": "Industrious",
-    "description": "Increased work speed by 15%."
-  },
+
+
+
+
+
+
+
   {
     "id": 18,
     "image": "/Traits/18.png",
