@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
-      title: "Cult of the Lamb - Save editor",
+      title: "Cult of the Lamb - Save file editor",
       htmlAttrs: {
         lang: "en",
       },
@@ -16,7 +16,22 @@ export default defineNuxtConfig({
         { rel: "dns-prefetch", href: "https://cotl.xl0.org/" },
       ],
       meta: [
-        { name: "description", content: "a save file editor for a game called Cult of the Lamb" },
+        {
+          name: "description",
+          content: "a save file editor for a game called Cult of the Lamb",
+        },
+        {
+          property: "og:title",
+          content: "Cult of the Lamb - Save file editor",
+        },
+        {
+          property: "og:descrption",
+          content: "a save file editor for a game called Cult of the Lamb",
+        },
+        {
+          property: "og:url",
+          content: "https://cult-of-the-lamb-save-editor.vercel.app/",
+        },
         { name: "color-scheme", content: "dark" },
         { name: "theme-color", content: "#eeeeee" },
       ],
