@@ -16,6 +16,7 @@ export default defineNuxtConfig({
         { rel: "dns-prefetch", href: "https://cotl.xl0.org/" },
       ],
       meta: [
+        { name: "description", content: "a save file editor for a game called Cult of the Lamb" },
         { name: "color-scheme", content: "dark" },
         { name: "theme-color", content: "#eeeeee" },
       ],
