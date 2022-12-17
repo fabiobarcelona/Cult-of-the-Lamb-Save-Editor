@@ -8,7 +8,7 @@
     "postinstall": "nuxi prepare"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
+    "@nuxt/image-edge": "1.0.0-27840416.dc1ed65",
     "@pinia/nuxt": "^0.4.6",
     "@popperjs/core": "^2.11.6",
     "@types/bootstrap": "^5.2.6",
