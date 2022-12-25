@@ -1,0 +1,69 @@
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-dark-5/dist/css/bootstrap-dark-plugin";
+@import "vanilla-jsoneditor/themes/jse-theme-dark.css";
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.1s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(0.5rem);
+}
+
+table,
+th,
+td {
+  border: 1px double;
+}
+
+h3 {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  text-align: center;
+}
+
+#form {
+  padding: 1rem;
+  margin-bottom: 5rem;
+}
+
+footer {
+  background-color: var(--bs-body-bg);
+}
+
+.center-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-inner {
+  object-fit: scale-down;
+}
+
+.large-size {
+  width: 256px;
+  height: 256px;
+}
+
+.small-size {
+  width: 64px;
+  height: 64px;
+}
+
+.tarot-card-size {
+  height: 80px;
+  width: 50px;
+}

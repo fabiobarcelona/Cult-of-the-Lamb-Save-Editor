@@ -1,0 +1,172 @@
+[
+  {
+    "id": 32,
+    "image": "/Cooking_Recipes/32.png",
+    "name": "Paltry Pumpkin Soup",
+    "description": "A healthy meal of vegetables.",
+    "effect": "+5% chance of causing illness and diarrhea.",
+    "ingredient": "x4 Pumpkin",
+    "category": "Vegetable",
+    "quality": "★☆☆"
+  },
+  {
+    "id": 57,
+    "image": "/Cooking_Recipes/57.png",
+    "name": "Grassy Gruel",
+    "description": "Better than nothing.",
+    "effect": "+25% chance of causing illness.",
+    "ingredient": "x5 Grass",
+    "category": "Basic",
+    "quality": "★☆☆"
+  },
+  {
+    "id": 58,
+    "image": "/Cooking_Recipes/58.png",
+    "name": "Hearty Meat Broth",
+    "description": "A filling, carnivorous affair.",
+    "effect": "+25% chance of dropping valuable resources, +15% chance of the Follower pooping instantly.",
+    "ingredient": "x2 Meat",
+    "category": "Meat",
+    "quality": "★★☆"
+  },
+  {
+    "id": 59,
+    "image": "/Cooking_Recipes/59.png",
+    "name": "Splendid Vegetable Feast",
+    "description": "A divine culinary experience!",
+    "effect": "+50% chance of increasing Follower loyalty, +5 Faith",
+    "ingredient": "x6 Beetroot, x2 Pumpkin, x2 Cauliflower",
+    "category": "Vegetable",
+    "quality": "★★★"
+  },
+  {
+    "id": 60,
+    "image": "/Cooking_Recipes/60.png",
+    "name": "Tasty Fish Meal",
+    "description": "A satisfying dish, made with care.",
+    "effect": "+25% chance of dropping valuable resources, +15% chance of the Follower vomiting instantly.",
+    "ingredient": "x3 Salmon",
+    "category": "Fish",
+    "quality": "★★☆"
+  },
+  {
+    "id": 65,
+    "image": "/Cooking_Recipes/65.png",
+    "name": "Minced Follower Meat",
+    "description": "A dish made of the flesh of fellow Cult members.",
+    "effect": "+75% chance of causing illness, +25% chance of increasing Follower loyalty, +40 chance of stopping a Follower from dissenting, -20 Faith.",
+    "ingredient": "x3 Follower Meat, x5 Bone",
+    "category": "Special",
+    "quality": "★☆☆"
+  },
+  {
+    "id": 69,
+    "image": "/Cooking_Recipes/69.png",
+    "name": "Bowl of Poop",
+    "description": "A \"meal\" made of excrement...",
+    "effect": "+50% chance of causing illness and diarrhea, -20 Faith.",
+    "ingredient": "x3 Fertilizer",
+    "category": "Special",
+    "quality": "★☆☆"
+  },
+  {
+    "id": 99,
+    "image": "/Cooking_Recipes/99.png",
+    "name": "Delicious Fish Feast",
+    "description": "Rich ingredients, perfectly prepared.",
+    "effect": "+25% chance of dropping valuable resources, +30% chance of a sick Follower recovering from illness, +5 Faith.",
+    "ingredient": "x1 Squid, x1 Octopus, x1 Blowfish, x1 Swordfish.",
+    "category": "Fish",
+    "quality": "★★★"
+  },
+  {
+    "id": 100,
+    "image": "/Cooking_Recipes/100.png",
+    "name": "Pungent Fish Stew",
+    "description": "Tastes better than it looks.",
+    "effect": "+10% chance of causing illness.",
+    "ingredient": "x3 Minnow",
+    "category": "Fish",
+    "quality": "★☆☆"
+  },
+  {
+    "id": 106,
+    "image": "/Cooking_Recipes/106.png",
+    "name": "Basic Berry Bowl",
+    "description": "Simple meal made from berries.",
+    "effect": "+15% chance of the follower pooping instantly.",
+    "ingredient": "x6 Berry",
+    "category": "Basic",
+    "quality": "★☆☆"
+  },
+  {
+    "id": 107,
+    "image": "/Cooking_Recipes/107.png",
+    "name": "Cheery Cauliflower Chowder",
+    "description": "Tasty veggy dish.",
+    "effect": "+25% chance of dropping valuable resources, +5% chance of causing illness. ",
+    "ingredient": "x4 Cauliflower",
+    "category": "Vegetable",
+    "quality": "★★☆"
+  },
+  {
+    "id": 108,
+    "image": "/Cooking_Recipes/108.png",
+    "name": "Meager Mixed Meal",
+    "description": "Not great.",
+    "effect": "+10% chance of increasing Follower loyalty.",
+    "ingredient": "x4 Berry, x2 Minnow, x2 Morsel",
+    "category": "Mixed",
+    "quality": "★☆☆"
+  },
+  {
+    "id": 109,
+    "image": "/Cooking_Recipes/109.png",
+    "name": "Modest Mixed Meal",
+    "description": "Tastes better than it looks.",
+    "effect": "+20% chance of increasing Follower loyalty.",
+    "ingredient": "x4 Pumpkin, x2 Salmon, x2 Meat",
+    "category": "Mixed",
+    "quality": "★★☆"
+  },
+  {
+    "id": 110,
+    "image": "/Cooking_Recipes/110.png",
+    "name": "Magnificent Mixed Meal",
+    "description": "A fine meal made from the very best mixed ingredients.",
+    "effect": "+100% chance of increasing Follower loyalty, +100% chance of stopping a Follower from dissenting.",
+    "ingredient": "x4 Beetroot, x2 Tuna, x2 Meat",
+    "category": "Mixed",
+    "quality": "★★★"
+  },
+  {
+    "id": 111,
+    "image": "/Cooking_Recipes/111.png",
+    "name": "Deadly Dish",
+    "description": "A truly vile concoction.",
+    "effect": "+75% chance of the follower dying instantly, +100% chance of dropping valuable resources.",
+    "ingredient": "x1 Follower Meat, x1 Fertilizer, x1 Grass",
+    "category": "Special",
+    "quality": "★☆☆"
+  },
+  {
+    "id": 112,
+    "image": "/Cooking_Recipes/112.png",
+    "name": "Stringy Meat Gruel",
+    "description": "Made from scraps.",
+    "effect": "+10% chance of causing exhaustion.",
+    "ingredient": "x3 Morsel",
+    "category": "Meat",
+    "quality": "★☆☆"
+  },
+  {
+    "id": 113,
+    "image": "/Cooking_Recipes/113.png",
+    "name": "Mighty Meat Feast",
+    "description": "Great hunks of juicy meat.",
+    "effect": "+75% chance of dropping valuable resources.",
+    "ingredient": "x4 Meat, x1 Crab, x1 Lobster",
+    "category": "Meat",
+    "quality": "★★★"
+  }
+]

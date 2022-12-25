@@ -1,0 +1,278 @@
+[
+  {
+    "name": "Deer",
+    "variant": ["Deer", "Deer2", "Deer3"]
+  },
+  {
+    "name": "Pig",
+    "variant": ["Pig", "Pig2", "Pig3"]
+  },
+  {
+    "name": "Cow",
+    "variant": ["Cow", "Cow2", "Cow3"]
+  },
+  {
+    "name": "Dog",
+    "variant": ["Dog", "Dog2", "Dog3"]
+  },
+  {
+    "name": "Giraffe",
+    "variant": ["Giraffe", "Giraffe2", "Giraffe3"]
+  },
+  {
+    "name": "Cat",
+    "variant": ["Cat", "Cat2", "Cat3"]
+  },
+  {
+    "name": "Horse",
+    "variant": ["Horse", "Horse2", "Horse3"]
+  },
+  {
+    "name": "Deer Ritual",
+    "variant": ["Deer_ritual", "Deer_ritual2", "Deer_ritual3"]
+  },
+  {
+    "name": "Bear",
+    "variant": ["Bear", "Bear2", "Bear3"]
+  },
+  {
+    "name": "Bison",
+    "variant": ["Bison", "Bison2", "Bison3"]
+  },
+  {
+    "name": "Crocodile",
+    "variant": ["Crocodile", "Crocodile2", "Crocodile3"]
+  },
+  {
+    "name": "Elephant",
+    "variant": ["Elephant", "Elephant2", "Elephant3"]
+  },
+  {
+    "name": "Fox",
+    "variant": ["Fox", "Fox2", "Fox3"]
+  },
+  {
+    "name": "Hedgehog",
+    "variant": ["Hedgehog", "Hedgehog2", "Hedgehog3"]
+  },
+  {
+    "name": "Hippo",
+    "variant": ["Hippo", "Hippo2", "Hippo3"]
+  },
+  {
+    "name": "Night Wolf",
+    "variant": ["Nightwolf", "Nightwolf2", "Nightwolf3"]
+  },
+  {
+    "name": "Pangolin",
+    "variant": ["Pangolin", "Pangolin2", "Pangolin3"]
+  },
+  {
+    "name": "Rabbit",
+    "variant": ["Rabbit", "Rabbit2", "Rabbit3"]
+  },
+  {
+    "name": "Shrew",
+    "variant": ["Shrew", "Shrew2", "Shrew3"]
+  },
+  {
+    "name": "Unicorn",
+    "variant": ["Unicorn", "Unicorn2", "Unicorn3"]
+  },
+  {
+    "name": "Frog",
+    "variant": ["Frog", "Frog2", "Frog3"]
+  },
+  {
+    "name": "Boss Mama Worm",
+    "variant": ["Boss Mama Worm"]
+  },
+  {
+    "name": "Boss Mama Maggot",
+    "variant": ["Boss Mama Maggot"]
+  },
+  {
+    "name": "Boss Flying Burp Frog",
+    "variant": ["Boss Flying Burp Frog"]
+  },
+  {
+    "name": "Boss Egg Hopper",
+    "variant": ["Boss Egg Hopper"]
+  },
+  {
+    "name": "Boss Burrow Worm",
+    "variant": ["Boss Burrow Worm"]
+  },
+  {
+    "name": "Boss Mortar Hopper",
+    "variant": ["Boss Mortar Hopper"]
+  },
+  {
+    "name": "Boss Scuttle Turret",
+    "variant": ["Boss Scuttle Turret"]
+  },
+  {
+    "name": "Boss Spiker",
+    "variant": ["Boss Spiker"]
+  },
+  {
+    "name": "Boss Charger",
+    "variant": ["Boss Charger"]
+  },
+  {
+    "name": "Boss Beholder 1",
+    "variant": ["Boss Beholder 1"]
+  },
+  {
+    "name": "Boss Beholder 2",
+    "variant": ["Boss Beholder 2"]
+  },
+  {
+    "name": "Boss Beholder 3",
+    "variant": ["Boss Beholder 3"]
+  },
+  {
+    "name": "Boss Beholder 4",
+    "variant": ["Boss Beholder 4"]
+  },
+  {
+    "name": "Boss Spider Jump",
+    "variant": ["Boss Spider Jump"]
+  },
+  {
+    "name": "Boss Millipede Poisoner",
+    "variant": ["Boss Millipede Poisoner"]
+  },
+  {
+    "name": "Boss Scorpion",
+    "variant": ["Boss Scorpion"]
+  },
+  {
+    "name": "Axolotl",
+    "variant": ["Axolotl", "Axolotl2", "Axolotl3"]
+  },
+  {
+    "name": "Starfish",
+    "variant": ["Starfish", "Starfish2", "Starfish3"]
+  },
+  {
+    "name": "Fish",
+    "variant": ["Fish", "Fish2", "Fish3"]
+  },
+  {
+    "name": "Bat",
+    "variant": ["Bat", "Bat2", "Bat3"]
+  },
+  {
+    "name": "Beetle",
+    "variant": ["Beetle", "Beetle2", "Beetle3"]
+  },
+  {
+    "name": "Capybara",
+    "variant": ["Capybara", "Capybara2", "Capybara3"]
+  },
+  {
+    "name": "Fennec Fox",
+    "variant": ["Fennec Fox", "Fennec Fox2", "Fennec Fox3"]
+  },
+  {
+    "name": "Otter",
+    "variant": ["Otter", "Otter2", "Otter3"]
+  },
+  {
+    "name": "Red Panda",
+    "variant": ["Red Panda", "Red Panda2", "Red Panda3"]
+  },
+  {
+    "name": "Seahorse",
+    "variant": ["Seahorse", "Seahorse2", "Seahorse3"]
+  },
+  {
+    "name": "Boss Death Cat",
+    "variant": ["Boss Death Cat"]
+  },
+  {
+    "name": "Bee",
+    "variant": ["Bee", "Bee2", "Bee3"]
+  },
+  {
+    "name": "Tapir",
+    "variant": ["Tapir", "Tapir2", "Tapir3"]
+  },
+  {
+    "name": "Turtle",
+    "variant": ["Turtle", "Turtle2", "Turtle3"]
+  },
+  {
+    "name": "Monkey",
+    "variant": ["Monkey", "Monkey2", "Monkey3"]
+  },
+  {
+    "name": "Narwal",
+    "variant": ["Narwal", "Narwal2", "Narwal3"]
+  },
+  {
+    "name": "Poop",
+    "variant": ["Poop", "Poop2"]
+  },
+  {
+    "name": "Massive Monster",
+    "variant": ["MassiveMonster", "MassiveMonster2"]
+  },
+  {
+    "name": "Crab",
+    "variant": ["Crab", "Crab2", "Crab3"]
+  },
+  {
+    "name": "Snail",
+    "variant": ["Snail", "Snail2", "Snail3"]
+  },
+  {
+    "name": "Cthulhu",
+    "variant": ["Cthulhu", "Cthulhu2", "Cthulhu3"]
+  },
+  {
+    "name": "Twitch Mouse",
+    "variant": ["TwitchMouse", "TwitchMouse2", "TwitchMouse3"]
+  },
+  {
+    "name": "Twitch Cat",
+    "variant": ["TwitchCat", "TwitchCat2", "TwitchCat3"]
+  },
+  {
+    "name": "Twitch Dog",
+    "variant": ["TwitchDog"]
+  },
+  {
+    "name": "Twitch Dog (Alt)",
+    "variant": ["TwitchDogAlt"]
+  },
+  {
+    "name": "Twitch Poggers",
+    "variant": ["TwitchPoggers"]
+  },
+  {
+    "name": "Rhino",
+    "variant": ["Rhino", "Rhino2", "Rhino3"]
+  },
+  {
+    "name": "Racoon",
+    "variant": ["Raccoon", "Raccoon2", "Raccoon3"]
+  },
+  {
+    "name": "Badger",
+    "variant": ["Badger", "Badger2", "Badger3"]
+  },
+  {
+    "name": "Crow",
+    "variant": ["Crow", "Crow2", "Crow3"]
+  },
+  {
+    "name": "Bat Demon",
+    "variant": ["BatDemon", "BatDemon2", "BatDemon3"]
+  },
+  {
+    "name": "Deer Skull",
+    "variant": ["DeerSkull", "DeerSkull2", "DeerSkull3"]
+  }
+]
