@@ -23,5 +23,5 @@
     "vanilla-jsoneditor": "^0.14.4",
     "vue-tsc": "^1.0.24"
   },
-  "packageManager": "pnpm@7.26.0"
+  "packageManager": "pnpm@7.27.0"
 }
