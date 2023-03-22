@@ -1,0 +1,290 @@
+[
+  {
+    "id": 0,
+    "image": "/Tarot_Cards/0.png",
+    "name": "The Hearts I",
+    "effect": "Gain an extra half heart.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 1,
+    "image": "/Tarot_Cards/1.png",
+    "name": "The Hearts II",
+    "effect": "Gain an extra heart.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 2,
+    "image": "/Tarot_Cards/2.png",
+    "name": "The Hearts III",
+    "effect": "Gain an extra 2 hearts.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 6,
+    "image": "/Tarot_Cards/6.png",
+    "name": "Weeping Moon",
+    "effect": "30% more damage during the night.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 16,
+    "image": "/Tarot_Cards/16.png",
+    "name": "Nature's Boon",
+    "effect": "Harvest bonus resources.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 3,
+    "image": "/Tarot_Cards/3.png",
+    "name": "The Lovers I",
+    "effect": "Blue Heart +1.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 4,
+    "image": "/Tarot_Cards/4.png",
+    "name": "The Lovers II",
+    "effect": "Blue Heart +2.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 5,
+    "image": "/Tarot_Cards/5.png",
+    "name": "All Seeing Sun",
+    "effect": "Do 20% more damage during the day.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 10,
+    "image": "/Tarot_Cards/10.png",
+    "name": "True Sight",
+    "effect": "The Lamb has a 10% chance of a crit when dealing damage.",
+    "effect_1": "The Lamb has a 20% chance of a crit when dealing damage.",
+    "effect_2": "-"
+  },
+  {
+    "id": 14,
+    "image": "/Tarot_Cards/14.png",
+    "name": "Telescope",
+    "effect": "Reveals the map.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 15,
+    "image": "/Tarot_Cards/15.png",
+    "name": "Hands of Rage",
+    "effect": "Fire a projectile when you swing your weapon. 10s cooldown.",
+    "effect_1": "Fire a projectile when you swing your weapon. 5s cooldown.",
+    "effect_2": "-"
+  },
+  {
+    "id": 17,
+    "image": "/Tarot_Cards/17.png",
+    "name": "The Burning Dead",
+    "effect": "Dead enemy bodies explode, damaging other enemies.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 9,
+    "image": "/Tarot_Cards/9.png",
+    "name": "Diseased Heart",
+    "effect": "Allows the Lamb to deal damage to everything on screen they are hit.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 8,
+    "image": "/Tarot_Cards/8.png",
+    "name": "The Arachnid",
+    "effect": "Allows the Lamb to deal poison damage to enemies when attacking.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 32,
+    "image": "/Tarot_Cards/32.png",
+    "name": "Divine Strength",
+    "effect": "Attack rate increased by 1.25x.",
+    "effect_1": "Attack rate increased by 1.5x.",
+    "effect_2": "Attack rate increased by 2x."
+  },
+  {
+    "id": 33,
+    "image": "/Tarot_Cards/33.png",
+    "name": "Master of the Art",
+    "effect": "The Lamb's overall weapon damage increases by 1.2x.",
+    "effect_1": "The Lamb's overall weapon damage increases by 1.5x.",
+    "effect_2": "The Lamb's overall weapon damage increases by 1.75x."
+  },
+  {
+    "id": 31,
+    "image": "/Tarot_Cards/31.png",
+    "name": "The Path",
+    "effect": "Increase movement speed by 1.25x.",
+    "effect_1": "Increase movement speed by 1.5x.",
+    "effect_2": "Increase movement speed by 2x."
+  },
+  {
+    "id": 34,
+    "image": "/Tarot_Cards/34.png",
+    "name": "Fervour's Harvest",
+    "effect": "Enemies drop 2x more Fervor.",
+    "effect_1": "Enemies drop 3x more Fervor.",
+    "effect_2": "-"
+  },
+  {
+    "id": 35,
+    "image": "/Tarot_Cards/35.png",
+    "name": "Soul Snatcher",
+    "effect": "When killing an enemy 10% chance of healing.",
+    "effect_1": "When killing an enemy 20% chance of healing.",
+    "effect_2": "-"
+  },
+  {
+    "id": 36,
+    "image": "/Tarot_Cards/36.png",
+    "name": "Shield of Faith",
+    "effect": "When attacked 10% chance of negating damage.",
+    "effect_1": "When attacked 20% chance of negating damage.",
+    "effect_2": "-"
+  },
+  {
+    "id": 37,
+    "image": "/Tarot_Cards/37.png",
+    "name": "The Bomb",
+    "effect": "Drop an explosive when you roll 10s cooldown.",
+    "effect_1": "Drop an explosive when you roll 5s cooldown.",
+    "effect_2": "-"
+  },
+  {
+    "id": 38,
+    "image": "/Tarot_Cards/38.png",
+    "name": "Ichor Earned",
+    "effect": "Drop black Ichor on hit.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 39,
+    "image": "/Tarot_Cards/39.png",
+    "name": "Ichor Lingered",
+    "effect": "Drop black Ichor when you roll 10s cooldown.",
+    "effect_1": "Drop black Ichor when you roll 5s cooldown.",
+    "effect_2": "-"
+  },
+  {
+    "id": 40,
+    "image": "/Tarot_Cards/40.png",
+    "name": "Mithridatism",
+    "effect": "Immune to poison from enemies.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 41,
+    "image": "/Tarot_Cards/41.png",
+    "name": "Blazing Trial",
+    "effect": "Rolling into an enemy will damage them.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 44,
+    "image": "/Tarot_Cards/44.png",
+    "name": "Divine Curse",
+    "effect": "Allows curses to consume 25% less Fervor.",
+    "effect_1": "Allows curses to consume 50% less Fervor.",
+    "effect_2": "Allows curses to consume 75% less Fervor."
+  },
+  {
+    "id": 45,
+    "image": "/Tarot_Cards/45.png",
+    "name": "Strength from Within",
+    "effect": "Fervour will slowly replenish over time 2.5s cooldown.",
+    "effect_1": "Fervour will slowly replenish over time 1.5s cooldown.",
+    "effect_2": "-"
+  },
+  {
+    "id": 46,
+    "image": "/Tarot_Cards/46.png",
+    "name": "Strength from Without",
+    "effect": "Receive 5 fervour when hit.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 47,
+    "image": "/Tarot_Cards/47.png",
+    "name": "Neptune's Curse",
+    "effect": "Enemies have a chance of dropping a fish upon death.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 42,
+    "image": "/Tarot_Cards/42.png",
+    "name": "Fortune's Blessing",
+    "effect": "The Lambs gains double health when healing.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 12,
+    "image": "/Tarot_Cards/12.png",
+    "name": "Death's Door",
+    "effect": "When hit down to half a heart, all enemies will be dealt 2 damage.",
+    "effect_1": "When hit down to half a heart, all enemies will be dealt 3 damage.",
+    "effect_2": "When hit down to half a heart, all enemies will be dealt 10 damage."
+  },
+  {
+    "id": 13,
+    "image": "/Tarot_Cards/13.png",
+    "name": "The Deal",
+    "effect": "When killed, resurrect with 1 heart",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 48,
+    "image": "/Tarot_Cards/48.png",
+    "name": "Rabbit's Foot",
+    "effect": "Increases the chance to spawn better chests.",
+    "effect_1": "-",
+    "effect_2": "-"
+  },
+  {
+    "id": 18,
+    "image": "/Tarot_Cards/18.png",
+    "name": "Ambrosia",
+    "effect": "Increase curse damage by 1.25x.",
+    "effect_1": "Increase curse damage by 1.5x.",
+    "effect_2": "Increase curse damage by 1.75x."
+  },
+  {
+    "id": 7,
+    "image": "/Tarot_Cards/7.png",
+    "name": "Gift From Below",
+    "effect": "The Lamb has a 10% chance of receiving a blue heart upon killing an enemy.",
+    "effect_1": "The Lamb has a 20% chance of receiving a blue heart upon killing an enemy.",
+    "effect_2": "-"
+  },
+  {
+    "id": 11,
+    "image": "/Tarot_Cards/11.png",
+    "name": "Fervour's Host",
+    "effect": "Fervour replenishes fully when entering a new combat room.",
+    "effect_1": "-",
+    "effect_2": "-"
+  }
+]
