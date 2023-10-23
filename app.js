@@ -24,6 +24,19 @@ var fileUploadModal = new bootstrap.Modal(document.getElementById('fileUploadMod
 
 fileUploadModal.toggle();
 
+document.getElementById('themeChangeButton').addEventListener('click', () => {
+    if (document.documentElement.getAttribute('data-bs-theme') === 'dark') {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+        document.querySelector('footer').classList.replace('bg-dark', 'bg-light');
+        document.querySelector('#themeChangeContainer label').innerHTML = 'Change to Dark Mode 🌑';
+    }
+    else {
+        document.documentElement.setAttribute('data-bs-theme', 'dark');
+        document.querySelector('footer').classList.replace('bg-light', 'bg-dark');
+        document.querySelector('#themeChangeContainer label').innerHTML = 'Change to Light Mode 🌞';
+    }
+});
+
 document.getElementById('file').addEventListener('change', handleFileSelect, false);
 document.getElementById('form').addEventListener('submit', handleSubmit);
 document.getElementById('DeathCatBeaten').addEventListener('change', function () {
@@ -130,22 +143,22 @@ function buildJSON() {
         // * Text fields
         obj.Followers[index].Name = document.getElementById('FollowerName_' + element.ID).value;
 
-        obj.Followers[index].XPLevel = isNaN(Number(document.getElementById('FollowerLevel_' + element.ID).value)) &&
+        obj.Followers[index].XPLevel = !isNaN(Number(document.getElementById('FollowerLevel_' + element.ID).value)) &&
             Number(document.getElementById('FollowerLevel_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerLevel_' + element.ID).value) : 1;
 
-        obj.Followers[index].Age = isNaN(Number(document.getElementById('FollowerAge_' + element.ID).value)) &&
+        obj.Followers[index].Age = !isNaN(Number(document.getElementById('FollowerAge_' + element.ID).value)) &&
             Number(document.getElementById('FollowerAge_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerAge_' + element.ID).value) : 1;
 
-        obj.Followers[index].DayJoined = isNaN(Number(document.getElementById('FollowerDayJoined_' + element.ID).value)) &&
+        obj.Followers[index].DayJoined = !isNaN(Number(document.getElementById('FollowerDayJoined_' + element.ID).value)) &&
             Number(document.getElementById('FollowerDayJoined_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerDayJoined_' + element.ID).value) : 1;
 
-        obj.Followers[index].MemberDuration = isNaN(Number(document.getElementById('FollowerMemberDuration_' + element.ID).value)) &&
+        obj.Followers[index].MemberDuration = !isNaN(Number(document.getElementById('FollowerMemberDuration_' + element.ID).value)) &&
             Number(document.getElementById('FollowerMemberDuration_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerMemberDuration_' + element.ID).value) : 1;
 
-        obj.Followers[index].SacrificialValue = isNaN(Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value)) &&
+        obj.Followers[index].SacrificialValue = !isNaN(Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value)) &&
             Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerSacrificialValue_' + element.ID).value) : 1;
 
-        obj.Followers[index].LifeExpectancy = isNaN(Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value)) &&
+        obj.Followers[index].LifeExpectancy = !isNaN(Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value)) &&
             Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value) >= 1 ? Number(document.getElementById('FollowerLifeExpectancy_' + element.ID).value) : 1;
 
         // * Dropdown fields
@@ -433,6 +446,7 @@ function loadTestData() {
     fetch('https://raw.githubusercontent.com/fabiobarcelona/Cult-of-the-Lamb-Save-Editor/main/test_save.json')
         .then(response => response.json())
         .then(function (data) {
+            fileName = 'test_save.json';
             obj = data;
             populateValues();
             fileUploadModal.hide();

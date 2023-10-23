@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-bs-theme="dark">
 
 <head>
     <!-- Required meta tags -->
@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <title>COTL Save Editor</title>
@@ -90,6 +92,10 @@
             </div>
         </div>
         <form id="form">
+            <div class="form-check form-switch float-end" id="themeChangeContainer">
+                <input class="form-check-input" type="checkbox" role="switch" id="themeChangeButton">
+                <label class="form-check-label" for="themeChangeButton">Change to Light Mode 🌞</label>
+            </div>
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-cult-tab" data-bs-toggle="tab" data-bs-target="#nav-cult"
@@ -757,9 +763,11 @@
                                         id="RecipesDiscovered_57" value="57">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/57.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_57">
+                                        <image src="./assets/Cooking_Recipes/57.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_57">Grassy Gruel</label>
@@ -789,9 +797,11 @@
                                         id="RecipesDiscovered_106" value="106">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/106.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_106">
+                                        <image src="./assets/Cooking_Recipes/106.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_106">Basic Berry Bowl</label>
@@ -822,9 +832,11 @@
                                         id="RecipesDiscovered_32" value="32">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/32.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_32">
+                                        <image src="./assets/Cooking_Recipes/32.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_32">Paltry Pumpkin
@@ -855,9 +867,11 @@
                                         id="RecipesDiscovered_107" value="107">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/107.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_107">
+                                        <image src="./assets/Cooking_Recipes/107.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_107">Cheery Cauliflower
@@ -888,9 +902,11 @@
                                         id="RecipesDiscovered_59" value="59">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/59.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_59">
+                                        <image src="./assets/Cooking_Recipes/59.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_59">Splendid Vegetable
@@ -922,9 +938,11 @@
                                         id="RecipesDiscovered_112" value="112">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/112.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_112">
+                                        <image src="./assets/Cooking_Recipes/112.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_112">Stringy Meat
@@ -955,9 +973,11 @@
                                         id="RecipesDiscovered_58" value="58">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/58.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_58">
+                                        <image src="./assets/Cooking_Recipes/58.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_58">Hearty Meat Broth</label>
@@ -987,9 +1007,11 @@
                                         id="RecipesDiscovered_113" value="113">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/113.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_113">
+                                        <image src="./assets/Cooking_Recipes/113.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_113">Mighty Meat
@@ -1021,9 +1043,11 @@
                                         id="RecipesDiscovered_100" value="100">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/100.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_100">
+                                        <image src="./assets/Cooking_Recipes/100.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_100">Pungent Fish
@@ -1054,9 +1078,11 @@
                                         id="RecipesDiscovered_60" value="60">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/60.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_60">
+                                        <image src="./assets/Cooking_Recipes/60.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_60">Tasty Fish Meal</label>
@@ -1087,9 +1113,11 @@
                                         id="RecipesDiscovered_99" value="99">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/99.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_99">
+                                        <image src="./assets/Cooking_Recipes/99.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_99">Delicious Fish
@@ -1123,9 +1151,11 @@
                                         id="RecipesDiscovered_108" value="108">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/108.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_108">
+                                        <image src="./assets/Cooking_Recipes/108.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_108">Meager Mixed
@@ -1157,9 +1187,11 @@
                                         id="RecipesDiscovered_109" value="109">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/109.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_109">
+                                        <image src="./assets/Cooking_Recipes/109.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_109">Modest Mixed
@@ -1192,9 +1224,11 @@
                                         id="RecipesDiscovered_110" value="110">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/110.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_110">
+                                        <image src="./assets/Cooking_Recipes/110.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_110">Magnificent Mixed
@@ -1229,9 +1263,11 @@
                                         id="RecipesDiscovered_69" value="69">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/69.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_69">
+                                        <image src="./assets/Cooking_Recipes/69.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_69">Bowl of Poop</label>
@@ -1261,9 +1297,11 @@
                                         id="RecipesDiscovered_65" value="65">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/65.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_65">
+                                        <image src="./assets/Cooking_Recipes/65.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_65">Minced Follower
@@ -1297,9 +1335,11 @@
                                         id="RecipesDiscovered_111" value="111">
                                 </td>
                                 <td>
-                                    <image src="./assets/Cooking_Recipes/111.png"
-                                        alt="Cooking Recipe Preview not available" height="80px" width="85px">
-                                    </image>
+                                    <label for="RecipesDiscovered_111">
+                                        <image src="./assets/Cooking_Recipes/111.png"
+                                            alt="Cooking Recipe Preview not available" height="64px" width="64px">
+                                        </image>
+                                    </label>
                                 </td>
                                 <td>
                                     <label class="form-check-label" for="RecipesDiscovered_111">Deadly Dish</label>
@@ -1334,7 +1374,7 @@
                     <div class="row row-cols-8 g-4 mb-4">
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Lumber" src="./assets/Items/1.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1352,7 +1392,7 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Stone" src="./assets/Items/2.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1371,7 +1411,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Bone" src="./assets/Items/9.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1390,7 +1430,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Coin" src="./assets/Items/20.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1409,7 +1449,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Heart of a Heretic"
                                         src="./assets/Items/22.png" width="116px" height="82px">
                                 </div>
@@ -1428,7 +1468,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Holy Talisman"
                                         src="./assets/Items/114.png" width="116px" height="82px">
                                 </div>
@@ -1451,7 +1491,7 @@
                     <div class="row g-4 mb-4">
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Meat" src="./assets/Items/6.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1470,7 +1510,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Berry" src="./assets/Items/21.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1489,7 +1529,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Salmon" src="./assets/Items/28.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1508,7 +1548,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Minnow" src="./assets/Items/33.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1527,7 +1567,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Tuna" src="./assets/Items/34.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1546,7 +1586,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Grass" src="./assets/Items/35.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1567,7 +1607,7 @@
                     <div class="row g-4 mb-4">
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Fertilizer" src="./assets/Items/39.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1586,7 +1626,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Pumpkin" src="./assets/Items/50.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1605,7 +1645,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Follower Meat"
                                         src="./assets/Items/62.png" width="116px" height="82px">
                                 </div>
@@ -1624,7 +1664,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Crab" src="./assets/Items/91.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1643,7 +1683,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Lobster" src="./assets/Items/92.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1662,7 +1702,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Octopus" src="./assets/Items/93.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1684,7 +1724,7 @@
                     <div class="row g-4 mb-4">
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Squid" src="./assets/Items/94.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1703,7 +1743,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Swordfish" src="./assets/Items/95.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1722,7 +1762,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Blowfish" src="./assets/Items/96.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1741,7 +1781,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Beetroot" src="./assets/Items/97.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1760,7 +1800,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Cauliflower" src="./assets/Items/102.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1779,7 +1819,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Morsel" src="./assets/Items/105.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1803,7 +1843,7 @@
                     <div class="row g-4 mb-4">
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Berry Bush Seed"
                                         src="./assets/Items/8.png" width="116px" height="82px">
                                 </div>
@@ -1822,7 +1862,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Small Gift" src="./assets/Items/43.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1841,7 +1881,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Big Gift" src="./assets/Items/44.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1860,7 +1900,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Flower Necklace"
                                         src="./assets/Items/45.png" width="116px" height="82px">
                                 </div>
@@ -1879,7 +1919,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Feather Necklace"
                                         src="./assets/Items/46.png" width="116px" height="82px">
                                 </div>
@@ -1898,7 +1938,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Skull Necklace"
                                         src="./assets/Items/47.png" width="116px" height="82px">
                                 </div>
@@ -1920,7 +1960,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Natures Necklace"
                                         src="./assets/Items/48.png" width="116px" height="82px">
                                 </div>
@@ -1939,7 +1979,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Moon Necklace"
                                         src="./assets/Items/49.png" width="116px" height="82px">
                                 </div>
@@ -1958,7 +1998,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Pumpkin Seed" src="./assets/Items/51.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1977,7 +2017,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Camellia" src="./assets/Items/55.png"
                                         width="116px" height="82px">
                                 </div>
@@ -1996,7 +2036,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Menticide Mushroom"
                                         src="./assets/Items/29.png" width="116px" height="82px">
                                 </div>
@@ -2015,7 +2055,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Menticide Mushroom Spore"
                                         src="./assets/Items/70.png" width="116px" height="82px">
                                 </div>
@@ -2036,7 +2076,7 @@
                     <div class="row g-4 mb-4">
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Camellia Seed"
                                         src="./assets/Items/72.png" width="116px" height="82px">
                                 </div>
@@ -2055,7 +2095,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Wooden Planks"
                                         src="./assets/Items/81.png" width="116px" height="82px">
                                 </div>
@@ -2074,7 +2114,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Stone Blocks" src="./assets/Items/82.png"
                                         width="116px" height="82px">
                                 </div>
@@ -2093,7 +2133,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Gold Nugget" src="./assets/Items/83.png"
                                         width="116px" height="82px">
                                 </div>
@@ -2112,7 +2152,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Gold Bars" src="./assets/Items/86.png"
                                         width="116px" height="82px">
                                 </div>
@@ -2131,7 +2171,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Crystal Shards"
                                         src="./assets/Items/89.png" width="116px" height="82px">
                                 </div>
@@ -2153,7 +2193,7 @@
                     <div class="row g-4 mb-4">
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Spider Silk" src="./assets/Items/90.png"
                                         width="116px" height="82px">
                                 </div>
@@ -2172,7 +2212,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Beetroot Seed"
                                         src="./assets/Items/98.png" width="116px" height="82px">
                                 </div>
@@ -2191,7 +2231,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Eye of the Witness"
                                         src="./assets/Items/101.png" width="116px" height="82px">
                                 </div>
@@ -2210,7 +2250,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Cauliflower Seed"
                                         src="./assets/Items/103.png" width="116px" height="82px">
                                 </div>
@@ -2229,7 +2269,7 @@
 
                         <div class="col">
                             <div class="card">
-                                <div class="text-center bg-light">
+                                <div class="text-center">
                                     <img class="card-img-top my-2 w-auto" alt="Shell" src="./assets/Items/117.png"
                                         width="116px" height="82px">
                                 </div>
@@ -3191,7 +3231,7 @@
                 </div>
             </div>
         </form>
-        <footer class="footer fixed-bottom bg-light py-2">
+        <footer class="footer fixed-bottom bg-dark py-2">
             <p class="alignleft">
                 <span class="text-muted text-center">Made with &#10084; by SavagE</span>
             </p>
