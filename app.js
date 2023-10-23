@@ -518,7 +518,7 @@ function populateCurrentFollowers() {
         content +=
             `<div class="col">
                 <div class="card" style="width: 16rem;">
-                    <img src="assets/Follower_Forms/${result.SkinName}.png" onerror="this.src='assets/Follower_Forms/Unknown.png'" class="card-img-top" id="FollowerPortrait_${result.ID}" alt="Picture not available">
+                    <img src="assets/Follower_Forms/${result.SkinName}.png" onerror="this.src='assets/Follower_Forms/Unknown.png'" class="card-img-top" id="FollowerPortrait_${result.ID}" width="200px" height="230px" alt="Picture not available">
                     <div class="card-body">
                         <h5 class="card-title">
                             ${result.Name}
